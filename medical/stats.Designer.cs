@@ -28,25 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.optionSel = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.databaseDrop = new Bunifu.UI.WinForms.BunifuDropdown();
             this.label2 = new System.Windows.Forms.Label();
             this.optionToRender = new Bunifu.UI.WinForms.BunifuDropdown();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuDropdown2 = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.graphType = new Bunifu.UI.WinForms.BunifuDropdown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuDatavizBasic1 = new Bunifu.Dataviz.WinForms.BunifuDatavizBasic();
+            this.mALADES4DataSet = new medical.MALADES4DataSet();
+            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientsTableAdapter = new medical.MALADES4DataSetTableAdapters.PatientsTableAdapter();
+            this.premdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datenaissDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbenfgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbenffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matriculeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wilayaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.communeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fonctmèreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fonctpèreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nommèreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nompèreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prénomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.optionSel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mALADES4DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // optionSel
             // 
-            this.optionSel.Controls.Add(this.bunifuDropdown2);
+            this.optionSel.Controls.Add(this.graphType);
             this.optionSel.Controls.Add(this.label3);
             this.optionSel.Controls.Add(this.optionToRender);
             this.optionSel.Controls.Add(this.label2);
@@ -177,55 +201,56 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Graph type :";
             // 
-            // bunifuDropdown2
+            // graphType
             // 
-            this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown2.BackgroundColor = System.Drawing.Color.White;
-            this.bunifuDropdown2.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuDropdown2.BorderRadius = 1;
-            this.bunifuDropdown2.Color = System.Drawing.Color.Silver;
-            this.bunifuDropdown2.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.bunifuDropdown2.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuDropdown2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuDropdown2.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuDropdown2.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.bunifuDropdown2.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.bunifuDropdown2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bunifuDropdown2.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.bunifuDropdown2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bunifuDropdown2.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown2.FillDropDown = true;
-            this.bunifuDropdown2.FillIndicator = false;
-            this.bunifuDropdown2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuDropdown2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuDropdown2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown2.FormattingEnabled = true;
-            this.bunifuDropdown2.Icon = null;
-            this.bunifuDropdown2.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown2.IndicatorColor = System.Drawing.Color.DarkGray;
-            this.bunifuDropdown2.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown2.IndicatorThickness = 2;
-            this.bunifuDropdown2.IsDropdownOpened = false;
-            this.bunifuDropdown2.ItemBackColor = System.Drawing.Color.White;
-            this.bunifuDropdown2.ItemBorderColor = System.Drawing.Color.White;
-            this.bunifuDropdown2.ItemForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown2.ItemHeight = 26;
-            this.bunifuDropdown2.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDropdown2.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown2.Items.AddRange(new object[] {
+            this.graphType.BackColor = System.Drawing.Color.Transparent;
+            this.graphType.BackgroundColor = System.Drawing.Color.White;
+            this.graphType.BorderColor = System.Drawing.Color.Silver;
+            this.graphType.BorderRadius = 1;
+            this.graphType.Color = System.Drawing.Color.Silver;
+            this.graphType.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.graphType.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.graphType.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.graphType.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.graphType.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.graphType.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.graphType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.graphType.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.graphType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.graphType.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.graphType.FillDropDown = true;
+            this.graphType.FillIndicator = false;
+            this.graphType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.graphType.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.graphType.ForeColor = System.Drawing.Color.Black;
+            this.graphType.FormattingEnabled = true;
+            this.graphType.Icon = null;
+            this.graphType.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.graphType.IndicatorColor = System.Drawing.Color.DarkGray;
+            this.graphType.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.graphType.IndicatorThickness = 2;
+            this.graphType.IsDropdownOpened = false;
+            this.graphType.ItemBackColor = System.Drawing.Color.White;
+            this.graphType.ItemBorderColor = System.Drawing.Color.White;
+            this.graphType.ItemForeColor = System.Drawing.Color.Black;
+            this.graphType.ItemHeight = 26;
+            this.graphType.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.graphType.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.graphType.Items.AddRange(new object[] {
             "PieChart",
             "Line",
             "Bar"});
-            this.bunifuDropdown2.ItemTopMargin = 3;
-            this.bunifuDropdown2.Location = new System.Drawing.Point(833, 21);
-            this.bunifuDropdown2.Name = "bunifuDropdown2";
-            this.bunifuDropdown2.Size = new System.Drawing.Size(254, 32);
-            this.bunifuDropdown2.TabIndex = 5;
-            this.bunifuDropdown2.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown2.TextLeftMargin = 5;
+            this.graphType.ItemTopMargin = 3;
+            this.graphType.Location = new System.Drawing.Point(833, 21);
+            this.graphType.Name = "graphType";
+            this.graphType.Size = new System.Drawing.Size(254, 32);
+            this.graphType.TabIndex = 5;
+            this.graphType.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.graphType.TextLeftMargin = 5;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -280,6 +305,144 @@
             this.bunifuDatavizBasic1.Theme = Bunifu.Dataviz.WinForms.BunifuDatavizBasic._theme.theme1;
             this.bunifuDatavizBasic1.Title = "";
             // 
+            // mALADES4DataSet
+            // 
+            this.mALADES4DataSet.DataSetName = "MALADES4DataSet";
+            this.mALADES4DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // patientsBindingSource
+            // 
+            this.patientsBindingSource.DataMember = "Patients";
+            this.patientsBindingSource.DataSource = this.mALADES4DataSet;
+            // 
+            // patientsTableAdapter
+            // 
+            this.patientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // premdateDataGridViewTextBoxColumn
+            // 
+            this.premdateDataGridViewTextBoxColumn.DataPropertyName = "prem_date";
+            this.premdateDataGridViewTextBoxColumn.HeaderText = "prem_date";
+            this.premdateDataGridViewTextBoxColumn.Name = "premdateDataGridViewTextBoxColumn";
+            // 
+            // datenaissDataGridViewTextBoxColumn
+            // 
+            this.datenaissDataGridViewTextBoxColumn.DataPropertyName = "date_naiss";
+            this.datenaissDataGridViewTextBoxColumn.HeaderText = "date_naiss";
+            this.datenaissDataGridViewTextBoxColumn.Name = "datenaissDataGridViewTextBoxColumn";
+            // 
+            // nbenfgDataGridViewTextBoxColumn
+            // 
+            this.nbenfgDataGridViewTextBoxColumn.DataPropertyName = "nb_enf_g";
+            this.nbenfgDataGridViewTextBoxColumn.HeaderText = "nb_enf_g";
+            this.nbenfgDataGridViewTextBoxColumn.Name = "nbenfgDataGridViewTextBoxColumn";
+            // 
+            // nbenffDataGridViewTextBoxColumn
+            // 
+            this.nbenffDataGridViewTextBoxColumn.DataPropertyName = "nb_enf_f";
+            this.nbenffDataGridViewTextBoxColumn.HeaderText = "nb_enf_f";
+            this.nbenffDataGridViewTextBoxColumn.Name = "nbenffDataGridViewTextBoxColumn";
+            // 
+            // matriculeDataGridViewTextBoxColumn
+            // 
+            this.matriculeDataGridViewTextBoxColumn.DataPropertyName = "matricule";
+            this.matriculeDataGridViewTextBoxColumn.HeaderText = "matricule";
+            this.matriculeDataGridViewTextBoxColumn.Name = "matriculeDataGridViewTextBoxColumn";
+            // 
+            // wilayaDataGridViewTextBoxColumn
+            // 
+            this.wilayaDataGridViewTextBoxColumn.DataPropertyName = "wilaya";
+            this.wilayaDataGridViewTextBoxColumn.HeaderText = "wilaya";
+            this.wilayaDataGridViewTextBoxColumn.Name = "wilayaDataGridViewTextBoxColumn";
+            // 
+            // sexeDataGridViewTextBoxColumn
+            // 
+            this.sexeDataGridViewTextBoxColumn.DataPropertyName = "sexe";
+            this.sexeDataGridViewTextBoxColumn.HeaderText = "sexe";
+            this.sexeDataGridViewTextBoxColumn.Name = "sexeDataGridViewTextBoxColumn";
+            // 
+            // communeDataGridViewTextBoxColumn
+            // 
+            this.communeDataGridViewTextBoxColumn.DataPropertyName = "commune";
+            this.communeDataGridViewTextBoxColumn.HeaderText = "commune";
+            this.communeDataGridViewTextBoxColumn.Name = "communeDataGridViewTextBoxColumn";
+            // 
+            // fonctmèreDataGridViewTextBoxColumn
+            // 
+            this.fonctmèreDataGridViewTextBoxColumn.DataPropertyName = "fonct_mère";
+            this.fonctmèreDataGridViewTextBoxColumn.HeaderText = "fonct_mère";
+            this.fonctmèreDataGridViewTextBoxColumn.Name = "fonctmèreDataGridViewTextBoxColumn";
+            // 
+            // fonctpèreDataGridViewTextBoxColumn
+            // 
+            this.fonctpèreDataGridViewTextBoxColumn.DataPropertyName = "fonct_père";
+            this.fonctpèreDataGridViewTextBoxColumn.HeaderText = "fonct_père";
+            this.fonctpèreDataGridViewTextBoxColumn.Name = "fonctpèreDataGridViewTextBoxColumn";
+            // 
+            // nommèreDataGridViewTextBoxColumn
+            // 
+            this.nommèreDataGridViewTextBoxColumn.DataPropertyName = "nom_mère";
+            this.nommèreDataGridViewTextBoxColumn.HeaderText = "nom_mère";
+            this.nommèreDataGridViewTextBoxColumn.Name = "nommèreDataGridViewTextBoxColumn";
+            // 
+            // nompèreDataGridViewTextBoxColumn
+            // 
+            this.nompèreDataGridViewTextBoxColumn.DataPropertyName = "nom_père";
+            this.nompèreDataGridViewTextBoxColumn.HeaderText = "nom_père";
+            this.nompèreDataGridViewTextBoxColumn.Name = "nompèreDataGridViewTextBoxColumn";
+            // 
+            // telDataGridViewTextBoxColumn
+            // 
+            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
+            this.telDataGridViewTextBoxColumn.HeaderText = "tel";
+            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
+            // 
+            // addresseDataGridViewTextBoxColumn
+            // 
+            this.addresseDataGridViewTextBoxColumn.DataPropertyName = "addresse";
+            this.addresseDataGridViewTextBoxColumn.HeaderText = "addresse";
+            this.addresseDataGridViewTextBoxColumn.Name = "addresseDataGridViewTextBoxColumn";
+            // 
+            // prénomDataGridViewTextBoxColumn
+            // 
+            this.prénomDataGridViewTextBoxColumn.DataPropertyName = "prénom";
+            this.prénomDataGridViewTextBoxColumn.HeaderText = "prénom";
+            this.prénomDataGridViewTextBoxColumn.Name = "prénomDataGridViewTextBoxColumn";
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomDataGridViewTextBoxColumn,
+            this.prénomDataGridViewTextBoxColumn,
+            this.addresseDataGridViewTextBoxColumn,
+            this.telDataGridViewTextBoxColumn,
+            this.nompèreDataGridViewTextBoxColumn,
+            this.nommèreDataGridViewTextBoxColumn,
+            this.fonctpèreDataGridViewTextBoxColumn,
+            this.fonctmèreDataGridViewTextBoxColumn,
+            this.communeDataGridViewTextBoxColumn,
+            this.sexeDataGridViewTextBoxColumn,
+            this.wilayaDataGridViewTextBoxColumn,
+            this.matriculeDataGridViewTextBoxColumn,
+            this.nbenffDataGridViewTextBoxColumn,
+            this.nbenfgDataGridViewTextBoxColumn,
+            this.datenaissDataGridViewTextBoxColumn,
+            this.premdateDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.patientsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 77);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(8, 8);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.Visible = false;
+            // 
             // stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -298,6 +461,9 @@
             this.optionSel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mALADES4DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,7 +471,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox optionSel;
-        private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown2;
+        private Bunifu.UI.WinForms.BunifuDropdown graphType;
         private System.Windows.Forms.Label label3;
         private Bunifu.UI.WinForms.BunifuDropdown optionToRender;
         private System.Windows.Forms.Label label2;
@@ -315,5 +481,25 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private Bunifu.Dataviz.WinForms.BunifuDatavizBasic bunifuDatavizBasic1;
+        private MALADES4DataSet mALADES4DataSet;
+        private System.Windows.Forms.BindingSource patientsBindingSource;
+        private MALADES4DataSetTableAdapters.PatientsTableAdapter patientsTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prénomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addresseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nompèreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nommèreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fonctpèreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fonctmèreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn communeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wilayaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matriculeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbenffDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbenfgDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datenaissDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn premdateDataGridViewTextBoxColumn;
     }
 }
