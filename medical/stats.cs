@@ -23,7 +23,20 @@ namespace medical
         int[] counter = new int[900];
         int pages = 0;
         bool cbn = false;
+        int using_a=-1;
+        int using_b=-1;
         int other_counter = 0;
+        void usingthis(int a,int b) {
+            using_a = a;
+            using_b = b;
+            
+        }
+        bool skipRange(int index,int index2)
+        {
+            if (index == using_a && index2 == using_b)
+            { return true; }
+            return false;
+        }
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\MALADES4.accdb");
         void render(int index, int index2,int index3,bool skipCalc) {
             dataGridView1.DataSource = patientsBindingSource;
@@ -59,15 +72,17 @@ namespace medical
                     switch (index2)
                     {
                         case 0: // WILAYA
-                            
+
 
 
                             if (!skipCalc)
                             {
+                                Clear(found, counter);
                                 search_db(found, counter, 10);
                                 whereStop(found); // FIND WHERE SHOULD WE STOP
-                                if (!cbn) { calcRange(); }
+                                calcRange();
                                 
+                                usingthis(index, index2);
                             }
                             
                             //TODO : HANDLE GRAPH CHANGE AT ANYTIME
@@ -82,18 +97,23 @@ namespace medical
                             Array.Clear(bunifuChartCanvas1.Labels, 0, 5);
                             Array.Clear(bunifuChartCanvas2.Labels, 0, 5);
                             Array.Clear(bunifuChartCanvas3.Labels, 0, 5);
+                            if (skipCalc)
+                            {
+                                MessageBox.Show(minRange[other_counter] + " " + maxRange[other_counter] + " " + skipCalc);
+                            }
                             for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++) {
-                               
+                                
                                 bunifuChartCanvas1.Labels[i - (5*other_counter)] = found[i];
                                 bunifuChartCanvas2.Labels[i - (5 * other_counter)] = found[i];
                                 bunifuChartCanvas3.Labels[i - (5 * other_counter)] = found[i];
                                 data.Add(counter[i]);
                                 
                             }
-                            /*if (other_counter < pages && skipCalc)
+                            if (other_counter < pages && skipCalc)
                             {
+                                
                                 other_counter++;
-                            }*/
+                            }
                             bunifuChartCanvas1.XAxesGridLines = false; // only for pie?
                             bunifuChartCanvas1.YAxesGridLines = false;
 
@@ -111,12 +131,74 @@ namespace medical
                             }
                             bunifuPieChart1.BackgroundColor = bgColors;
                             bunifuBarChart1.BackgroundColor = bgColors;
+                           
                             break;
                         case 1: // COMMUNE
 
                             break;
                         case 2: // SEXE
+                            
+                            if (bunifuChartCanvas1.Labels != null && bunifuChartCanvas2.Labels != null && bunifuChartCanvas3.Labels !=null)
+                            {
+                                Array.Clear(bunifuChartCanvas1.Labels, 0, 5);
+                                Array.Clear(bunifuChartCanvas2.Labels, 0, 5);
+                                Array.Clear(bunifuChartCanvas3.Labels, 0, 5);
+                            }
+                            if (!skipCalc)
+                            {
+                                Clear(found, counter);
+                                search_db(found, counter, 9);
+                                whereStop(found); // FIND WHERE SHOULD WE STOP
+                                calcRange(); 
 
+                                usingthis(index, index2);
+                            }
+
+                            //TODO : HANDLE GRAPH CHANGE AT ANYTIME
+
+                            
+                            
+
+                            
+                            bunifuChartCanvas1.Labels = new string[5];
+                            bunifuChartCanvas2.Labels = new string[5];
+                            bunifuChartCanvas3.Labels = new string[5];
+                            List<double> data1 = new List<double>();
+                            Array.Clear(bunifuChartCanvas1.Labels, 0, 5);
+                            Array.Clear(bunifuChartCanvas2.Labels, 0, 5);
+                            Array.Clear(bunifuChartCanvas3.Labels, 0, 5);
+                            for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++)
+                            {
+
+                                bunifuChartCanvas1.Labels[i - (5 * other_counter)] = found[i];
+                                bunifuChartCanvas2.Labels[i - (5 * other_counter)] = found[i];
+                                bunifuChartCanvas3.Labels[i - (5 * other_counter)] = found[i];
+
+                                data1.Add(counter[i]);
+                                MessageBox.Show("Sexe : " + found[i] + " Counter :" + counter[i]);
+                            }
+                            /*if (other_counter < pages && skipCalc)
+                            {
+                                other_counter++;
+                            }*/
+                            bunifuChartCanvas1.XAxesGridLines = false; // only for pie?
+                            bunifuChartCanvas1.YAxesGridLines = false;
+
+                            bunifuPieChart1.Data = data1;
+                            bunifuLineChart1.Data = data1;
+                            bunifuBarChart1.Data = data1;
+                            bunifuPieChart1.TargetCanvas = bunifuChartCanvas1;
+                            bunifuLineChart1.TargetCanvas = bunifuChartCanvas2;
+                            bunifuBarChart1.TargetCanvas = bunifuChartCanvas3;
+                            var r1 = new Random();
+                            List<Color> bgColors1 = new List<Color>();
+                            for (int i = 0; i < 5; i++)
+                            {
+                                bgColors1.Add(Color.FromArgb(r1.Next(256), r1.Next(256), r1.Next(256)));
+                            }
+                            bunifuPieChart1.BackgroundColor = bgColors1;
+                            bunifuBarChart1.BackgroundColor = bgColors1;
+                          
                             break;
                         case 3: // ENFANTS
 
@@ -223,7 +305,7 @@ namespace medical
                 DataGridViewRow selectedRow = dataGridView1.Rows[i];
                 if (temp == 0)
                 { // ADDING FIRST ITEM 
-                    found[0] = selectedRow.Cells[10].Value.ToString();
+                    found[0] = selectedRow.Cells[cell].Value.ToString();
                     
                     counter[0]++;
                     temp++;
@@ -245,7 +327,7 @@ namespace medical
                         }
                         j++;
                     }
-                    if (!wasFound && (selectedRow.Cells[10].Value != null))
+                    if (!wasFound && (selectedRow.Cells[cell].Value != null))
                     { // I DIDNT FIND THE ITEM IN THE LIST
                         found[j] = selectedRow.Cells[cell].Value.ToString();
                        
@@ -281,7 +363,19 @@ namespace medical
             int page_nbr = (int)estimate_page_main;
             pages = (int)(Math.Ceiling(estimate_page_main));
             int other_nbr = (int)estimate_page_after;
-            for(int i =0;i < (int)(Math.Ceiling(estimate_page_main)); i++)
+            int test;
+            if((int)(Math.Ceiling(estimate_page_main)) == 0)
+            {
+
+                test = 1;
+            }
+            else
+            {
+                
+                test = (int)(Math.Ceiling(estimate_page_main));
+                MessageBox.Show(test + " ");
+            }
+            for(int i =0;i < test; i++)
             {
                 // Regardless i am doing max pages required
                 if (!flag)
@@ -290,16 +384,16 @@ namespace medical
                     minRange[0] = 0;
                     if (maxRange[0] < toStop - 5)
                     {
-                        
 
+                       
                         maxRange[0] += 5;
                     }
                     else if (maxRange[0] < toStop)
                     {
-                        
+                      
                         maxRange[0] += (toStop - maxRange[0]);
                     }
-                    cbn = true;
+                    
                     flag = true;
                 }
                 else
@@ -314,7 +408,7 @@ namespace medical
                         maxRange[i] = toStop - maxRange[i - 1];
                     }
                 }
-
+               
             }
         }
         private void nav_right_Click(object sender, EventArgs e)
