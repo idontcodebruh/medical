@@ -22,23 +22,22 @@ namespace medical
         string[] found = new string[900];
         int[] counter = new int[900];
         int pages = 0;
-        bool cbn = false;
-        int using_a=-1;
-        int using_b=-1;
         int other_counter = 0;
-        void usingthis(int a,int b) {
-            using_a = a;
-            using_b = b;
-            
-        }
-        bool skipRange(int index,int index2)
-        {
-            if (index == using_a && index2 == using_b)
-            { return true; }
-            return false;
-        }
+        
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\MALADES4.accdb");
-        void render(int index, int index2,int index3,bool skipCalc) {
+        void render(int index, int index2,int index3,bool skipCalc,bool test) {
+            int n;
+            if (bunifuChartCanvas1.Labels != null && bunifuChartCanvas2.Labels != null && bunifuChartCanvas3.Labels != null)
+            {
+                Array.Clear(bunifuChartCanvas1.Labels, 0, 5);
+                Array.Clear(bunifuChartCanvas2.Labels, 0, 5);
+                Array.Clear(bunifuChartCanvas3.Labels, 0, 5);
+            }
+            bunifuChartCanvas1.XAxesGridLines = false;
+            bunifuChartCanvas1.YAxesGridLines = false;
+            bunifuPieChart1.TargetCanvas = bunifuChartCanvas1;
+            bunifuLineChart1.TargetCanvas = bunifuChartCanvas2;
+            bunifuBarChart1.TargetCanvas = bunifuChartCanvas3;
             dataGridView1.DataSource = patientsBindingSource;
             /*
              * This is used solely to know which graph type is being used.
@@ -68,61 +67,46 @@ namespace medical
                 bunifuChartCanvas2.Visible = false;
             }
             switch (index) {
+
                 case 0:
                     switch (index2)
                     {
                         case 0: // WILAYA
-
-
-
                             if (!skipCalc)
                             {
                                 Clear(found, counter);
                                 search_db(found, counter, 10);
                                 whereStop(found); // FIND WHERE SHOULD WE STOP
                                 calcRange();
-                                
-                                usingthis(index, index2);
+                            }
+                            if (other_counter < pages && skipCalc && test)
+                            {
+                              
+                                other_counter++;
+                            }
+                            if(other_counter >= 1 && skipCalc && !test)
+                            {
+                                other_counter--;
                             }
                             
-                            //TODO : HANDLE GRAPH CHANGE AT ANYTIME
-                           
-                            
-                            
+                            //TODO : HANDLE GRAPH CHANGE AT ANYTIME     
                             List<double> data = new List<double>();
                             bunifuChartCanvas1.Labels = new string[5];
                             bunifuChartCanvas2.Labels = new string[5];
                             bunifuChartCanvas3.Labels = new string[5];
-                            
-                            Array.Clear(bunifuChartCanvas1.Labels, 0, 5);
-                            Array.Clear(bunifuChartCanvas2.Labels, 0, 5);
-                            Array.Clear(bunifuChartCanvas3.Labels, 0, 5);
-                            if (skipCalc)
-                            {
-                                MessageBox.Show(minRange[other_counter] + " " + maxRange[other_counter] + " " + skipCalc);
-                            }
+                            n = 0;
                             for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++) {
                                 
-                                bunifuChartCanvas1.Labels[i - (5*other_counter)] = found[i];
-                                bunifuChartCanvas2.Labels[i - (5 * other_counter)] = found[i];
-                                bunifuChartCanvas3.Labels[i - (5 * other_counter)] = found[i];
+                                bunifuChartCanvas1.Labels[n] = found[i];
+                                bunifuChartCanvas2.Labels[n] = found[i];
+                                bunifuChartCanvas3.Labels[n] = found[i];
                                 data.Add(counter[i]);
-                                
+                                n++;
                             }
-                            if (other_counter < pages && skipCalc)
-                            {
-                                
-                                other_counter++;
-                            }
-                            bunifuChartCanvas1.XAxesGridLines = false; // only for pie?
-                            bunifuChartCanvas1.YAxesGridLines = false;
-
+                            n = 0;
                             bunifuPieChart1.Data = data;
                             bunifuLineChart1.Data = data;
                             bunifuBarChart1.Data = data;
-                            bunifuPieChart1.TargetCanvas = bunifuChartCanvas1;
-                            bunifuLineChart1.TargetCanvas = bunifuChartCanvas2;
-                            bunifuBarChart1.TargetCanvas = bunifuChartCanvas3;
                             var r = new Random();
                             List<Color> bgColors = new List<Color>();
                             for (int i = 0; i < 5; i++)
@@ -138,58 +122,32 @@ namespace medical
                             break;
                         case 2: // SEXE
                             
-                            if (bunifuChartCanvas1.Labels != null && bunifuChartCanvas2.Labels != null && bunifuChartCanvas3.Labels !=null)
-                            {
-                                Array.Clear(bunifuChartCanvas1.Labels, 0, 5);
-                                Array.Clear(bunifuChartCanvas2.Labels, 0, 5);
-                                Array.Clear(bunifuChartCanvas3.Labels, 0, 5);
-                            }
+
                             if (!skipCalc)
                             {
                                 Clear(found, counter);
                                 search_db(found, counter, 9);
                                 whereStop(found); // FIND WHERE SHOULD WE STOP
                                 calcRange(); 
-
-                                usingthis(index, index2);
                             }
 
-                            //TODO : HANDLE GRAPH CHANGE AT ANYTIME
-
-                            
-                            
-
-                            
-                            bunifuChartCanvas1.Labels = new string[5];
-                            bunifuChartCanvas2.Labels = new string[5];
-                            bunifuChartCanvas3.Labels = new string[5];
+                            //TODO : HANDLE GRAPH CHANGE AT ANYTIME 
                             List<double> data1 = new List<double>();
-                            Array.Clear(bunifuChartCanvas1.Labels, 0, 5);
-                            Array.Clear(bunifuChartCanvas2.Labels, 0, 5);
-                            Array.Clear(bunifuChartCanvas3.Labels, 0, 5);
+                            n = 0;
                             for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++)
                             {
 
-                                bunifuChartCanvas1.Labels[i - (5 * other_counter)] = found[i];
-                                bunifuChartCanvas2.Labels[i - (5 * other_counter)] = found[i];
-                                bunifuChartCanvas3.Labels[i - (5 * other_counter)] = found[i];
+                                bunifuChartCanvas1.Labels[n] = found[i];
+                                bunifuChartCanvas2.Labels[n] = found[i];
+                                bunifuChartCanvas3.Labels[n] = found[i];
 
                                 data1.Add(counter[i]);
-                                MessageBox.Show("Sexe : " + found[i] + " Counter :" + counter[i]);
+                             
                             }
-                            /*if (other_counter < pages && skipCalc)
-                            {
-                                other_counter++;
-                            }*/
-                            bunifuChartCanvas1.XAxesGridLines = false; // only for pie?
-                            bunifuChartCanvas1.YAxesGridLines = false;
-
+                            n = 0;
                             bunifuPieChart1.Data = data1;
                             bunifuLineChart1.Data = data1;
                             bunifuBarChart1.Data = data1;
-                            bunifuPieChart1.TargetCanvas = bunifuChartCanvas1;
-                            bunifuLineChart1.TargetCanvas = bunifuChartCanvas2;
-                            bunifuBarChart1.TargetCanvas = bunifuChartCanvas3;
                             var r1 = new Random();
                             List<Color> bgColors1 = new List<Color>();
                             for (int i = 0; i < 5; i++)
@@ -249,7 +207,7 @@ namespace medical
         private void button1_Click(object sender, EventArgs e)
         {
 
-                render(databaseDrop.SelectedIndex, optionToRender.SelectedIndex, graphType.SelectedIndex,false);
+                render(databaseDrop.SelectedIndex, optionToRender.SelectedIndex, graphType.SelectedIndex,false ,false);
 
         }
         /*
@@ -416,7 +374,7 @@ namespace medical
             /* TODO: calculate new maxRange
              * 
              */
-            render(databaseDrop.SelectedIndex, optionToRender.SelectedIndex, graphType.SelectedIndex, true);
+            render(databaseDrop.SelectedIndex, optionToRender.SelectedIndex, graphType.SelectedIndex, true,true);
         }
 
         private void nav_left_Click(object sender, EventArgs e)
@@ -424,7 +382,7 @@ namespace medical
             /* TODO: calculate minRange
              * 
              */
-            
+            render(databaseDrop.SelectedIndex, optionToRender.SelectedIndex, graphType.SelectedIndex, true,false);
         }
 
         private void button2_Click(object sender, EventArgs e)

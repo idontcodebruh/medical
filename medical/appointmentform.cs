@@ -128,7 +128,8 @@ namespace medical
                 con.Open();
                 OleDbCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority) values ('" + global_nom + "','" + global_prénom + "','" + bunifuDatePicker1.Value.ToShortDateString() + "','" + priority + "')";
+                
+                cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority) values ('" + global_nom + "','" + global_prénom + "','" + bunifuDatePicker1.Value.ToString("dd/MM/yyyy") + "','" + priority + "')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Yes");
                 /* REFRESH DATA */
@@ -158,5 +159,6 @@ namespace medical
             finalGrid.DataSource = dt1;
             con.Close();
         }
+
     }
 }
