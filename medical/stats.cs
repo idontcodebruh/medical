@@ -179,14 +179,6 @@ namespace medical
                                 whereStop(); // FIND WHERE SHOULD WE STOP
                                 calcRange();
                             }
-                            if (other_counter < pages && skipCalc && test)
-                            {
-                                other_counter++;
-                            }
-                            if (other_counter >= 1 && skipCalc && !test)
-                            {
-                                other_counter--;
-                            }
                             Do_Render();
                             break;
                         case 1: // ANAMNESE > Lieu
@@ -226,13 +218,34 @@ namespace medical
                             Do_Render();
                             break;
                         case 3: // ANAMNESE > TABAC
-
+                            if (!skipCalc)
+                            {
+                                Clear();
+                                search_anamnese(27);
+                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                calcRange();
+                            }
+                            Do_Render();
                             break;
                         case 4: // ANAMNESE > VACCINE
-
+                            if (!skipCalc)
+                            {
+                                Clear();
+                                search_anamnese(16);
+                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                calcRange();
+                            }
+                            Do_Render();
                             break;
                         case 5: // ANAMNESE > HYGIENE
-
+                            if (!skipCalc)
+                            {
+                                Clear();
+                                search_anamnese(28);
+                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                calcRange();
+                            }
+                            Do_Render();
                             break;
                         case 6: // ANAMNESE > NAISSANCE
                             if (!skipCalc)
@@ -505,6 +518,11 @@ namespace medical
             }
 
         }
+        /* SEARCH ANAMNESE FUNCTION OVERVIEW:
+         * Arguments : int cell. Cell to look into
+         * Function : Searches throughout the anamnese database for different options and fill the arrays for rendering the graphs
+         * TODO : Optimize the search and reduce loops.
+         */
         public void search_anamnese(int cell)
         {
 
@@ -555,8 +573,82 @@ namespace medical
             }
             else // doing tabac or hygiene or vaccination test
             {
+                if(cell== 16) // RESPONSIBLE FOR CHECKING VACCINATION
+                {
+                        found[0] = "Vacciné";
+                        found[1] = "Non-Vacciné";
+                        found[2] = "01";
+                        found[3] = "02";
+                        found[4] = "03";
+                        for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                        {
+                            
+                            DataGridViewRow selectedRow = dataGridView3.Rows[i];
+                        string a = selectedRow.Cells[16].Value.ToString();
+                        string b = selectedRow.Cells[17].Value.ToString();
+                        string c = selectedRow.Cells[18].Value.ToString();
+                        string d = selectedRow.Cells[19].Value.ToString();
+                        string e = selectedRow.Cells[20].Value.ToString();
+                        string f = selectedRow.Cells[21].Value.ToString();
+                        string g = selectedRow.Cells[22].Value.ToString();
+                        string h = selectedRow.Cells[23].Value.ToString();
+                        string j = selectedRow.Cells[24].Value.ToString();
+                        string k = selectedRow.Cells[25].Value.ToString();
+                        string l = selectedRow.Cells[26].Value.ToString();
+                        string[] array_vaccine = {a,b,c,d,e,f,g,h,j,k,l };
+                            if (array_vaccine.Contains("True")) // Vaccinated?
+                            {
+                                counter[0] = counter[0] + 1;
+                            }
+                            else // Non-vaccinated?
+                            {
+                                counter[1] = counter[1] + 1;
+                            }
+                        }
+                }
+                if (cell==27) // RESPONSIBLE FOR CHECKING TABAC
+                {
+                    found[0] = "Fumeur";
+                    found[1] = "Non-Fumeur";
+                    found[2] = "01";
+                    found[3] = "02";
+                    found[4] = "03";
+                    for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                    {
+                        
+                        DataGridViewRow selectedRow = dataGridView3.Rows[i];
+                        if(selectedRow.Cells[cell].Value.ToString() == "True") // Smoker?
+                        {
+                            
+                            counter[0]= counter[0]+1;
+                        }
+                        else // Non-smoker
+                        {
+                            counter[1]= counter[1]+1;
+                        }
+                    }
+                }
+                if (cell==28) // RESPONBILE FOR CHECKING HYGIENE
+                {
+                    found[0] = "Hygiène";
+                    found[1] = "No hygiène";
+                    found[2] = "01";
+                    found[3] = "02";
+                    found[4] = "03";
+                    for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                    {
+                        DataGridViewRow selectedRow = dataGridView3.Rows[i];
+                        if (selectedRow.Cells[cell].Value.ToString() == "True") // Hygiene
+                        {
 
-
+                            counter[0] = counter[0] + 1;
+                        }
+                        else // No Hygiene
+                        {
+                            counter[1] = counter[1] + 1;
+                        }
+                    }
+                }
             }
         }
         private void databaseDrop_SelectedIndexChanged(object sender, EventArgs e)
