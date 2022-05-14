@@ -39,8 +39,70 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.nomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prénomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matriculeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datenaissDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datecouranteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diagnosticDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.analysesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tailleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poidsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maladieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.examensBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mALADES4DataSet = new medical.MALADES4DataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.nav_right = new FontAwesome.Sharp.IconButton();
+            this.nav_left = new FontAwesome.Sharp.IconButton();
+            this.bunifuPieChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuPieChart(this.components);
+            this.bunifuLineChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuLineChart(this.components);
+            this.bunifuBarChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuBarChart(this.components);
+            this.bunifuRadarChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuRadarChart(this.components);
+            this.bunifuChartCanvas4 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
+            this.bunifuChartCanvas1 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
+            this.bunifuChartCanvas2 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
+            this.bunifuChartCanvas3 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
+            this.examensTableAdapter = new medical.MALADES4DataSetTableAdapters.ExamensTableAdapter();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.anamneseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.anamneseTableAdapter = new medical.MALADES4DataSetTableAdapters.AnamneseTableAdapter();
+            this.néDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poidsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allaitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allartifDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.réaduréeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.réatraitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eantmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eantcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pantmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pantcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prénomDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matriculeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datenaissDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bCGPDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dTCOQ3MDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dTCOQ4MDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dTCOQ5MDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dTCOQ18MDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dTA11ADataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dTA16ADataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.rOUGEOLE9MDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dTCPR6ADataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.vitamD1MDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.vitamD6MDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tABACDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pROPRETEDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.naissanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maternelduréeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientsTableAdapter = new medical.MALADES4DataSetTableAdapters.PatientsTableAdapter();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prénomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,41 +119,15 @@
             this.nbenfgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datenaissDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.premdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.nav_right = new FontAwesome.Sharp.IconButton();
-            this.nav_left = new FontAwesome.Sharp.IconButton();
-            this.patientsTableAdapter = new medical.MALADES4DataSetTableAdapters.PatientsTableAdapter();
-            this.bunifuPieChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuPieChart(this.components);
-            this.bunifuLineChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuLineChart(this.components);
-            this.bunifuBarChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuBarChart(this.components);
-            this.bunifuRadarChart1 = new Bunifu.Charts.WinForms.ChartTypes.BunifuRadarChart(this.components);
-            this.bunifuChartCanvas4 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
-            this.bunifuChartCanvas1 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
-            this.bunifuChartCanvas2 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
-            this.bunifuChartCanvas3 = new Bunifu.Charts.WinForms.BunifuChartCanvas();
-            this.examensBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.examensTableAdapter = new medical.MALADES4DataSetTableAdapters.ExamensTableAdapter();
-            this.nomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prénomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matriculeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datenaissDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datecouranteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.objetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diagnosticDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.analysesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tailleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poidsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maladieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.optionSel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.examensBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mALADES4DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anamneseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examensBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // optionSel
@@ -281,6 +317,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dataGridView3);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button1);
@@ -321,6 +358,102 @@
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.Visible = false;
             // 
+            // nomDataGridViewTextBoxColumn1
+            // 
+            this.nomDataGridViewTextBoxColumn1.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn1.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn1.Name = "nomDataGridViewTextBoxColumn1";
+            this.nomDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // prénomDataGridViewTextBoxColumn1
+            // 
+            this.prénomDataGridViewTextBoxColumn1.DataPropertyName = "prénom";
+            this.prénomDataGridViewTextBoxColumn1.HeaderText = "prénom";
+            this.prénomDataGridViewTextBoxColumn1.Name = "prénomDataGridViewTextBoxColumn1";
+            this.prénomDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // matriculeDataGridViewTextBoxColumn1
+            // 
+            this.matriculeDataGridViewTextBoxColumn1.DataPropertyName = "matricule";
+            this.matriculeDataGridViewTextBoxColumn1.HeaderText = "matricule";
+            this.matriculeDataGridViewTextBoxColumn1.Name = "matriculeDataGridViewTextBoxColumn1";
+            this.matriculeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // datenaissDataGridViewTextBoxColumn1
+            // 
+            this.datenaissDataGridViewTextBoxColumn1.DataPropertyName = "date_naiss";
+            this.datenaissDataGridViewTextBoxColumn1.HeaderText = "date_naiss";
+            this.datenaissDataGridViewTextBoxColumn1.Name = "datenaissDataGridViewTextBoxColumn1";
+            this.datenaissDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // datecouranteDataGridViewTextBoxColumn
+            // 
+            this.datecouranteDataGridViewTextBoxColumn.DataPropertyName = "date_courante";
+            this.datecouranteDataGridViewTextBoxColumn.HeaderText = "date_courante";
+            this.datecouranteDataGridViewTextBoxColumn.Name = "datecouranteDataGridViewTextBoxColumn";
+            this.datecouranteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "age";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // objetDataGridViewTextBoxColumn
+            // 
+            this.objetDataGridViewTextBoxColumn.DataPropertyName = "objet";
+            this.objetDataGridViewTextBoxColumn.HeaderText = "objet";
+            this.objetDataGridViewTextBoxColumn.Name = "objetDataGridViewTextBoxColumn";
+            this.objetDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diagnosticDataGridViewTextBoxColumn
+            // 
+            this.diagnosticDataGridViewTextBoxColumn.DataPropertyName = "diagnostic";
+            this.diagnosticDataGridViewTextBoxColumn.HeaderText = "diagnostic";
+            this.diagnosticDataGridViewTextBoxColumn.Name = "diagnosticDataGridViewTextBoxColumn";
+            this.diagnosticDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // analysesDataGridViewTextBoxColumn
+            // 
+            this.analysesDataGridViewTextBoxColumn.DataPropertyName = "Analyses";
+            this.analysesDataGridViewTextBoxColumn.HeaderText = "Analyses";
+            this.analysesDataGridViewTextBoxColumn.Name = "analysesDataGridViewTextBoxColumn";
+            this.analysesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tailleDataGridViewTextBoxColumn
+            // 
+            this.tailleDataGridViewTextBoxColumn.DataPropertyName = "taille";
+            this.tailleDataGridViewTextBoxColumn.HeaderText = "taille";
+            this.tailleDataGridViewTextBoxColumn.Name = "tailleDataGridViewTextBoxColumn";
+            this.tailleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pCDataGridViewTextBoxColumn
+            // 
+            this.pCDataGridViewTextBoxColumn.DataPropertyName = "P_C";
+            this.pCDataGridViewTextBoxColumn.HeaderText = "P_C";
+            this.pCDataGridViewTextBoxColumn.Name = "pCDataGridViewTextBoxColumn";
+            this.pCDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // poidsDataGridViewTextBoxColumn
+            // 
+            this.poidsDataGridViewTextBoxColumn.DataPropertyName = "poids";
+            this.poidsDataGridViewTextBoxColumn.HeaderText = "poids";
+            this.poidsDataGridViewTextBoxColumn.Name = "poidsDataGridViewTextBoxColumn";
+            this.poidsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maladieDataGridViewTextBoxColumn
+            // 
+            this.maladieDataGridViewTextBoxColumn.DataPropertyName = "maladie";
+            this.maladieDataGridViewTextBoxColumn.HeaderText = "maladie";
+            this.maladieDataGridViewTextBoxColumn.Name = "maladieDataGridViewTextBoxColumn";
+            this.maladieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // examensBindingSource
+            // 
+            this.examensBindingSource.DataMember = "Examens";
+            this.examensBindingSource.DataSource = this.mALADES4DataSet;
+            // 
             // mALADES4DataSet
             // 
             this.mALADES4DataSet.DataSetName = "MALADES4DataSet";
@@ -328,6 +461,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -350,110 +485,10 @@
             this.dataGridView1.DataSource = this.patientsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 77);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(8, 8);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.Visible = false;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            // 
-            // prénomDataGridViewTextBoxColumn
-            // 
-            this.prénomDataGridViewTextBoxColumn.DataPropertyName = "prénom";
-            this.prénomDataGridViewTextBoxColumn.HeaderText = "prénom";
-            this.prénomDataGridViewTextBoxColumn.Name = "prénomDataGridViewTextBoxColumn";
-            // 
-            // addresseDataGridViewTextBoxColumn
-            // 
-            this.addresseDataGridViewTextBoxColumn.DataPropertyName = "addresse";
-            this.addresseDataGridViewTextBoxColumn.HeaderText = "addresse";
-            this.addresseDataGridViewTextBoxColumn.Name = "addresseDataGridViewTextBoxColumn";
-            // 
-            // telDataGridViewTextBoxColumn
-            // 
-            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
-            this.telDataGridViewTextBoxColumn.HeaderText = "tel";
-            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
-            // 
-            // nompèreDataGridViewTextBoxColumn
-            // 
-            this.nompèreDataGridViewTextBoxColumn.DataPropertyName = "nom_père";
-            this.nompèreDataGridViewTextBoxColumn.HeaderText = "nom_père";
-            this.nompèreDataGridViewTextBoxColumn.Name = "nompèreDataGridViewTextBoxColumn";
-            // 
-            // nommèreDataGridViewTextBoxColumn
-            // 
-            this.nommèreDataGridViewTextBoxColumn.DataPropertyName = "nom_mère";
-            this.nommèreDataGridViewTextBoxColumn.HeaderText = "nom_mère";
-            this.nommèreDataGridViewTextBoxColumn.Name = "nommèreDataGridViewTextBoxColumn";
-            // 
-            // fonctpèreDataGridViewTextBoxColumn
-            // 
-            this.fonctpèreDataGridViewTextBoxColumn.DataPropertyName = "fonct_père";
-            this.fonctpèreDataGridViewTextBoxColumn.HeaderText = "fonct_père";
-            this.fonctpèreDataGridViewTextBoxColumn.Name = "fonctpèreDataGridViewTextBoxColumn";
-            // 
-            // fonctmèreDataGridViewTextBoxColumn
-            // 
-            this.fonctmèreDataGridViewTextBoxColumn.DataPropertyName = "fonct_mère";
-            this.fonctmèreDataGridViewTextBoxColumn.HeaderText = "fonct_mère";
-            this.fonctmèreDataGridViewTextBoxColumn.Name = "fonctmèreDataGridViewTextBoxColumn";
-            // 
-            // communeDataGridViewTextBoxColumn
-            // 
-            this.communeDataGridViewTextBoxColumn.DataPropertyName = "commune";
-            this.communeDataGridViewTextBoxColumn.HeaderText = "commune";
-            this.communeDataGridViewTextBoxColumn.Name = "communeDataGridViewTextBoxColumn";
-            // 
-            // sexeDataGridViewTextBoxColumn
-            // 
-            this.sexeDataGridViewTextBoxColumn.DataPropertyName = "sexe";
-            this.sexeDataGridViewTextBoxColumn.HeaderText = "sexe";
-            this.sexeDataGridViewTextBoxColumn.Name = "sexeDataGridViewTextBoxColumn";
-            // 
-            // wilayaDataGridViewTextBoxColumn
-            // 
-            this.wilayaDataGridViewTextBoxColumn.DataPropertyName = "wilaya";
-            this.wilayaDataGridViewTextBoxColumn.HeaderText = "wilaya";
-            this.wilayaDataGridViewTextBoxColumn.Name = "wilayaDataGridViewTextBoxColumn";
-            // 
-            // matriculeDataGridViewTextBoxColumn
-            // 
-            this.matriculeDataGridViewTextBoxColumn.DataPropertyName = "matricule";
-            this.matriculeDataGridViewTextBoxColumn.HeaderText = "matricule";
-            this.matriculeDataGridViewTextBoxColumn.Name = "matriculeDataGridViewTextBoxColumn";
-            // 
-            // nbenffDataGridViewTextBoxColumn
-            // 
-            this.nbenffDataGridViewTextBoxColumn.DataPropertyName = "nb_enf_f";
-            this.nbenffDataGridViewTextBoxColumn.HeaderText = "nb_enf_f";
-            this.nbenffDataGridViewTextBoxColumn.Name = "nbenffDataGridViewTextBoxColumn";
-            // 
-            // nbenfgDataGridViewTextBoxColumn
-            // 
-            this.nbenfgDataGridViewTextBoxColumn.DataPropertyName = "nb_enf_g";
-            this.nbenfgDataGridViewTextBoxColumn.HeaderText = "nb_enf_g";
-            this.nbenfgDataGridViewTextBoxColumn.Name = "nbenfgDataGridViewTextBoxColumn";
-            // 
-            // datenaissDataGridViewTextBoxColumn
-            // 
-            this.datenaissDataGridViewTextBoxColumn.DataPropertyName = "date_naiss";
-            this.datenaissDataGridViewTextBoxColumn.HeaderText = "date_naiss";
-            this.datenaissDataGridViewTextBoxColumn.Name = "datenaissDataGridViewTextBoxColumn";
-            // 
-            // premdateDataGridViewTextBoxColumn
-            // 
-            this.premdateDataGridViewTextBoxColumn.DataPropertyName = "prem_date";
-            this.premdateDataGridViewTextBoxColumn.HeaderText = "prem_date";
-            this.premdateDataGridViewTextBoxColumn.Name = "premdateDataGridViewTextBoxColumn";
-            // 
-            // patientsBindingSource
-            // 
-            this.patientsBindingSource.DataMember = "Patients";
-            this.patientsBindingSource.DataSource = this.mALADES4DataSet;
             // 
             // button1
             // 
@@ -494,10 +529,6 @@
             this.nav_left.TabIndex = 2;
             this.nav_left.UseVisualStyleBackColor = true;
             this.nav_left.Click += new System.EventHandler(this.nav_left_Click);
-            // 
-            // patientsTableAdapter
-            // 
-            this.patientsTableAdapter.ClearBeforeFill = true;
             // 
             // bunifuPieChart1
             // 
@@ -818,105 +849,402 @@
             this.bunifuChartCanvas3.YAxesZeroLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.bunifuChartCanvas3.YAxesZeroLineWidth = 1;
             // 
-            // examensBindingSource
-            // 
-            this.examensBindingSource.DataMember = "Examens";
-            this.examensBindingSource.DataSource = this.mALADES4DataSet;
-            // 
             // examensTableAdapter
             // 
             this.examensTableAdapter.ClearBeforeFill = true;
             // 
-            // nomDataGridViewTextBoxColumn1
+            // dataGridView3
             // 
-            this.nomDataGridViewTextBoxColumn1.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn1.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn1.Name = "nomDataGridViewTextBoxColumn1";
-            this.nomDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.néDataGridViewTextBoxColumn,
+            this.lieuDataGridViewTextBoxColumn,
+            this.poidsDataGridViewTextBoxColumn1,
+            this.allaitDataGridViewTextBoxColumn,
+            this.allartifDataGridViewTextBoxColumn,
+            this.réaduréeDataGridViewTextBoxColumn,
+            this.réatraitDataGridViewTextBoxColumn,
+            this.eantmDataGridViewTextBoxColumn,
+            this.eantcDataGridViewTextBoxColumn,
+            this.pantmDataGridViewTextBoxColumn,
+            this.pantcDataGridViewTextBoxColumn,
+            this.nomDataGridViewTextBoxColumn2,
+            this.prénomDataGridViewTextBoxColumn2,
+            this.matriculeDataGridViewTextBoxColumn2,
+            this.datenaissDataGridViewTextBoxColumn2,
+            this.dateDataGridViewTextBoxColumn,
+            this.bCGPDataGridViewCheckBoxColumn,
+            this.dTCOQ3MDataGridViewCheckBoxColumn,
+            this.dTCOQ4MDataGridViewCheckBoxColumn,
+            this.dTCOQ5MDataGridViewCheckBoxColumn,
+            this.dTCOQ18MDataGridViewCheckBoxColumn,
+            this.dTA11ADataGridViewCheckBoxColumn,
+            this.dTA16ADataGridViewCheckBoxColumn,
+            this.rOUGEOLE9MDataGridViewCheckBoxColumn,
+            this.dTCPR6ADataGridViewCheckBoxColumn,
+            this.vitamD1MDataGridViewCheckBoxColumn,
+            this.vitamD6MDataGridViewCheckBoxColumn,
+            this.tABACDataGridViewCheckBoxColumn,
+            this.pROPRETEDataGridViewCheckBoxColumn,
+            this.naissanceDataGridViewTextBoxColumn,
+            this.maternelduréeDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.anamneseBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(42, 75);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(10, 10);
+            this.dataGridView3.TabIndex = 3;
+            this.dataGridView3.Visible = false;
             // 
-            // prénomDataGridViewTextBoxColumn1
+            // anamneseBindingSource
             // 
-            this.prénomDataGridViewTextBoxColumn1.DataPropertyName = "prénom";
-            this.prénomDataGridViewTextBoxColumn1.HeaderText = "prénom";
-            this.prénomDataGridViewTextBoxColumn1.Name = "prénomDataGridViewTextBoxColumn1";
-            this.prénomDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.anamneseBindingSource.DataMember = "Anamnese";
+            this.anamneseBindingSource.DataSource = this.mALADES4DataSet;
             // 
-            // matriculeDataGridViewTextBoxColumn1
+            // anamneseTableAdapter
             // 
-            this.matriculeDataGridViewTextBoxColumn1.DataPropertyName = "matricule";
-            this.matriculeDataGridViewTextBoxColumn1.HeaderText = "matricule";
-            this.matriculeDataGridViewTextBoxColumn1.Name = "matriculeDataGridViewTextBoxColumn1";
-            this.matriculeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.anamneseTableAdapter.ClearBeforeFill = true;
             // 
-            // datenaissDataGridViewTextBoxColumn1
+            // néDataGridViewTextBoxColumn
             // 
-            this.datenaissDataGridViewTextBoxColumn1.DataPropertyName = "date_naiss";
-            this.datenaissDataGridViewTextBoxColumn1.HeaderText = "date_naiss";
-            this.datenaissDataGridViewTextBoxColumn1.Name = "datenaissDataGridViewTextBoxColumn1";
-            this.datenaissDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.néDataGridViewTextBoxColumn.DataPropertyName = "né";
+            this.néDataGridViewTextBoxColumn.HeaderText = "né";
+            this.néDataGridViewTextBoxColumn.Name = "néDataGridViewTextBoxColumn";
+            this.néDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // datecouranteDataGridViewTextBoxColumn
+            // lieuDataGridViewTextBoxColumn
             // 
-            this.datecouranteDataGridViewTextBoxColumn.DataPropertyName = "date_courante";
-            this.datecouranteDataGridViewTextBoxColumn.HeaderText = "date_courante";
-            this.datecouranteDataGridViewTextBoxColumn.Name = "datecouranteDataGridViewTextBoxColumn";
-            this.datecouranteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lieuDataGridViewTextBoxColumn.DataPropertyName = "lieu";
+            this.lieuDataGridViewTextBoxColumn.HeaderText = "lieu";
+            this.lieuDataGridViewTextBoxColumn.Name = "lieuDataGridViewTextBoxColumn";
+            this.lieuDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ageDataGridViewTextBoxColumn
+            // poidsDataGridViewTextBoxColumn1
             // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "age";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.poidsDataGridViewTextBoxColumn1.DataPropertyName = "poids";
+            this.poidsDataGridViewTextBoxColumn1.HeaderText = "poids";
+            this.poidsDataGridViewTextBoxColumn1.Name = "poidsDataGridViewTextBoxColumn1";
+            this.poidsDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // objetDataGridViewTextBoxColumn
+            // allaitDataGridViewTextBoxColumn
             // 
-            this.objetDataGridViewTextBoxColumn.DataPropertyName = "objet";
-            this.objetDataGridViewTextBoxColumn.HeaderText = "objet";
-            this.objetDataGridViewTextBoxColumn.Name = "objetDataGridViewTextBoxColumn";
-            this.objetDataGridViewTextBoxColumn.ReadOnly = true;
+            this.allaitDataGridViewTextBoxColumn.DataPropertyName = "allait";
+            this.allaitDataGridViewTextBoxColumn.HeaderText = "allait";
+            this.allaitDataGridViewTextBoxColumn.Name = "allaitDataGridViewTextBoxColumn";
+            this.allaitDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // diagnosticDataGridViewTextBoxColumn
+            // allartifDataGridViewTextBoxColumn
             // 
-            this.diagnosticDataGridViewTextBoxColumn.DataPropertyName = "diagnostic";
-            this.diagnosticDataGridViewTextBoxColumn.HeaderText = "diagnostic";
-            this.diagnosticDataGridViewTextBoxColumn.Name = "diagnosticDataGridViewTextBoxColumn";
-            this.diagnosticDataGridViewTextBoxColumn.ReadOnly = true;
+            this.allartifDataGridViewTextBoxColumn.DataPropertyName = "all_artif";
+            this.allartifDataGridViewTextBoxColumn.HeaderText = "all_artif";
+            this.allartifDataGridViewTextBoxColumn.Name = "allartifDataGridViewTextBoxColumn";
+            this.allartifDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // analysesDataGridViewTextBoxColumn
+            // réaduréeDataGridViewTextBoxColumn
             // 
-            this.analysesDataGridViewTextBoxColumn.DataPropertyName = "Analyses";
-            this.analysesDataGridViewTextBoxColumn.HeaderText = "Analyses";
-            this.analysesDataGridViewTextBoxColumn.Name = "analysesDataGridViewTextBoxColumn";
-            this.analysesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.réaduréeDataGridViewTextBoxColumn.DataPropertyName = "réa_durée";
+            this.réaduréeDataGridViewTextBoxColumn.HeaderText = "réa_durée";
+            this.réaduréeDataGridViewTextBoxColumn.Name = "réaduréeDataGridViewTextBoxColumn";
+            this.réaduréeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // tailleDataGridViewTextBoxColumn
+            // réatraitDataGridViewTextBoxColumn
             // 
-            this.tailleDataGridViewTextBoxColumn.DataPropertyName = "taille";
-            this.tailleDataGridViewTextBoxColumn.HeaderText = "taille";
-            this.tailleDataGridViewTextBoxColumn.Name = "tailleDataGridViewTextBoxColumn";
-            this.tailleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.réatraitDataGridViewTextBoxColumn.DataPropertyName = "réa_trait";
+            this.réatraitDataGridViewTextBoxColumn.HeaderText = "réa_trait";
+            this.réatraitDataGridViewTextBoxColumn.Name = "réatraitDataGridViewTextBoxColumn";
+            this.réatraitDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // pCDataGridViewTextBoxColumn
+            // eantmDataGridViewTextBoxColumn
             // 
-            this.pCDataGridViewTextBoxColumn.DataPropertyName = "P_C";
-            this.pCDataGridViewTextBoxColumn.HeaderText = "P_C";
-            this.pCDataGridViewTextBoxColumn.Name = "pCDataGridViewTextBoxColumn";
-            this.pCDataGridViewTextBoxColumn.ReadOnly = true;
+            this.eantmDataGridViewTextBoxColumn.DataPropertyName = "e_ant_m";
+            this.eantmDataGridViewTextBoxColumn.HeaderText = "e_ant_m";
+            this.eantmDataGridViewTextBoxColumn.Name = "eantmDataGridViewTextBoxColumn";
+            this.eantmDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // poidsDataGridViewTextBoxColumn
+            // eantcDataGridViewTextBoxColumn
             // 
-            this.poidsDataGridViewTextBoxColumn.DataPropertyName = "poids";
-            this.poidsDataGridViewTextBoxColumn.HeaderText = "poids";
-            this.poidsDataGridViewTextBoxColumn.Name = "poidsDataGridViewTextBoxColumn";
-            this.poidsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.eantcDataGridViewTextBoxColumn.DataPropertyName = "e_ant_c";
+            this.eantcDataGridViewTextBoxColumn.HeaderText = "e_ant_c";
+            this.eantcDataGridViewTextBoxColumn.Name = "eantcDataGridViewTextBoxColumn";
+            this.eantcDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // maladieDataGridViewTextBoxColumn
+            // pantmDataGridViewTextBoxColumn
             // 
-            this.maladieDataGridViewTextBoxColumn.DataPropertyName = "maladie";
-            this.maladieDataGridViewTextBoxColumn.HeaderText = "maladie";
-            this.maladieDataGridViewTextBoxColumn.Name = "maladieDataGridViewTextBoxColumn";
-            this.maladieDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pantmDataGridViewTextBoxColumn.DataPropertyName = "p_ant_m";
+            this.pantmDataGridViewTextBoxColumn.HeaderText = "p_ant_m";
+            this.pantmDataGridViewTextBoxColumn.Name = "pantmDataGridViewTextBoxColumn";
+            this.pantmDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pantcDataGridViewTextBoxColumn
+            // 
+            this.pantcDataGridViewTextBoxColumn.DataPropertyName = "p_ant_c";
+            this.pantcDataGridViewTextBoxColumn.HeaderText = "p_ant_c";
+            this.pantcDataGridViewTextBoxColumn.Name = "pantcDataGridViewTextBoxColumn";
+            this.pantcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomDataGridViewTextBoxColumn2
+            // 
+            this.nomDataGridViewTextBoxColumn2.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn2.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn2.Name = "nomDataGridViewTextBoxColumn2";
+            this.nomDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // prénomDataGridViewTextBoxColumn2
+            // 
+            this.prénomDataGridViewTextBoxColumn2.DataPropertyName = "prénom";
+            this.prénomDataGridViewTextBoxColumn2.HeaderText = "prénom";
+            this.prénomDataGridViewTextBoxColumn2.Name = "prénomDataGridViewTextBoxColumn2";
+            this.prénomDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // matriculeDataGridViewTextBoxColumn2
+            // 
+            this.matriculeDataGridViewTextBoxColumn2.DataPropertyName = "matricule";
+            this.matriculeDataGridViewTextBoxColumn2.HeaderText = "matricule";
+            this.matriculeDataGridViewTextBoxColumn2.Name = "matriculeDataGridViewTextBoxColumn2";
+            this.matriculeDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // datenaissDataGridViewTextBoxColumn2
+            // 
+            this.datenaissDataGridViewTextBoxColumn2.DataPropertyName = "date_naiss";
+            this.datenaissDataGridViewTextBoxColumn2.HeaderText = "date_naiss";
+            this.datenaissDataGridViewTextBoxColumn2.Name = "datenaissDataGridViewTextBoxColumn2";
+            this.datenaissDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bCGPDataGridViewCheckBoxColumn
+            // 
+            this.bCGPDataGridViewCheckBoxColumn.DataPropertyName = "BCG_P";
+            this.bCGPDataGridViewCheckBoxColumn.HeaderText = "BCG_P";
+            this.bCGPDataGridViewCheckBoxColumn.Name = "bCGPDataGridViewCheckBoxColumn";
+            this.bCGPDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // dTCOQ3MDataGridViewCheckBoxColumn
+            // 
+            this.dTCOQ3MDataGridViewCheckBoxColumn.DataPropertyName = "DTCOQ_3M";
+            this.dTCOQ3MDataGridViewCheckBoxColumn.HeaderText = "DTCOQ_3M";
+            this.dTCOQ3MDataGridViewCheckBoxColumn.Name = "dTCOQ3MDataGridViewCheckBoxColumn";
+            this.dTCOQ3MDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // dTCOQ4MDataGridViewCheckBoxColumn
+            // 
+            this.dTCOQ4MDataGridViewCheckBoxColumn.DataPropertyName = "DTCOQ_4M";
+            this.dTCOQ4MDataGridViewCheckBoxColumn.HeaderText = "DTCOQ_4M";
+            this.dTCOQ4MDataGridViewCheckBoxColumn.Name = "dTCOQ4MDataGridViewCheckBoxColumn";
+            this.dTCOQ4MDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // dTCOQ5MDataGridViewCheckBoxColumn
+            // 
+            this.dTCOQ5MDataGridViewCheckBoxColumn.DataPropertyName = "DTCOQ_5M";
+            this.dTCOQ5MDataGridViewCheckBoxColumn.HeaderText = "DTCOQ_5M";
+            this.dTCOQ5MDataGridViewCheckBoxColumn.Name = "dTCOQ5MDataGridViewCheckBoxColumn";
+            this.dTCOQ5MDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // dTCOQ18MDataGridViewCheckBoxColumn
+            // 
+            this.dTCOQ18MDataGridViewCheckBoxColumn.DataPropertyName = "DTCOQ_18M";
+            this.dTCOQ18MDataGridViewCheckBoxColumn.HeaderText = "DTCOQ_18M";
+            this.dTCOQ18MDataGridViewCheckBoxColumn.Name = "dTCOQ18MDataGridViewCheckBoxColumn";
+            this.dTCOQ18MDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // dTA11ADataGridViewCheckBoxColumn
+            // 
+            this.dTA11ADataGridViewCheckBoxColumn.DataPropertyName = "DTA_11A";
+            this.dTA11ADataGridViewCheckBoxColumn.HeaderText = "DTA_11A";
+            this.dTA11ADataGridViewCheckBoxColumn.Name = "dTA11ADataGridViewCheckBoxColumn";
+            this.dTA11ADataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // dTA16ADataGridViewCheckBoxColumn
+            // 
+            this.dTA16ADataGridViewCheckBoxColumn.DataPropertyName = "DTA_16A";
+            this.dTA16ADataGridViewCheckBoxColumn.HeaderText = "DTA_16A";
+            this.dTA16ADataGridViewCheckBoxColumn.Name = "dTA16ADataGridViewCheckBoxColumn";
+            this.dTA16ADataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // rOUGEOLE9MDataGridViewCheckBoxColumn
+            // 
+            this.rOUGEOLE9MDataGridViewCheckBoxColumn.DataPropertyName = "ROUGEOLE_9M";
+            this.rOUGEOLE9MDataGridViewCheckBoxColumn.HeaderText = "ROUGEOLE_9M";
+            this.rOUGEOLE9MDataGridViewCheckBoxColumn.Name = "rOUGEOLE9MDataGridViewCheckBoxColumn";
+            this.rOUGEOLE9MDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // dTCPR6ADataGridViewCheckBoxColumn
+            // 
+            this.dTCPR6ADataGridViewCheckBoxColumn.DataPropertyName = "DTC_P_R_6A";
+            this.dTCPR6ADataGridViewCheckBoxColumn.HeaderText = "DTC_P_R_6A";
+            this.dTCPR6ADataGridViewCheckBoxColumn.Name = "dTCPR6ADataGridViewCheckBoxColumn";
+            this.dTCPR6ADataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // vitamD1MDataGridViewCheckBoxColumn
+            // 
+            this.vitamD1MDataGridViewCheckBoxColumn.DataPropertyName = "VitamD_1M";
+            this.vitamD1MDataGridViewCheckBoxColumn.HeaderText = "VitamD_1M";
+            this.vitamD1MDataGridViewCheckBoxColumn.Name = "vitamD1MDataGridViewCheckBoxColumn";
+            this.vitamD1MDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // vitamD6MDataGridViewCheckBoxColumn
+            // 
+            this.vitamD6MDataGridViewCheckBoxColumn.DataPropertyName = "VitamD_6M";
+            this.vitamD6MDataGridViewCheckBoxColumn.HeaderText = "VitamD_6M";
+            this.vitamD6MDataGridViewCheckBoxColumn.Name = "vitamD6MDataGridViewCheckBoxColumn";
+            this.vitamD6MDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tABACDataGridViewCheckBoxColumn
+            // 
+            this.tABACDataGridViewCheckBoxColumn.DataPropertyName = "TABAC";
+            this.tABACDataGridViewCheckBoxColumn.HeaderText = "TABAC";
+            this.tABACDataGridViewCheckBoxColumn.Name = "tABACDataGridViewCheckBoxColumn";
+            this.tABACDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // pROPRETEDataGridViewCheckBoxColumn
+            // 
+            this.pROPRETEDataGridViewCheckBoxColumn.DataPropertyName = "PROPRETE";
+            this.pROPRETEDataGridViewCheckBoxColumn.HeaderText = "PROPRETE";
+            this.pROPRETEDataGridViewCheckBoxColumn.Name = "pROPRETEDataGridViewCheckBoxColumn";
+            this.pROPRETEDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // naissanceDataGridViewTextBoxColumn
+            // 
+            this.naissanceDataGridViewTextBoxColumn.DataPropertyName = "naissance";
+            this.naissanceDataGridViewTextBoxColumn.HeaderText = "naissance";
+            this.naissanceDataGridViewTextBoxColumn.Name = "naissanceDataGridViewTextBoxColumn";
+            this.naissanceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maternelduréeDataGridViewTextBoxColumn
+            // 
+            this.maternelduréeDataGridViewTextBoxColumn.DataPropertyName = "maternel_durée";
+            this.maternelduréeDataGridViewTextBoxColumn.HeaderText = "maternel_durée";
+            this.maternelduréeDataGridViewTextBoxColumn.Name = "maternelduréeDataGridViewTextBoxColumn";
+            this.maternelduréeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // patientsBindingSource
+            // 
+            this.patientsBindingSource.DataMember = "Patients";
+            this.patientsBindingSource.DataSource = this.mALADES4DataSet;
+            // 
+            // patientsTableAdapter
+            // 
+            this.patientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prénomDataGridViewTextBoxColumn
+            // 
+            this.prénomDataGridViewTextBoxColumn.DataPropertyName = "prénom";
+            this.prénomDataGridViewTextBoxColumn.HeaderText = "prénom";
+            this.prénomDataGridViewTextBoxColumn.Name = "prénomDataGridViewTextBoxColumn";
+            this.prénomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addresseDataGridViewTextBoxColumn
+            // 
+            this.addresseDataGridViewTextBoxColumn.DataPropertyName = "addresse";
+            this.addresseDataGridViewTextBoxColumn.HeaderText = "addresse";
+            this.addresseDataGridViewTextBoxColumn.Name = "addresseDataGridViewTextBoxColumn";
+            this.addresseDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telDataGridViewTextBoxColumn
+            // 
+            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
+            this.telDataGridViewTextBoxColumn.HeaderText = "tel";
+            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
+            this.telDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nompèreDataGridViewTextBoxColumn
+            // 
+            this.nompèreDataGridViewTextBoxColumn.DataPropertyName = "nom_père";
+            this.nompèreDataGridViewTextBoxColumn.HeaderText = "nom_père";
+            this.nompèreDataGridViewTextBoxColumn.Name = "nompèreDataGridViewTextBoxColumn";
+            this.nompèreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nommèreDataGridViewTextBoxColumn
+            // 
+            this.nommèreDataGridViewTextBoxColumn.DataPropertyName = "nom_mère";
+            this.nommèreDataGridViewTextBoxColumn.HeaderText = "nom_mère";
+            this.nommèreDataGridViewTextBoxColumn.Name = "nommèreDataGridViewTextBoxColumn";
+            this.nommèreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fonctpèreDataGridViewTextBoxColumn
+            // 
+            this.fonctpèreDataGridViewTextBoxColumn.DataPropertyName = "fonct_père";
+            this.fonctpèreDataGridViewTextBoxColumn.HeaderText = "fonct_père";
+            this.fonctpèreDataGridViewTextBoxColumn.Name = "fonctpèreDataGridViewTextBoxColumn";
+            this.fonctpèreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fonctmèreDataGridViewTextBoxColumn
+            // 
+            this.fonctmèreDataGridViewTextBoxColumn.DataPropertyName = "fonct_mère";
+            this.fonctmèreDataGridViewTextBoxColumn.HeaderText = "fonct_mère";
+            this.fonctmèreDataGridViewTextBoxColumn.Name = "fonctmèreDataGridViewTextBoxColumn";
+            this.fonctmèreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // communeDataGridViewTextBoxColumn
+            // 
+            this.communeDataGridViewTextBoxColumn.DataPropertyName = "commune";
+            this.communeDataGridViewTextBoxColumn.HeaderText = "commune";
+            this.communeDataGridViewTextBoxColumn.Name = "communeDataGridViewTextBoxColumn";
+            this.communeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sexeDataGridViewTextBoxColumn
+            // 
+            this.sexeDataGridViewTextBoxColumn.DataPropertyName = "sexe";
+            this.sexeDataGridViewTextBoxColumn.HeaderText = "sexe";
+            this.sexeDataGridViewTextBoxColumn.Name = "sexeDataGridViewTextBoxColumn";
+            this.sexeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wilayaDataGridViewTextBoxColumn
+            // 
+            this.wilayaDataGridViewTextBoxColumn.DataPropertyName = "wilaya";
+            this.wilayaDataGridViewTextBoxColumn.HeaderText = "wilaya";
+            this.wilayaDataGridViewTextBoxColumn.Name = "wilayaDataGridViewTextBoxColumn";
+            this.wilayaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // matriculeDataGridViewTextBoxColumn
+            // 
+            this.matriculeDataGridViewTextBoxColumn.DataPropertyName = "matricule";
+            this.matriculeDataGridViewTextBoxColumn.HeaderText = "matricule";
+            this.matriculeDataGridViewTextBoxColumn.Name = "matriculeDataGridViewTextBoxColumn";
+            this.matriculeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nbenffDataGridViewTextBoxColumn
+            // 
+            this.nbenffDataGridViewTextBoxColumn.DataPropertyName = "nb_enf_f";
+            this.nbenffDataGridViewTextBoxColumn.HeaderText = "nb_enf_f";
+            this.nbenffDataGridViewTextBoxColumn.Name = "nbenffDataGridViewTextBoxColumn";
+            this.nbenffDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nbenfgDataGridViewTextBoxColumn
+            // 
+            this.nbenfgDataGridViewTextBoxColumn.DataPropertyName = "nb_enf_g";
+            this.nbenfgDataGridViewTextBoxColumn.HeaderText = "nb_enf_g";
+            this.nbenfgDataGridViewTextBoxColumn.Name = "nbenfgDataGridViewTextBoxColumn";
+            this.nbenfgDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datenaissDataGridViewTextBoxColumn
+            // 
+            this.datenaissDataGridViewTextBoxColumn.DataPropertyName = "date_naiss";
+            this.datenaissDataGridViewTextBoxColumn.HeaderText = "date_naiss";
+            this.datenaissDataGridViewTextBoxColumn.Name = "datenaissDataGridViewTextBoxColumn";
+            this.datenaissDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // premdateDataGridViewTextBoxColumn
+            // 
+            this.premdateDataGridViewTextBoxColumn.DataPropertyName = "prem_date";
+            this.premdateDataGridViewTextBoxColumn.HeaderText = "prem_date";
+            this.premdateDataGridViewTextBoxColumn.Name = "premdateDataGridViewTextBoxColumn";
+            this.premdateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // stats
             // 
@@ -939,10 +1267,12 @@
             this.optionSel.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.examensBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mALADES4DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anamneseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examensBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -959,25 +1289,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private MALADES4DataSet mALADES4DataSet;
-        private System.Windows.Forms.BindingSource patientsBindingSource;
-        private MALADES4DataSetTableAdapters.PatientsTableAdapter patientsTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prénomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addresseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nompèreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nommèreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fonctpèreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fonctmèreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn communeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wilayaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matriculeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbenffDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbenfgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datenaissDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn premdateDataGridViewTextBoxColumn;
         private FontAwesome.Sharp.IconButton nav_left;
         private FontAwesome.Sharp.IconButton nav_right;
         private Bunifu.Charts.WinForms.ChartTypes.BunifuPieChart bunifuPieChart1;
@@ -1004,5 +1316,57 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn poidsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maladieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.BindingSource anamneseBindingSource;
+        private MALADES4DataSetTableAdapters.AnamneseTableAdapter anamneseTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn néDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lieuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poidsDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allaitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allartifDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn réaduréeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn réatraitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eantmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eantcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pantmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pantcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prénomDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matriculeDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datenaissDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bCGPDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dTCOQ3MDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dTCOQ4MDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dTCOQ5MDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dTCOQ18MDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dTA11ADataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dTA16ADataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn rOUGEOLE9MDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dTCPR6ADataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn vitamD1MDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn vitamD6MDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn tABACDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn pROPRETEDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn naissanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maternelduréeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource patientsBindingSource;
+        private MALADES4DataSetTableAdapters.PatientsTableAdapter patientsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prénomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addresseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nompèreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nommèreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fonctpèreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fonctmèreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn communeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wilayaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matriculeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbenffDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbenfgDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datenaissDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn premdateDataGridViewTextBoxColumn;
     }
 }

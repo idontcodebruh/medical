@@ -52,6 +52,7 @@ namespace medical
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\MALADES4.accdb");
         void render(int index, int index2, int index3, bool skipCalc, bool test)
         {
+
             int n;
             bunifuChartCanvas1.XAxesGridLines = false;
             bunifuChartCanvas1.YAxesGridLines = false;
@@ -61,6 +62,7 @@ namespace medical
             bunifuRadarChart1.TargetCanvas = bunifuChartCanvas4;
             dataGridView1.DataSource = patientsBindingSource;
             dataGridView2.DataSource = examensBindingSource;
+            dataGridView3.DataSource = anamneseBindingSource;
             bunifuChartCanvas1.Labels = new string[5];
             bunifuChartCanvas2.Labels = new string[5];
             bunifuChartCanvas3.Labels = new string[5];
@@ -113,7 +115,7 @@ namespace medical
             switch (index)
             {
 
-                case 0:
+                case 0: // RESPONSILBE FOR PATIENT
                     switch (index2)
                     {
                         case 0: // WILAYA
@@ -133,40 +135,12 @@ namespace medical
                             {
                                 other_counter--;
                             }
-                            //TODO : HANDLE GRAPH CHANGE AT ANYTIME     
-                            List<double> data = new List<double>();
-                            n = 0;
-                            for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++)
-                            {
-                                
-                                bunifuChartCanvas1.Labels[n] = found[i];
-                                bunifuChartCanvas2.Labels[n] = found[i];
-                                bunifuChartCanvas3.Labels[n] = found[i];
-                                bunifuChartCanvas4.Labels[n] = found[i];
-                                data.Add(counter[i]);
-                                n++;
-                            }
-                            n = 0;
-                            bunifuPieChart1.Data = data;
-                            bunifuLineChart1.Data = data;
-                            bunifuBarChart1.Data = data;
-                            bunifuRadarChart1.Data = data;
-                            var r = new Random();
-                            List<Color> bgColors = new List<Color>();
-                            for (int i = 0; i < 5; i++)
-                            {
-                                bgColors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
-                            }
-                            bunifuPieChart1.BackgroundColor = bgColors;
-                            bunifuBarChart1.BackgroundColor = bgColors;
-
+                            Do_Render();
                             break;
                         case 1: // COMMUNE
 
                             break;
                         case 2: // SEXE
-
-
                             if (!skipCalc)
                             {
                                 Clear();
@@ -174,36 +148,7 @@ namespace medical
                                 whereStop(); // FIND WHERE SHOULD WE STOP
                                 calcRange();
                             }
-
-                            //TODO : HANDLE GRAPH CHANGE AT ANYTIME 
-                            List<double> data1 = new List<double>();
-                            n = 0;
-
-                            for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++)
-                            {
-                                
-                                bunifuChartCanvas1.Labels[n] = found[i];
-                                bunifuChartCanvas2.Labels[n] = found[i];
-                                bunifuChartCanvas3.Labels[n] = found[i];
-                                bunifuChartCanvas4.Labels[n] = found[i];
-                          
-                                data1.Add(counter[i]);
-                                n++;
-                            }
-                            n = 0;
-                            bunifuPieChart1.Data = data1;
-                            bunifuLineChart1.Data = data1;
-                            bunifuBarChart1.Data = data1;
-                            bunifuRadarChart1.Data = data1;
-                            var r1 = new Random();
-                            List<Color> bgColors1 = new List<Color>();
-                            for (int i = 0; i < 5; i++)
-                            {
-                                bgColors1.Add(Color.FromArgb(r1.Next(256), r1.Next(256), r1.Next(256)));
-                            }
-                            bunifuPieChart1.BackgroundColor = bgColors1;
-                            bunifuBarChart1.BackgroundColor = bgColors1;
-
+                            Do_Render();
                             break;
                         case 3: // ENFANTS
 
@@ -217,20 +162,100 @@ namespace medical
                     }
 
                     break;
-                case 1:
+                case 1: // RESPONSIBLE FOR EXAMEN
                     switch (index2)
                     {
 
                     }
                     break;
-                case 2:
+                case 2: // RESPONSIBLE FOR ANAMNESE
                     switch (index2)
                     {
+                        case 0: // ANAMNESE > Né
+                            if (!skipCalc)
+                            {
+                                Clear();
+                                search_anamnese(0);
+                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                calcRange();
+                            }
+                            if (other_counter < pages && skipCalc && test)
+                            {
+                                other_counter++;
+                            }
+                            if (other_counter >= 1 && skipCalc && !test)
+                            {
+                                other_counter--;
+                            }
+                            Do_Render();
+                            break;
+                        case 1: // ANAMNESE > Lieu
+                            if (!skipCalc)
+                            {
+                                Clear();
+                                search_anamnese(1);
+                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                calcRange();
+                            }
+                            if (other_counter < pages && skipCalc && test)
+                            {
+                                other_counter++;
+                            }
+                            if (other_counter >= 1 && skipCalc && !test)
+                            {
+                                other_counter--;
+                            }
+                            Do_Render();
+                            break;
+                        case 2: // ANAMNESE > ALLAIT
+                            if (!skipCalc)
+                            {
+                                Clear();
+                                search_anamnese(3);
+                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                calcRange();
+                            }
+                            if (other_counter < pages && skipCalc && test)
+                            {
+                                other_counter++;
+                            }
+                            if (other_counter >= 1 && skipCalc && !test)
+                            {
+                                other_counter--;
+                            }
+                            Do_Render();
+                            break;
+                        case 3: // ANAMNESE > TABAC
 
+                            break;
+                        case 4: // ANAMNESE > VACCINE
+
+                            break;
+                        case 5: // ANAMNESE > HYGIENE
+
+                            break;
+                        case 6: // ANAMNESE > NAISSANCE
+                            if (!skipCalc)
+                            {
+                                Clear();
+                                search_anamnese(29);
+                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                calcRange();
+                            }
+                            if (other_counter < pages && skipCalc && test)
+                            {
+                                other_counter++;
+                            }
+                            if (other_counter >= 1 && skipCalc && !test)
+                            {
+                                other_counter--;
+                            }
+                            Do_Render();
+                            break;
 
                     }
                     break;
-                case 3:
+                case 3: // RESPONSIBLE FOR PATIENT FOLLOW
                     Load_Patient();
                     if(String.IsNullOrEmpty(global_nom) && String.IsNullOrEmpty(global_prénom))
                     {
@@ -377,11 +402,12 @@ namespace medical
         }
         private void stats_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'mALADES4DataSet.Patients' table. You can move, or remove it, as needed.
+            this.patientsTableAdapter.Fill(this.mALADES4DataSet.Patients);
+            // TODO: This line of code loads data into the 'mALADES4DataSet.Anamnese' table. You can move, or remove it, as needed.
+            this.anamneseTableAdapter.Fill(this.mALADES4DataSet.Anamnese);
             // TODO: This line of code loads data into the 'mALADES4DataSet.Examens' table. You can move, or remove it, as needed.
             this.examensTableAdapter.Fill(this.mALADES4DataSet.Examens);
-            // TODO: This line of code loads data into the 'mALADES4DataSet.Patients' table. You can move, or remove it, as needed.
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -440,8 +466,8 @@ namespace medical
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 wasFound = false;
-
                 DataGridViewRow selectedRow = dataGridView1.Rows[i];
+
                 if (temp == 0)
                 { // ADDING FIRST ITEM 
                     found[0] = selectedRow.Cells[cell].Value.ToString();
@@ -469,7 +495,6 @@ namespace medical
                     if (!wasFound && (selectedRow.Cells[cell].Value != null))
                     { // I DIDNT FIND THE ITEM IN THE LIST
                         found[j] = selectedRow.Cells[cell].Value.ToString();
-
                         counter[j]++;
                     }
 
@@ -480,7 +505,60 @@ namespace medical
             }
 
         }
+        public void search_anamnese(int cell)
+        {
 
+            if (cell == 0 || cell == 1 || cell == 3|| cell == 29) // all others are done here
+            {
+                bool wasFound;
+                int temp = 0;
+                for (int i = 0; i < dataGridView3.RowCount; i++)
+                {
+                    wasFound = false;
+                    DataGridViewRow selectedRow = dataGridView3.Rows[i];
+
+                    if (temp == 0)
+                    { // ADDING FIRST ITEM 
+                        found[0] = selectedRow.Cells[cell].Value.ToString();
+
+                        counter[0]++;
+                        temp++;
+                    }
+                    else
+                    {
+                        int j = 0;
+                        while (!String.IsNullOrEmpty(found[j]))
+                        {
+                            if (selectedRow.Cells[cell].Value == null)
+                            {
+                                // SKIP CUZ THIS IS NULL
+                                break;
+                            }
+                            if (selectedRow.Cells[cell].Value.ToString() == found[j])
+                            { // CHECK IF ITEM ALRDY EXISTS IN MY ARRAY
+                                wasFound = true;
+                                counter[j]++;
+                            }
+                            j++;
+                        }
+                        if (!wasFound && (selectedRow.Cells[cell].Value != null))
+                        { // I DIDNT FIND THE ITEM IN THE LIST
+                            found[j] = selectedRow.Cells[cell].Value.ToString();
+                            counter[j]++;
+                        }
+
+                    }
+
+
+
+                }
+            }
+            else // doing tabac or hygiene or vaccination test
+            {
+
+
+            }
+        }
         private void databaseDrop_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -500,6 +578,14 @@ namespace medical
             if(databaseDrop.SelectedIndex == 2)
             {
                 optionToRender.Items.Clear();
+                optionToRender.Items.Add("Né");
+                optionToRender.Items.Add("Lieu");
+                optionToRender.Items.Add("Allait");
+                optionToRender.Items.Add("Fumeur/Non fumeur");
+                optionToRender.Items.Add("Vacciné/Non vacciné");
+                optionToRender.Items.Add("Hygiene");
+                optionToRender.Items.Add("Naissance");
+
             }
             if(databaseDrop.SelectedIndex == 3)
             {
@@ -579,6 +665,37 @@ namespace medical
         private void button2_Click(object sender, EventArgs e)
         {
             
+        }
+        public void Do_Render() // HANDLE RENDERING PROCESS
+        {
+            int n;
+            //TODO : HANDLE GRAPH CHANGE AT ANYTIME     
+            List<double> data = new List<double>();
+            n = 0;
+            for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++)
+            {
+
+                bunifuChartCanvas1.Labels[n] = found[i];
+                bunifuChartCanvas2.Labels[n] = found[i];
+                bunifuChartCanvas3.Labels[n] = found[i];
+                bunifuChartCanvas4.Labels[n] = found[i];
+                data.Add(counter[i]);
+                n++;
+            }
+            n = 0;
+            bunifuPieChart1.Data = data;
+            bunifuLineChart1.Data = data;
+            bunifuBarChart1.Data = data;
+            bunifuRadarChart1.Data = data;
+            var r = new Random();
+            List<Color> bgColors = new List<Color>();
+            for (int i = 0; i < 5; i++)
+            {
+                bgColors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
+            }
+            bunifuPieChart1.BackgroundColor = bgColors;
+            bunifuBarChart1.BackgroundColor = bgColors;
+
         }
     }
 }
