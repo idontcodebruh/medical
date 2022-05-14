@@ -49,6 +49,26 @@ namespace medical
             }
 
         }
+        public string date_naissance(string date)
+        {
+            int found = 0;
+            int pos=0;
+            for(int i = 0; i<date.Length; i++)
+            {
+               if(date[i] == '/')
+                {
+                    found++;
+                }
+                if (found == 2)
+                {
+                    pos = i + 1;
+                    break;
+                }
+            }
+            
+            string remaining = date.Substring(pos, 4);
+            return remaining;
+        }
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\MALADES4.accdb");
         void render(int index, int index2, int index3, bool skipCalc, bool test)
         {
@@ -170,7 +190,15 @@ namespace medical
 
                             break;
                         case 4: //DATE NAISSANCE
-
+                             if (!skipCalc)
+                             {
+                                 Clear();
+                                 search_dates(14);
+                                 whereStop();
+                                 calcRange();
+                             }
+                             Do_Render();
+                                
                             break;
                         default:
 
@@ -465,6 +493,48 @@ namespace medical
                 {
                     break;
                 }
+            }
+        }
+        public void search_dates(int cell)
+        {
+            bool wasFound;
+            int temp = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                wasFound = false;
+                DataGridViewRow selectedRow = dataGridView1.Rows[i];
+
+                if (temp == 0)
+                { // ADDING FIRST ITEM 
+                    found[0] = date_naissance(selectedRow.Cells[cell].Value.ToString());
+                    counter[0]++;
+                    temp++;
+                }
+                else
+                {
+                    int j = 0;
+                    while (!String.IsNullOrEmpty(found[j]))
+                    {
+                        if (selectedRow.Cells[cell].Value == System.DBNull.Value)
+                        {
+                            // SKIP CUZ THIS IS NULL
+                            break;
+                        }
+                        if (date_naissance(selectedRow.Cells[cell].Value.ToString()) == found[j])
+                        { // CHECK IF ITEM ALRDY EXISTS IN MY ARRAY
+                            wasFound = true;
+                            counter[j]++;
+                        }
+                        j++;
+                    }
+                    if (!wasFound && (selectedRow.Cells[cell].Value != System.DBNull.Value))
+                    { // I DIDNT FIND THE ITEM IN THE LIST
+                        found[j] = date_naissance(selectedRow.Cells[cell].Value.ToString());
+                        counter[j]++;
+                    }
+
+                }
+
             }
         }
         /*
