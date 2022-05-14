@@ -23,8 +23,8 @@ namespace medical
         int toStop = 0;
         int[] minRange = new int[256];
         int[] maxRange = new int[256];
-        string[] found = new string[200];
-        int[] counter = new int[200];
+        string[] found = new string[900];
+        int[] counter = new int[900];
         double[] personal_poids = new double[50];
         double[] personal_taille = new double[50];
         int pages = 0;
@@ -138,14 +138,30 @@ namespace medical
                             Do_Render();
                             break;
                         case 1: // COMMUNE
+                            if (!skipCalc)
+                            {
+                                Clear();
+                                search_db(found, counter, 8);
+                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                calcRange();
 
+                            }
+                            if (other_counter < pages && skipCalc && test)
+                            {
+                                other_counter++;
+                            }
+                            if (other_counter >= 1 && skipCalc && !test)
+                            {
+                                other_counter--;
+                            }
+                            Do_Render();
                             break;
                         case 2: // SEXE
                             if (!skipCalc)
                             {
                                 Clear();
                                 search_db(found, counter, 9);
-                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                whereStop();
                                 calcRange();
                             }
                             Do_Render();
@@ -176,7 +192,7 @@ namespace medical
                             {
                                 Clear();
                                 search_anamnese(0);
-                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                whereStop(); 
                                 calcRange();
                             }
                             Do_Render();
@@ -186,7 +202,7 @@ namespace medical
                             {
                                 Clear();
                                 search_anamnese(1);
-                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                whereStop();
                                 calcRange();
                             }
                             if (other_counter < pages && skipCalc && test)
@@ -204,7 +220,7 @@ namespace medical
                             {
                                 Clear();
                                 search_anamnese(3);
-                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                whereStop(); 
                                 calcRange();
                             }
                             if (other_counter < pages && skipCalc && test)
@@ -222,7 +238,7 @@ namespace medical
                             {
                                 Clear();
                                 search_anamnese(27);
-                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                whereStop();
                                 calcRange();
                             }
                             Do_Render();
@@ -232,7 +248,7 @@ namespace medical
                             {
                                 Clear();
                                 search_anamnese(16);
-                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                whereStop(); 
                                 calcRange();
                             }
                             Do_Render();
@@ -242,7 +258,7 @@ namespace medical
                             {
                                 Clear();
                                 search_anamnese(28);
-                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                whereStop();
                                 calcRange();
                             }
                             Do_Render();
@@ -252,7 +268,7 @@ namespace medical
                             {
                                 Clear();
                                 search_anamnese(29);
-                                whereStop(); // FIND WHERE SHOULD WE STOP
+                                whereStop();
                                 calcRange();
                             }
                             if (other_counter < pages && skipCalc && test)
@@ -498,7 +514,7 @@ namespace medical
                             // SKIP CUZ THIS IS NULL
                             break;
                         }
-                        if (selectedRow.Cells[cell].Value.ToString() == found[j])
+                        if (selectedRow.Cells[cell].Value.ToString().ToLower() == found[j].ToLower())
                         { // CHECK IF ITEM ALRDY EXISTS IN MY ARRAY
                             wasFound = true;
                             counter[j]++;
@@ -566,9 +582,6 @@ namespace medical
                         }
 
                     }
-
-
-
                 }
             }
             else // doing tabac or hygiene or vaccination test
