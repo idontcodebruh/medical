@@ -197,10 +197,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="appointmentform.cs">
+    <Compile Include="SubForms\appointmentform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="appointmentform.Designer.cs">
+    <Compile Include="SubForms\appointmentform.Designer.cs">
       <DependentUpon>appointmentform.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSet1.cs">
@@ -211,22 +211,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Main Entry\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Main Entry\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="SubForms\homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="homepage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="homepage.Designer.cs">
+    <Compile Include="SubForms\homepage.Designer.cs">
       <DependentUpon>homepage.cs</DependentUpon>
     </Compile>
     <Compile Include="LogsDataSet.cs">
@@ -237,10 +231,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LogsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="mainmenu.cs">
+    <Compile Include="Main Entry\mainmenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainmenu.Designer.cs">
+    <Compile Include="Main Entry\mainmenu.Designer.cs">
       <DependentUpon>mainmenu.cs</DependentUpon>
     </Compile>
     <Compile Include="MALADES4DataSet.cs">
@@ -253,16 +247,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="searchform.cs">
+    <Compile Include="SubForms\searchform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="searchform.Designer.cs">
+    <Compile Include="SubForms\searchform.Designer.cs">
       <DependentUpon>searchform.cs</DependentUpon>
     </Compile>
-    <Compile Include="stats.cs">
+    <Compile Include="SubForms\stats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="stats.Designer.cs">
+    <Compile Include="SubForms\stats.Designer.cs">
       <DependentUpon>stats.cs</DependentUpon>
     </Compile>
     <Compile Include="viewer.cs">
@@ -271,28 +265,25 @@
     <Compile Include="viewer.Designer.cs">
       <DependentUpon>viewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewmedical.cs">
+    <Compile Include="SubForms\viewmedical.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="viewmedical.Designer.cs">
+    <Compile Include="SubForms\viewmedical.Designer.cs">
       <DependentUpon>viewmedical.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="addform.resx">
       <DependentUpon>addform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="appointmentform.resx">
+    <EmbeddedResource Include="SubForms\appointmentform.resx">
       <DependentUpon>appointmentform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Main Entry\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="homepage.resx">
+    <EmbeddedResource Include="SubForms\homepage.resx">
       <DependentUpon>homepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainmenu.resx">
+    <EmbeddedResource Include="Main Entry\mainmenu.resx">
       <DependentUpon>mainmenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -306,16 +297,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="searchform.resx">
+    <EmbeddedResource Include="SubForms\searchform.resx">
       <DependentUpon>searchform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="stats.resx">
+    <EmbeddedResource Include="SubForms\stats.resx">
       <DependentUpon>stats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewer.resx">
       <DependentUpon>viewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="viewmedical.resx">
+    <EmbeddedResource Include="SubForms\viewmedical.resx">
       <DependentUpon>viewmedical.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="appointmentDataSet.xsc">
