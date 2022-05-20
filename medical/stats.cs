@@ -23,8 +23,8 @@ namespace medical
         int toStop = 0;
         int[] minRange = new int[256];
         int[] maxRange = new int[256];
-        string[] found = new string[900];
-        int[] counter = new int[900];
+        string[] found = new string[3000];
+        int[] counter = new int[3000];
         double[] personal_poids = new double[50];
         double[] personal_taille = new double[50];
         int pages = 0;
@@ -209,7 +209,9 @@ namespace medical
                 case 1: // RESPONSIBLE FOR EXAMEN
                     switch (index2)
                     {
+                        case 0:
 
+                            break;
                     }
                     break;
                 case 2: // RESPONSIBLE FOR ANAMNESE
@@ -431,31 +433,35 @@ namespace medical
         }
         public void search_examen(int cell)
         {
-            int j = 0;
-            double test_weight;
-            for(int i =0;i< dataGridView2.Rows.Count; i++)
+            bool wasFound;
+            int temp = 0;
+            if (cell ==9 || cell == 11) // POIDS ND TAILLE 
             {
-                DataGridViewRow selectedRow = dataGridView2.Rows[i];
-                if(selectedRow.Cells[0].Value.ToString() == global_nom && selectedRow.Cells[1].Value.ToString()  == global_prénom)
+                int p = 0;
+                double test_weight;
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
                 {
-                    // getting correct patient
-                    if(selectedRow.Cells[cell].Value != System.DBNull.Value)
+                    DataGridViewRow selectedRow = dataGridView2.Rows[i];
+                    if (selectedRow.Cells[0].Value.ToString() == global_nom && selectedRow.Cells[1].Value.ToString() == global_prénom)
                     {
-                        // getting only correct weight
-                        
-                        found[j] = global_nom +" "+global_prénom +" "+selectedRow.Cells[4].Value.ToString();
-                        test_weight = Convert.ToDouble(selectedRow.Cells[cell].Value);
-                        if ((cell == 11) && (test_weight > 1000)) // cba to do separate func for checking weight just doing it here
+                        // getting correct patient
+                        if (selectedRow.Cells[cell].Value != System.DBNull.Value)
                         {
-                            // FIX WEIGHTS IN GRAMS TO KG
-                            test_weight = test_weight/1000;
+                            // getting only correct weight
+
+                            found[p] = global_nom + " " + global_prénom + " " + selectedRow.Cells[4].Value.ToString();
+                            test_weight = Convert.ToDouble(selectedRow.Cells[cell].Value);
+                            if ((cell == 11) && (test_weight > 1000)) // cba to do separate func for checking weight just doing it here
+                            {
+                                // FIX WEIGHTS IN GRAMS TO KG
+                                test_weight = test_weight / 1000;
+                            }
+                            personal_poids[p] = test_weight;
+                            p++;
                         }
-                        personal_poids[j] = test_weight;
-                        j++;
                     }
                 }
             }
-
         }
         private void stats_Load(object sender, EventArgs e)
         {
@@ -749,6 +755,7 @@ namespace medical
             if (databaseDrop.SelectedIndex == 1)
             {
                 optionToRender.Items.Clear();
+                optionToRender.Items.Add("Maladie");
             }
             if(databaseDrop.SelectedIndex == 2)
             {
@@ -772,11 +779,9 @@ namespace medical
         public void calcRange()
         {
             bool flag = false;
-            decimal estimate_page_main = (decimal)(toStop / 10);
-            decimal estimate_page_after = estimate_page_main - Math.Truncate(estimate_page_main);
-            int page_nbr = (int)estimate_page_main;
-            pages = (int)(Math.Ceiling(estimate_page_main));
-            int other_nbr = (int)estimate_page_after;
+            decimal estimate_page_main = (decimal)(toStop / 5);
+            pages = (int)(Math.Ceiling((decimal)toStop / (decimal)5.0));
+            MessageBox.Show("estimated pages : " + pages + " toStop :" + toStop);
             int test;
             if ((int)(Math.Ceiling(estimate_page_main)) == 0)
             {
@@ -786,8 +791,8 @@ namespace medical
             else
             {
 
-                test = (int)(Math.Ceiling(estimate_page_main));
-                MessageBox.Show(test + " ");
+                pages = (int)(Math.Ceiling((double)toStop / 5.0));
+                test = pages;
             }
             for (int i = 0; i < test; i++)
             {
@@ -815,10 +820,11 @@ namespace medical
                     }
                     else if (maxRange[i - 1] < toStop)
                     {
-                        maxRange[i] = toStop - maxRange[i - 1];
+                        maxRange[i] = toStop;
+                        minRange[i] = minRange[i-1] + 5;
                     }
                 }
-
+                
             }
         }
         private void nav_right_Click(object sender, EventArgs e)
