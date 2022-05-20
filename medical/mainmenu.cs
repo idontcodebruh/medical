@@ -46,7 +46,7 @@ namespace medical
 
         private void homepagebtn_Click(object sender, EventArgs e)
         {
-            
+            loadform(new homepage());
         }
 
         private void medicalbtn_Click(object sender, EventArgs e)

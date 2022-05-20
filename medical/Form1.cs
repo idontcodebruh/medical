@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
-
 namespace medical
 {
     public partial class Form1 : Form
     {
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\Logs.accdb");
         public Form1()
         {
             InitializeComponent();
@@ -33,14 +33,13 @@ namespace medical
             }
             else {
                 MessageBox.Show("Welcome back, Doctor.", "Auth", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                if (bunifuCheckBox1.Checked == true && (File.ReadAllText("settings.txt") != "true"))
-                {
-                    //Run this once and only once for instant login
-                    string chkbox = "true";
-                    File.WriteAllText("settings.txt", chkbox);
-                  
-                    
-                }
+                DateTime dt = DateTime.Now;
+                con.Open();
+                OleDbCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into Log (AccessTime,[User]) values ('" + dt.ToString() + "','" + usernametxt.Text + "')";
+                cmd.ExecuteNonQuery();
+                con.Close();
                 mainmenu f2 = new mainmenu();
                 this.Hide();
                 f2.ShowDialog();

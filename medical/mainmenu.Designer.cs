@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainmenu));
+            this.mainpanel = new System.Windows.Forms.Panel();
             this.sidebar = new Bunifu.UI.WinForms.BunifuPanel();
             this.logoutpanel = new System.Windows.Forms.Panel();
             this.logoutbtn = new FontAwesome.Sharp.IconButton();
@@ -42,14 +43,21 @@
             this.medicalbtn = new FontAwesome.Sharp.IconButton();
             this.homepagebtn = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mainpanel = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
             this.logoutpanel.SuspendLayout();
             this.SuspendLayout();
             // 
+            // mainpanel
+            // 
+            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainpanel.Location = new System.Drawing.Point(135, 0);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Size = new System.Drawing.Size(1117, 521);
+            this.mainpanel.TabIndex = 2;
+            // 
             // sidebar
             // 
-            this.sidebar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(42)))));
+            this.sidebar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
             this.sidebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sidebar.BackgroundImage")));
             this.sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sidebar.BorderColor = System.Drawing.Color.Transparent;
@@ -73,7 +81,7 @@
             // 
             // logoutpanel
             // 
-            this.logoutpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(42)))));
+            this.logoutpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
             this.logoutpanel.Controls.Add(this.logoutbtn);
             this.logoutpanel.Controls.Add(this.currentuser);
             this.logoutpanel.Controls.Add(this.bottomside_label);
@@ -280,14 +288,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(135, 48);
             this.panel1.TabIndex = 0;
-            // 
-            // mainpanel
-            // 
-            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpanel.Location = new System.Drawing.Point(135, 0);
-            this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1117, 521);
-            this.mainpanel.TabIndex = 2;
             // 
             // mainmenu
             // 

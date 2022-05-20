@@ -223,6 +223,20 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="homepage.Designer.cs">
+      <DependentUpon>homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogsDataSet.cs">
+      <DependentUpon>LogsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LogsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="mainmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="homepage.resx">
+      <DependentUpon>homepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainmenu.resx">
       <DependentUpon>mainmenu.cs</DependentUpon>
@@ -334,6 +351,17 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="LogsDataSet.xsc">
+      <DependentUpon>LogsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LogsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LogsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LogsDataSet.xss">
+      <DependentUpon>LogsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="MALADES4DataSet.xsc">
       <DependentUpon>MALADES4DataSet.xsd</DependentUpon>
     </None>
@@ -366,9 +394,13 @@
     <Content Include="appointment.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Logs.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MALADES4.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\download.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

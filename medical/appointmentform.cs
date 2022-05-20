@@ -130,7 +130,7 @@ namespace medical
                 OleDbCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 string status = "Unknown";
-                cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority) values ('" + global_nom + "','" + global_prénom + "','" + bunifuDatePicker1.Value.ToString("dd/MM/yyyy") + "','" + priority + "','" + status + "')";
+                cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority,status) values ('" + global_nom + "','" + global_prénom + "','" + bunifuDatePicker1.Value.ToString("MM/dd/yyyy") + "','" + priority + "','" + status + "')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Yes");
                 con.Close();
