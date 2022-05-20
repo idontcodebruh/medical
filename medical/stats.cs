@@ -145,6 +145,7 @@ namespace medical
                                 search_db(found, counter, 10);
                                 whereStop(); // FIND WHERE SHOULD WE STOP
                                 calcRange();
+                                fixFound();
                                 
                             }
                             if (other_counter < pages && skipCalc && test)
@@ -164,7 +165,7 @@ namespace medical
                                 search_db(found, counter, 8);
                                 whereStop(); // FIND WHERE SHOULD WE STOP
                                 calcRange();
-
+                                fixFound();
                             }
                             if (other_counter < pages && skipCalc && test)
                             {
@@ -196,7 +197,8 @@ namespace medical
                                  search_dates(14);
                                  whereStop();
                                  calcRange();
-                             }
+                                 fixFound();
+                            }
                              Do_Render();
                                 
                             break;
@@ -331,6 +333,7 @@ namespace medical
                                 search_examen(11);
                                 whereStop();
                                 calcRange();
+                                fixOther();
                            
                             }
                             if (other_counter < pages && skipCalc && test)
@@ -374,6 +377,7 @@ namespace medical
                                 search_examen(9);
                                 whereStop();
                                 calcRange();
+                                fixOther();
                              
                             }
                             if (other_counter < pages && skipCalc && test)
@@ -433,8 +437,6 @@ namespace medical
         }
         public void search_examen(int cell)
         {
-            bool wasFound;
-            int temp = 0;
             if (cell ==9 || cell == 11) // POIDS ND TAILLE 
             {
                 int p = 0;
@@ -461,6 +463,7 @@ namespace medical
                         }
                     }
                 }
+
             }
         }
         private void stats_Load(object sender, EventArgs e)
@@ -609,6 +612,34 @@ namespace medical
 
             }
 
+        }
+        /*
+         * Fix missing items.
+         * Idea behind : if last range was few items away from being a multiple of 5, we add the missing items.
+         */
+        public void fixFound()
+        {
+            MessageBox.Show("Pages :" + pages +
+                            "\ntoStop :" + toStop +
+                            "\nMissing items : " + getMissingItems());
+            for(int i = 0; i < getMissingItems(); i++)
+            {
+                found[toStop + i] = found[toStop - 1];
+                counter[toStop + i] = counter[toStop - 1];
+                MessageBox.Show("added new item : " + found[toStop+i] + " Last item was : "+found[toStop-i]);
+            }
+        }
+        public void fixOther()
+        {
+            MessageBox.Show("Pages :" + pages +
+                "\ntoStop :" + toStop +
+                "\nMissing items : " + getMissingItems());
+            for (int i = 0; i < getMissingItems(); i++)
+            {
+                personal_poids[toStop + i] = personal_poids[toStop - 1];
+                found[toStop + i] = found[toStop - 1];
+                MessageBox.Show("added new item : " + personal_poids[toStop + i] + " Last item was : " + personal_poids[toStop - i]);
+            }
         }
         /* SEARCH ANAMNESE FUNCTION OVERVIEW:
          * Arguments : int cell. Cell to look into
@@ -776,12 +807,15 @@ namespace medical
                 optionToRender.Items.Add("Taille");
             }
         }
+        /*
+         * CALCRANGE FUNCTION OVERVIEW
+         * This function is used to calculate usable ranges for displaying in BUNIFU canvas.
+         * It is also used to calculate max pages for navigation, since we are limited to 5 items per page
+         */
         public void calcRange()
         {
-            bool flag = false;
             decimal estimate_page_main = (decimal)(toStop / 5);
             pages = (int)(Math.Ceiling((decimal)toStop / (decimal)5.0));
-            MessageBox.Show("estimated pages : " + pages + " toStop :" + toStop);
             int test;
             if ((int)(Math.Ceiling(estimate_page_main)) == 0)
             {
@@ -790,42 +824,17 @@ namespace medical
             }
             else
             {
-
                 pages = (int)(Math.Ceiling((double)toStop / 5.0));
                 test = pages;
             }
             for (int i = 0; i < test; i++)
             {
-                // Regardless i am doing max pages required
-                if (!flag)
-                {
-                    // Doing first iteration
-                    minRange[0] = 0;
-                    if (maxRange[0] < toStop - 5)
-                    {
-                        maxRange[0] += 5;
-                    }
-                    else if (maxRange[0] < toStop)
-                    {
-                        maxRange[0] += (toStop - maxRange[0]);
-                    }
-                    flag = true;
-                }
-                else
-                {
-                    if (maxRange[i - 1] < toStop - 5)
-                    {
-                        minRange[i] = minRange[i - 1] + 5;
-                        maxRange[i] = maxRange[i - 1] + 5;
-                    }
-                    else if (maxRange[i - 1] < toStop)
-                    {
-                        maxRange[i] = toStop;
-                        minRange[i] = minRange[i-1] + 5;
-                    }
-                }
-                
+
+                minRange[i] = (5*i);
+                maxRange[i] = minRange[i] + 5;
+        
             }
+
         }
         private void nav_right_Click(object sender, EventArgs e)
         {
@@ -833,6 +842,13 @@ namespace medical
              * 
              */
             render(databaseDrop.SelectedIndex, optionToRender.SelectedIndex, graphType.SelectedIndex, true, true);
+        }
+        /*
+         * Returns missing items in order to fix rendering
+         */
+        public int getMissingItems()
+        {
+            return (minRange[pages - 1] + 5) - toStop;
         }
 
         private void nav_left_Click(object sender, EventArgs e)
@@ -853,6 +869,7 @@ namespace medical
             //TODO : HANDLE GRAPH CHANGE AT ANYTIME     
             List<double> data = new List<double>();
             n = 0;
+            MessageBox.Show("minRange " + minRange[other_counter] + " maxRange " + maxRange[other_counter]);
             for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++)
             {
 
@@ -863,7 +880,6 @@ namespace medical
                 data.Add(counter[i]);
                 n++;
             }
-            n = 0;
             bunifuPieChart1.Data = data;
             bunifuLineChart1.Data = data;
             bunifuBarChart1.Data = data;
