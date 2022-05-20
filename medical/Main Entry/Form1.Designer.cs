@@ -268,6 +268,7 @@
             this.passwordtxt.PasswordChar = '*';
             this.passwordtxt.Size = new System.Drawing.Size(198, 13);
             this.passwordtxt.TabIndex = 6;
+            this.passwordtxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordtxt_KeyPress);
             // 
             // usernametxt
             // 

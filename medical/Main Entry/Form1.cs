@@ -27,29 +27,38 @@ namespace medical
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            if (!(passwordtxt.Text == "admin" && usernametxt.Text == "admin"))
-            {
-                MessageBox.Show("Wrong Password/Username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else {
-                MessageBox.Show("Welcome back, Doctor.", "Auth", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                DateTime dt = DateTime.Now;
-                con.Open();
-                OleDbCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into Log (AccessTime,[User]) values ('" + dt.ToString() + "','" + usernametxt.Text + "')";
-                cmd.ExecuteNonQuery();
-                con.Close();
-                mainmenu f2 = new mainmenu();
-                this.Hide();
-                f2.ShowDialog();
-                this.Close();
 
-            }
         }
 
         private void bunifuCheckBox1_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
         {
+        }
+
+        private void passwordtxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            {
+                if (!(passwordtxt.Text == "admin" && usernametxt.Text == "admin"))
+                {
+                    MessageBox.Show("Wrong Password/Username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+
+                    DateTime dt = DateTime.Now;
+                    con.Open();
+                    OleDbCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "insert into Log (AccessTime,[User]) values ('" + dt.ToString() + "','" + usernametxt.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    mainmenu f2 = new mainmenu();
+                    this.Hide();
+                    f2.ShowDialog();
+                    this.Close();
+
+                }
+            }
         }
     }
 }
