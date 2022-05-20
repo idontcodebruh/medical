@@ -43,8 +43,9 @@ namespace medical
 
         private void appointmentform_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'appointmentDataSet1.Table1' table. You can move, or remove it, as needed.
+            this.table1TableAdapter.Fill(this.appointmentDataSet1.Table1);
             // TODO: This line of code loads data into the 'dataSet1.Table1' table. You can move, or remove it, as needed.
-            this.table1TableAdapter.Fill(this.dataSet1.Table1);
             Load_Patient();
             fullNameText.Text = global_nom + "-" + global_prénom;
         }
@@ -128,29 +129,55 @@ namespace medical
                 con.Open();
                 OleDbCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                
-                cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority) values ('" + global_nom + "','" + global_prénom + "','" + bunifuDatePicker1.Value.ToString("dd/MM/yyyy") + "','" + priority + "')";
+                string status = "Unknown";
+                cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority) values ('" + global_nom + "','" + global_prénom + "','" + bunifuDatePicker1.Value.ToString("dd/MM/yyyy") + "','" + priority + "','" + status + "')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Yes");
-                /* REFRESH DATA */
-                cmd.CommandText = "select * from Table1";
-                cmd.ExecuteNonQuery();
-                DataTable dt1 = new DataTable();
-                OleDbDataAdapter dataAdapter1 = new OleDbDataAdapter(cmd);
-                dataAdapter1.Fill(dt1);
-                finalGrid.DataSource = dt1;
                 con.Close();
-                /* REFRESH DATA */
+                refreshData();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            con.Open();
+            int current_row = finalGrid.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (current_row > 0)
+            {
+                int ID;
+                string mark = "Canceled";
+                ID = Convert.ToInt32(finalGrid.SelectedRows[0].Cells[0].Value);
+                con.Open();
+                OleDbCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update Table1 set status = '" + mark + "' where ID=" + ID;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                refreshData();
+            }
+        }
+
+        private void markBtn_Click(object sender, EventArgs e)
+        {
+            int current_row = finalGrid.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (current_row > 0)
+            {
+                int ID;
+                string mark = "Processed";
+                ID = Convert.ToInt32(finalGrid.SelectedRows[0].Cells[0].Value);
+                con.Open();
+                OleDbCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update Table1 set status = '" + mark + "' where ID=" + ID;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                refreshData();
+            }
+        }
+        public void refreshData() {
+
+            /* REFRESH DATA */
             OleDbCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from Table1 where nom ='" + global_nom + "'";
-
-            MessageBox.Show("Deleted succesfully.");
+            con.Open();
             cmd.CommandText = "select * from Table1";
             cmd.ExecuteNonQuery();
             DataTable dt1 = new DataTable();
@@ -158,7 +185,8 @@ namespace medical
             dataAdapter1.Fill(dt1);
             finalGrid.DataSource = dt1;
             con.Close();
-        }
+            /* REFRESH DATA */
 
+        }
     }
 }

@@ -192,6 +192,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>appointmentDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="appointmentDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="appointmentform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +311,17 @@
     </None>
     <None Include="appointmentDataSet.xss">
       <DependentUpon>appointmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="appointmentDataSet1.xsc">
+      <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="appointmentDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>appointmentDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="appointmentDataSet1.xss">
+      <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
     </None>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

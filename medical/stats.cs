@@ -626,7 +626,7 @@ namespace medical
             {
                 found[toStop + i] = found[toStop - 1];
                 counter[toStop + i] = counter[toStop - 1];
-                MessageBox.Show("added new item : " + found[toStop+i] + " Last item was : "+found[toStop-i]);
+                MessageBox.Show("added new item : " + found[toStop+i] + " Last item was : "+found[toStop-1]);
             }
         }
         public void fixOther()
@@ -638,7 +638,7 @@ namespace medical
             {
                 personal_poids[toStop + i] = personal_poids[toStop - 1];
                 found[toStop + i] = found[toStop - 1];
-                MessageBox.Show("added new item : " + personal_poids[toStop + i] + " Last item was : " + personal_poids[toStop - i]);
+                MessageBox.Show("added new item : " + personal_poids[toStop + i] + " Last item was : " + personal_poids[toStop - 1]);
             }
         }
         /* SEARCH ANAMNESE FUNCTION OVERVIEW:
