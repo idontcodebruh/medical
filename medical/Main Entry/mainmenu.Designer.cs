@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainmenu));
             this.mainpanel = new System.Windows.Forms.Panel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.sidebar = new Bunifu.UI.WinForms.BunifuPanel();
             this.logoutpanel = new System.Windows.Forms.Panel();
             this.logoutbtn = new FontAwesome.Sharp.IconButton();
@@ -37,7 +39,6 @@
             this.bottomside_label = new System.Windows.Forms.Label();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.searchbtn = new FontAwesome.Sharp.IconButton();
-            this.receiptbtn = new FontAwesome.Sharp.IconButton();
             this.statsbtn = new FontAwesome.Sharp.IconButton();
             this.appointmentbtn = new FontAwesome.Sharp.IconButton();
             this.medicalbtn = new FontAwesome.Sharp.IconButton();
@@ -55,6 +56,11 @@
             this.mainpanel.Size = new System.Drawing.Size(1117, 521);
             this.mainpanel.TabIndex = 2;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 6;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // sidebar
             // 
             this.sidebar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
@@ -66,7 +72,6 @@
             this.sidebar.Controls.Add(this.logoutpanel);
             this.sidebar.Controls.Add(this.iconButton7);
             this.sidebar.Controls.Add(this.searchbtn);
-            this.sidebar.Controls.Add(this.receiptbtn);
             this.sidebar.Controls.Add(this.statsbtn);
             this.sidebar.Controls.Add(this.appointmentbtn);
             this.sidebar.Controls.Add(this.medicalbtn);
@@ -140,12 +145,13 @@
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton7.IconSize = 20;
             this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 258);
+            this.iconButton7.Location = new System.Drawing.Point(0, 252);
             this.iconButton7.Name = "iconButton7";
             this.iconButton7.Size = new System.Drawing.Size(135, 35);
             this.iconButton7.TabIndex = 7;
-            this.iconButton7.Text = "iconButton7";
+            this.iconButton7.Text = "a";
             this.iconButton7.UseVisualStyleBackColor = false;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
             // searchbtn
             // 
@@ -154,13 +160,13 @@
             this.searchbtn.FlatAppearance.BorderSize = 0;
             this.searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchbtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.searchbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.searchbtn.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.searchbtn.IconColor = System.Drawing.Color.White;
             this.searchbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.searchbtn.IconSize = 20;
             this.searchbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchbtn.Location = new System.Drawing.Point(0, 223);
+            this.searchbtn.Location = new System.Drawing.Point(0, 217);
             this.searchbtn.Name = "searchbtn";
             this.searchbtn.Size = new System.Drawing.Size(135, 35);
             this.searchbtn.TabIndex = 6;
@@ -168,27 +174,6 @@
             this.searchbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.searchbtn.UseVisualStyleBackColor = false;
             this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click_1);
-            // 
-            // receiptbtn
-            // 
-            this.receiptbtn.BackColor = System.Drawing.Color.Transparent;
-            this.receiptbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.receiptbtn.FlatAppearance.BorderSize = 0;
-            this.receiptbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.receiptbtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.receiptbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.receiptbtn.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            this.receiptbtn.IconColor = System.Drawing.Color.White;
-            this.receiptbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.receiptbtn.IconSize = 20;
-            this.receiptbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.receiptbtn.Location = new System.Drawing.Point(0, 188);
-            this.receiptbtn.Name = "receiptbtn";
-            this.receiptbtn.Size = new System.Drawing.Size(135, 35);
-            this.receiptbtn.TabIndex = 5;
-            this.receiptbtn.Text = "Receipt";
-            this.receiptbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.receiptbtn.UseVisualStyleBackColor = false;
             // 
             // statsbtn
             // 
@@ -203,7 +188,7 @@
             this.statsbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.statsbtn.IconSize = 20;
             this.statsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.statsbtn.Location = new System.Drawing.Point(0, 153);
+            this.statsbtn.Location = new System.Drawing.Point(0, 182);
             this.statsbtn.Name = "statsbtn";
             this.statsbtn.Size = new System.Drawing.Size(135, 35);
             this.statsbtn.TabIndex = 4;
@@ -225,7 +210,7 @@
             this.appointmentbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.appointmentbtn.IconSize = 20;
             this.appointmentbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.appointmentbtn.Location = new System.Drawing.Point(0, 118);
+            this.appointmentbtn.Location = new System.Drawing.Point(0, 147);
             this.appointmentbtn.Name = "appointmentbtn";
             this.appointmentbtn.Size = new System.Drawing.Size(135, 35);
             this.appointmentbtn.TabIndex = 3;
@@ -247,7 +232,7 @@
             this.medicalbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.medicalbtn.IconSize = 20;
             this.medicalbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.medicalbtn.Location = new System.Drawing.Point(0, 83);
+            this.medicalbtn.Location = new System.Drawing.Point(0, 112);
             this.medicalbtn.Name = "medicalbtn";
             this.medicalbtn.Size = new System.Drawing.Size(135, 35);
             this.medicalbtn.TabIndex = 2;
@@ -269,7 +254,7 @@
             this.homepagebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.homepagebtn.IconSize = 20;
             this.homepagebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homepagebtn.Location = new System.Drawing.Point(0, 48);
+            this.homepagebtn.Location = new System.Drawing.Point(0, 77);
             this.homepagebtn.Name = "homepagebtn";
             this.homepagebtn.Size = new System.Drawing.Size(135, 35);
             this.homepagebtn.TabIndex = 1;
@@ -286,7 +271,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(135, 48);
+            this.panel1.Size = new System.Drawing.Size(135, 77);
             this.panel1.TabIndex = 0;
             // 
             // mainmenu
@@ -313,7 +298,6 @@
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton searchbtn;
-        private FontAwesome.Sharp.IconButton receiptbtn;
         private FontAwesome.Sharp.IconButton statsbtn;
         private FontAwesome.Sharp.IconButton appointmentbtn;
         private FontAwesome.Sharp.IconButton medicalbtn;
@@ -323,5 +307,6 @@
         private System.Windows.Forms.Label currentuser;
         private System.Windows.Forms.Label bottomside_label;
         private System.Windows.Forms.Panel mainpanel;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

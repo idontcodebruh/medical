@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 namespace medical
 {
     public partial class homepage : Form
     {
+
         public homepage()
         {
             InitializeComponent();
+
+            
         }
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\Logs.accdb");
         private void homepage_Load(object sender, EventArgs e)
         {
+
             // TODO: This line of code loads data into the 'appointmentDataSet1.Table1' table. You can move, or remove it, as needed.
             this.table1TableAdapter.Fill(this.appointmentDataSet1.Table1);
             // TODO: This line of code loads data into the 'logsDataSet.Log' table. You can move, or remove it, as needed.

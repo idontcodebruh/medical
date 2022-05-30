@@ -75,17 +75,17 @@
   <xs:element name="LogsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="LogsDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LogsDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Log" msprop:Generator_RowClassName="LogRow" msprop:Generator_RowEvHandlerName="LogRowChangeEventHandler" msprop:Generator_RowDeletedName="LogRowDeleted" msprop:Generator_RowDeletingName="LogRowDeleting" msprop:Generator_RowEvArgName="LogRowChangeEvent" msprop:Generator_TablePropName="Log" msprop:Generator_RowChangedName="LogRowChanged" msprop:Generator_UserTableName="Log" msprop:Generator_RowChangingName="LogRowChanging" msprop:Generator_TableClassName="LogDataTable" msprop:Generator_TableVarName="tableLog">
+        <xs:element name="Log" msprop:Generator_RowEvHandlerName="LogRowChangeEventHandler" msprop:Generator_RowDeletedName="LogRowDeleted" msprop:Generator_RowDeletingName="LogRowDeleting" msprop:Generator_RowEvArgName="LogRowChangeEvent" msprop:Generator_TablePropName="Log" msprop:Generator_RowChangedName="LogRowChanged" msprop:Generator_UserTableName="Log" msprop:Generator_RowChangingName="LogRowChanging" msprop:Generator_RowClassName="LogRow" msprop:Generator_TableClassName="LogDataTable" msprop:Generator_TableVarName="tableLog">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AccessTime" msprop:Generator_UserColumnName="AccessTime" msprop:Generator_ColumnPropNameInTable="AccessTimeColumn" msprop:Generator_ColumnPropNameInRow="AccessTime" msprop:Generator_ColumnVarNameInTable="columnAccessTime">
+              <xs:element name="AccessTime" msprop:Generator_ColumnPropNameInTable="AccessTimeColumn" msprop:Generator_ColumnPropNameInRow="AccessTime" msprop:Generator_UserColumnName="AccessTime" msprop:Generator_ColumnVarNameInTable="columnAccessTime">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="User" msprop:Generator_UserColumnName="User" msprop:Generator_ColumnPropNameInTable="UserColumn" msprop:Generator_ColumnPropNameInRow="User" msprop:Generator_ColumnVarNameInTable="columnUser" minOccurs="0">
+              <xs:element name="User" msprop:Generator_ColumnPropNameInTable="UserColumn" msprop:Generator_ColumnPropNameInRow="User" msprop:Generator_UserColumnName="User" msprop:Generator_ColumnVarNameInTable="columnUser" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />

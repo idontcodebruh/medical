@@ -18,6 +18,7 @@ namespace medical
             mainpanel.Dock = DockStyle.Fill;
         }
         public void loadform(object Form) {
+           
             if (this.mainpanel.Controls.Count > 0)
             {
                 this.mainpanel.Controls.RemoveAt(0);
@@ -51,7 +52,7 @@ namespace medical
 
         private void medicalbtn_Click(object sender, EventArgs e)
         {
-            loadform(new viewmedical());
+            loadform(new medicalviewer());
         }
 
         private void appointmentbtn_Click(object sender, EventArgs e)
@@ -62,6 +63,11 @@ namespace medical
         private void statsbtn_Click(object sender, EventArgs e)
         {
             loadform(new stats());
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

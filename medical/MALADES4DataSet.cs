@@ -7,9 +7,12 @@
     }
 }
 
-namespace medical.MALADES4DataSetTableAdapters {
-    
-    
+namespace medical.MALADES4DataSetTableAdapters
+{
+    partial class ExamensTableAdapter
+    {
+    }
+
     public partial class PatientsTableAdapter {
     }
 }

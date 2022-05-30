@@ -197,6 +197,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\medicalviewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\medicalviewer.Designer.cs">
+      <DependentUpon>medicalviewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForms\appointmentform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,18 +265,6 @@
     <Compile Include="SubForms\stats.Designer.cs">
       <DependentUpon>stats.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="viewer.Designer.cs">
-      <DependentUpon>viewer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubForms\viewmedical.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubForms\viewmedical.Designer.cs">
-      <DependentUpon>viewmedical.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="addform.resx">
       <DependentUpon>addform.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,17 +291,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SubForms\medicalviewer.resx">
+      <DependentUpon>medicalviewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForms\searchform.resx">
       <DependentUpon>searchform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\stats.resx">
       <DependentUpon>stats.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="viewer.resx">
-      <DependentUpon>viewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubForms\viewmedical.resx">
-      <DependentUpon>viewmedical.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="appointmentDataSet.xsc">
       <DependentUpon>appointmentDataSet.xsd</DependentUpon>
