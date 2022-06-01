@@ -59,7 +59,7 @@ namespace medical
             }
             loadname.Text = global_nom + "-" + global_prénom;
               Load_Dates();
-              Load_Vaccine();
+              Load_Anamnese();
         }
 
         /* Load_Dates():
@@ -110,6 +110,7 @@ namespace medical
         {
 
         }
+                                                            /* UPDATE DATA FUNCTIONS */
         private void button1_Click(object sender, EventArgs e)
         {
             UpdateDataExamen();
@@ -164,16 +165,38 @@ namespace medical
             cmd.ExecuteNonQuery();
             cmd.CommandText = "update Anamnese set PROPRETE=" + bunifuToggleSwitch13.Checked + " where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
             cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set né='" + textBox1.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set lieu='" + textBox2.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set allait='" + textBox3.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set poids='" + textBox4.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set all_artif='" + textBox5.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set réa_durée='" + textBox6.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set réa_trait='" + textBox7.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set naissance='" + textBox8.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "update Anamnese set maternel_durée='" + textBox9.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
+            cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Success");
             refreshData();
-            Load_Vaccine();
+            Load_Anamnese();
         }
+
+
+                                                                /* UPDATE DATA FUNCTIONS */
+
         /* Load_Dates():
         * Arguments : None
         * Functionality : Loads latest vaccination data on target patient
         */
-        public void Load_Vaccine()
+        public void Load_Anamnese()
         {
 
                 Array.Clear(retrieved_vaccine,0,retrieved_vaccine.Length);
@@ -182,6 +205,7 @@ namespace medical
                 DataGridViewRow selectedRow = dataGridView2.Rows[i];
                 if (selectedRow.Cells[11].Value.ToString() == global_nom && selectedRow.Cells[12].Value.ToString() == global_prénom)
                 {
+                                         // GETTING VACCINE
                     retrieved_vaccine[0] = Convert.ToBoolean(selectedRow.Cells[16].Value);
                     retrieved_vaccine[1] = Convert.ToBoolean(selectedRow.Cells[17].Value);
                     retrieved_vaccine[2] = Convert.ToBoolean(selectedRow.Cells[18].Value);
@@ -195,6 +219,18 @@ namespace medical
                     retrieved_vaccine[10] = Convert.ToBoolean(selectedRow.Cells[26].Value);
                     retrieved_vaccine[11] = Convert.ToBoolean(selectedRow.Cells[27].Value);
                     retrieved_vaccine[12] = Convert.ToBoolean(selectedRow.Cells[28].Value);
+                                        // GETTING VACCINE
+                                        // GETTING GENERAL INFO
+                    textBox1.Text = selectedRow.Cells[0].Value.ToString();
+                    textBox2.Text = selectedRow.Cells[1].Value.ToString();
+                    textBox3.Text = selectedRow.Cells[3].Value.ToString();
+                    textBox4.Text = selectedRow.Cells[2].Value.ToString();
+                    textBox5.Text = selectedRow.Cells[4].Value.ToString();
+                    textBox6.Text = selectedRow.Cells[5].Value.ToString();
+                    textBox7.Text = selectedRow.Cells[6].Value.ToString();
+                    textBox8.Text = selectedRow.Cells[29].Value.ToString();
+                    textBox9.Text = selectedRow.Cells[30].Value.ToString();
+                                        // GETTING GENERAL INFO
                 }
             }
             bunifuToggleSwitch1.Checked = retrieved_vaccine[0];
@@ -211,10 +247,7 @@ namespace medical
             bunifuToggleSwitch12.Checked = retrieved_vaccine[11];
             bunifuToggleSwitch13.Checked = retrieved_vaccine[12];
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-        }
         public void refreshData()
         {
             /* REFRESH DATA */
@@ -237,6 +270,7 @@ namespace medical
             dataGridView2.DataSource = dt2;
             con.Close();
             /* REFRESH DATA */
+       
         }
 
         private void bunifuToggleSwitch1_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs e)

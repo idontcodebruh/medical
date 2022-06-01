@@ -37,7 +37,6 @@
             this.logoutbtn = new FontAwesome.Sharp.IconButton();
             this.currentuser = new System.Windows.Forms.Label();
             this.bottomside_label = new System.Windows.Forms.Label();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.searchbtn = new FontAwesome.Sharp.IconButton();
             this.statsbtn = new FontAwesome.Sharp.IconButton();
             this.appointmentbtn = new FontAwesome.Sharp.IconButton();
@@ -70,7 +69,6 @@
             this.sidebar.BorderRadius = 3;
             this.sidebar.BorderThickness = 1;
             this.sidebar.Controls.Add(this.logoutpanel);
-            this.sidebar.Controls.Add(this.iconButton7);
             this.sidebar.Controls.Add(this.searchbtn);
             this.sidebar.Controls.Add(this.statsbtn);
             this.sidebar.Controls.Add(this.appointmentbtn);
@@ -131,27 +129,6 @@
             this.bottomside_label.Size = new System.Drawing.Size(41, 14);
             this.bottomside_label.TabIndex = 0;
             this.bottomside_label.Text = "User:";
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconButton7.IconColor = System.Drawing.Color.White;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 20;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 252);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(135, 35);
-            this.iconButton7.TabIndex = 7;
-            this.iconButton7.Text = "a";
-            this.iconButton7.UseVisualStyleBackColor = false;
-            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
             // searchbtn
             // 
@@ -296,7 +273,6 @@
 
         private Bunifu.UI.WinForms.BunifuPanel sidebar;
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton searchbtn;
         private FontAwesome.Sharp.IconButton statsbtn;
         private FontAwesome.Sharp.IconButton appointmentbtn;
