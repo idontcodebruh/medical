@@ -52,7 +52,7 @@ namespace medical
 
         private void medicalbtn_Click(object sender, EventArgs e)
         {
-            loadform(new medicalviewer());
+            loadform(new medicalview());
         }
 
         private void appointmentbtn_Click(object sender, EventArgs e)

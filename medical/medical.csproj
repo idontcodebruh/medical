@@ -156,14 +156,32 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
+    <Reference Include="C1.C1Pdf.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.C1Zip.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.DataEngine, Version=5.0.20221.247, Culture=neutral, PublicKeyToken=6e0c8e6954369090" />
+    <Reference Include="C1.PivotEngine, Version=5.0.20221.247, Culture=neutral, PublicKeyToken=6e0c8e6954369090" />
+    <Reference Include="C1.Win.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1Chart.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=a22e16972c085838" />
+    <Reference Include="C1.Win.C1Command.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1DX.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1FlexGrid.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.C1FlexGrid.GroupPanel.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.ImportExport.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.C1Input.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1SuperTooltip.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.FlexChart.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=3aa2920c09e0aefd, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.FlexPivot.4.5.2, Version=4.5.20221.548, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -197,11 +215,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SubForms\medicalviewer.cs">
+    <Compile Include="SubForms\patientinfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SubForms\medicalviewer.Designer.cs">
-      <DependentUpon>medicalviewer.cs</DependentUpon>
+    <Compile Include="SubForms\patientinfo.Designer.cs">
+      <DependentUpon>patientinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\medicalview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\medicalview.Designer.cs">
+      <DependentUpon>medicalview.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForms\appointmentform.cs">
       <SubType>Form</SubType>
@@ -268,6 +292,9 @@
     <EmbeddedResource Include="addform.resx">
       <DependentUpon>addform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\patientinfo.resx">
+      <DependentUpon>patientinfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForms\appointmentform.resx">
       <DependentUpon>appointmentform.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,8 +318,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SubForms\medicalviewer.resx">
-      <DependentUpon>medicalviewer.cs</DependentUpon>
+    <EmbeddedResource Include="SubForms\medicalview.resx">
+      <DependentUpon>medicalview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\searchform.resx">
       <DependentUpon>searchform.cs</DependentUpon>
@@ -355,6 +382,7 @@
     <None Include="MALADES4DataSet.xss">
       <DependentUpon>MALADES4DataSet.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="medical.gclicx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
