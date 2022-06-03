@@ -36,5 +36,10 @@ namespace medical
         {
             loadform(new patientinfo());
         }
+
+        private void anamnesebtn_Click(object sender, EventArgs e)
+        {
+            loadform(new anamneseinfo());
+        }
     }
 }

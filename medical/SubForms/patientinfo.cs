@@ -118,8 +118,8 @@ namespace medical
              cmd.CommandText = "update Patients set tel='" + bunifuTextBox13.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "'";
              cmd.ExecuteNonQuery();
              con.Close();
-            MessageBox.Show(bunifuDatePicker1.Value.ToString("MM/dd/yyyy"));
             MessageBox.Show("Updated successfully");
+            readData();
         }
         public void Load_Patient()
         { /* LOAD PATIENT NAME INTO GLOBAL VARS */

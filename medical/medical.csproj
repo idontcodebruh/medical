@@ -202,6 +202,12 @@
     <Compile Include="addform.Designer.cs">
       <DependentUpon>addform.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\anamneseinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\anamneseinfo.Designer.cs">
+      <DependentUpon>anamneseinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="appointmentDataSet.cs">
       <DependentUpon>appointmentDataSet.xsd</DependentUpon>
     </Compile>
@@ -291,6 +297,9 @@
     </Compile>
     <EmbeddedResource Include="addform.resx">
       <DependentUpon>addform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\anamneseinfo.resx">
+      <DependentUpon>anamneseinfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\patientinfo.resx">
       <DependentUpon>patientinfo.cs</DependentUpon>
