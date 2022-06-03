@@ -99,10 +99,8 @@ namespace medical
         {
             updateData();
         }
-        
-        /*
-         * on index change, interactive look. 
-         */
+
+        // #### HANDLE CHANGES ON DROP DOWN #### //
         private void bunifuDropdown1_SelectedIndexChanged(object sender, EventArgs e)
         {
             con.Open();
@@ -155,6 +153,39 @@ namespace medical
             }
 
             con1.Close();
+        }
+        // #### HANDLE CHANGES ON DROP DOWN #### //
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(richTextBox3.Text))
+            {
+                richTextBox3.AppendText("->Maladie: " + Convert.ToString(bunifuDropdown2.SelectedItem));
+                richTextBox3.AppendText("\n");
+                richTextBox3.AppendText("->Symptomes: " + Convert.ToString(bunifuDropdown3.SelectedItem));
+            }
+            else
+            {
+                richTextBox3.AppendText("\n");
+                richTextBox3.AppendText("->Maladie: " + Convert.ToString(bunifuDropdown2.SelectedItem));
+                richTextBox3.AppendText("\n");
+                richTextBox3.AppendText("->Symptomes: " + Convert.ToString(bunifuDropdown3.SelectedItem));
+            }
+            richTextBox4.AppendText(richTextBox2.Text);
+
+            if (String.IsNullOrEmpty(richTextBox5.Text))
+            {
+                richTextBox5.AppendText("->Type: " + Convert.ToString(bunifuDropdown4.SelectedItem));
+                richTextBox5.AppendText("\n");
+                richTextBox5.AppendText("->Detail: " + Convert.ToString(bunifuDropdown5.SelectedItem));
+            }
+            else
+            {
+                richTextBox5.AppendText("\n");
+                richTextBox5.AppendText("->Type: " + Convert.ToString(bunifuDropdown4.SelectedItem));
+                richTextBox5.AppendText("\n");
+                richTextBox5.AppendText("->Detail: " + Convert.ToString(bunifuDropdown5.SelectedItem));
+            }
+
         }
     }
 }

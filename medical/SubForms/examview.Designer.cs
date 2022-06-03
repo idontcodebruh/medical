@@ -527,6 +527,7 @@
             this.confirmBtn.TabIndex = 8;
             this.confirmBtn.Text = "Ajouter";
             this.confirmBtn.UseVisualStyleBackColor = true;
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // groupBox3
             // 
