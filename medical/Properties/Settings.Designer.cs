@@ -52,5 +52,15 @@ namespace medical.Properties {
                 return ((string)(this["LogsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\PARAMETRES.accdb")]
+        public string PARAMETRESConnectionString {
+            get {
+                return ((string)(this["PARAMETRESConnectionString"]));
+            }
+        }
     }
 }

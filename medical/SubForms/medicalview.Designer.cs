@@ -82,6 +82,7 @@
             this.exambtn.Text = "Examen";
             this.exambtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.exambtn.UseVisualStyleBackColor = true;
+            this.exambtn.Click += new System.EventHandler(this.exambtn_Click);
             // 
             // anamnesebtn
             // 

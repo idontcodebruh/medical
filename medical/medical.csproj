@@ -202,6 +202,17 @@
     <Compile Include="addform.Designer.cs">
       <DependentUpon>addform.cs</DependentUpon>
     </Compile>
+    <Compile Include="PARAMETRESDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PARAMETRESDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\examview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\examview.Designer.cs">
+      <DependentUpon>examview.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForms\anamneseinfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +312,9 @@
     <EmbeddedResource Include="SubForms\anamneseinfo.resx">
       <DependentUpon>anamneseinfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\examview.resx">
+      <DependentUpon>examview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForms\patientinfo.resx">
       <DependentUpon>patientinfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +407,17 @@
     </None>
     <EmbeddedResource Include="medical.gclicx" />
     <None Include="packages.config" />
+    <None Include="PARAMETRESDataSet.xsc">
+      <DependentUpon>PARAMETRESDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PARAMETRESDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PARAMETRESDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PARAMETRESDataSet.xss">
+      <DependentUpon>PARAMETRESDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -417,6 +442,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="MALADES4.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PARAMETRES.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\download.jpg" />
