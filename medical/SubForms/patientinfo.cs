@@ -143,5 +143,16 @@ namespace medical
         {
             updateData();
         }
+
+        private void newexamBtn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert into Patients (nom,prénom,addresse,tel,nom_père,nom_mère,fonct_père,fonct_mère,commune,sexe,wilaya,matricule,nb_enf_f,nb_enf_g,date_naiss,prem_date) values('" + bunifuTextBox1.Text + "','" + bunifuTextBox2.Text + "','" + bunifuTextBox10.Text + "','" + bunifuTextBox13.Text + "','" + bunifuTextBox4.Text + "','" + bunifuTextBox5.Text + "','" + bunifuTextBox6.Text + "','" + bunifuTextBox7.Text + "','" + bunifuTextBox11.Text + "','" + bunifuTextBox10.Text + "','" + bunifuTextBox12.Text + "','" + String.Empty + "','" + Int32.Parse(bunifuTextBox8.Text) + "','" + Int32.Parse(bunifuTextBox9.Text) + "','" + bunifuDatePicker1.Value.ToShortDateString() + "','" + bunifuDatePicker2.Value.ToShortDateString() + "')";
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Successfully added new patient.");
+            con.Close();
+        }
     }
 }

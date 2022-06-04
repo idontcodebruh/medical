@@ -374,7 +374,7 @@
             this.bunifuTextBox2.PasswordChar = '\0';
             this.bunifuTextBox2.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox2.PlaceholderText = "";
-            this.bunifuTextBox2.ReadOnly = true;
+            this.bunifuTextBox2.ReadOnly = false;
             this.bunifuTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.bunifuTextBox2.SelectedText = "";
             this.bunifuTextBox2.SelectionLength = 0;
@@ -464,7 +464,7 @@
             this.bunifuTextBox1.PasswordChar = '\0';
             this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox1.PlaceholderText = "";
-            this.bunifuTextBox1.ReadOnly = true;
+            this.bunifuTextBox1.ReadOnly = false;
             this.bunifuTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.bunifuTextBox1.SelectedText = "";
             this.bunifuTextBox1.SelectionLength = 0;
@@ -1462,6 +1462,7 @@
             this.newexamBtn.TabIndex = 14;
             this.newexamBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.newexamBtn.UseVisualStyleBackColor = true;
+            this.newexamBtn.Click += new System.EventHandler(this.newexamBtn_Click);
             // 
             // deleteBtn
             // 
