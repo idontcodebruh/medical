@@ -184,5 +184,16 @@ namespace medical
         {
             updateData();
         }
+
+        private void newexamBtn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Anamnese (né, lieu, poids, allait, all_artif, [réa_durée], [réa_trait], e_ant_m, e_ant_c, p_ant_m, p_ant_c, nom, prénom, matricule, date_naiss, [date], BCG_P, DTCOQ_3M, DTCOQ_4M, DTCOQ_5M, DTCOQ_18M, DTA_11A, DTA_16A, ROUGEOLE_9M, DTC_P_R_6A, VitamD_1M, VitamD_6M, TABAC, PROPRETE, naissance, [maternel_durée]) values('" + bunifuTextBox4.Text + "','" + bunifuTextBox5.Text + "','" + bunifuTextBox6.Text + "','" + bunifuTextBox7.Text + "','" + bunifuTextBox8.Text + "','" + bunifuTextBox9.Text + "','" + bunifuTextBox10.Text  + "','" + String.Empty + "','" + String.Empty + "','" + String.Empty + "','" + String.Empty + "','" + bunifuTextBox1.Text + "','" + bunifuTextBox2.Text + "','" + String.Empty + "','" + bunifuDatePicker1.Value.ToShortDateString() + "','" + DateTime.Now.ToShortDateString() + "'," + bunifuToggleSwitch1.Checked + "," + bunifuToggleSwitch2.Checked + ","+ bunifuToggleSwitch3.Checked+ "," + bunifuToggleSwitch4.Checked + "," + bunifuToggleSwitch5.Checked + "," + bunifuToggleSwitch6.Checked+","+ bunifuToggleSwitch7.Checked+ ","+ bunifuToggleSwitch8.Checked+ "," + bunifuToggleSwitch9.Checked+","+ bunifuToggleSwitch10.Checked+ ","+ bunifuToggleSwitch11.Checked+ ","+ bunifuToggleSwitch12.Checked + "," + bunifuToggleSwitch13.Checked + ",'" + bunifuTextBox11.Text + "','" + bunifuTextBox12.Text+ "')";
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Succesfully added new anamnese.");
+            con.Close();
+        }
     }
 }
