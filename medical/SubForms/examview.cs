@@ -21,6 +21,7 @@ namespace medical
         }
         public string global_nom;
         public string global_prénom;
+        bool flag = false;
         private void examview_Load(object sender, EventArgs e)
         {
             Load_Patient();
@@ -28,6 +29,45 @@ namespace medical
         }
         public void updateData()
         {
+            /*
+             * Updating an existing row.
+             */
+            if (!flag)
+            {
+                con.Open();
+                OleDbCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update Examens set objet='" + richTextBox1.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "' AND date_courante ='" + Convert.ToDateTime(Convert.ToString(bunifuDropdown1.SelectedItem)).ToShortDateString() +"'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "update Examens set diagnostic='" + richTextBox4.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "' AND date_courante ='" + Convert.ToDateTime(Convert.ToString(bunifuDropdown1.SelectedItem)).ToShortDateString() + "'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "update Examens set Analyses='" + richTextBox5.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "' AND date_courante ='" + Convert.ToDateTime(Convert.ToString(bunifuDropdown1.SelectedItem)).ToShortDateString() + "'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "update Examens set maladie='" + richTextBox3.Text + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "' AND date_courante ='" + Convert.ToDateTime(Convert.ToString(bunifuDropdown1.SelectedItem)).ToShortDateString() + "'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "update Examens set taille='" + Convert.ToDecimal(textBox1.Text) + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "' AND date_courante ='" + Convert.ToDateTime(Convert.ToString(bunifuDropdown1.SelectedItem)).ToShortDateString() + "'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "update Examens set poids='" + Convert.ToDecimal(textBox2.Text) + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "' AND date_courante ='" + Convert.ToDateTime(Convert.ToString(bunifuDropdown1.SelectedItem)).ToShortDateString() + "'";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "update Examens set P_C='" + Convert.ToDecimal(textBox3.Text) + "' where nom='" + global_nom + "' AND prénom ='" + global_prénom + "' AND date_courante ='" + Convert.ToDateTime(Convert.ToString(bunifuDropdown1.SelectedItem)).ToShortDateString() + "'";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("success");
+                con.Close();
+            }
+            /*
+             * Updating/Adding a new exam. 
+             */
+            else
+            {
+                con.Open();
+                OleDbCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into Examens (nom,prénom,matricule,date_naiss,date_courante,age,objet,diagnostic,Analyses,taille,P_C,poids,maladie) values('" + global_nom + "','" + global_prénom + "','" + String.Empty + "','" + bunifuDatePicker1.Value.ToShortDateString() + "','" + DateTime.Now.ToShortDateString() + "','" + Convert.ToInt32("0") + "','" + richTextBox1.Text + "','" + richTextBox4.Text + "','" + richTextBox5.Text + "','" + Convert.ToDecimal(textBox1.Text)+ "','" + Convert.ToDecimal(textBox2.Text) + "','" + Convert.ToDecimal(textBox3.Text) + "','" + richTextBox3.Text + "')";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Succesfully added the new exam.");
+                con.Close();
+                flag = false;
+            }
 
         }
         public void readData()
@@ -91,6 +131,17 @@ namespace medical
             for(int i =0;i< reader1.FieldCount; i++)
             {
                 bunifuDropdown4.Items.Add(reader1.GetName(i));
+            }
+            con1.Close();
+            /*
+             * Populate all type of objet de contrôle
+             */
+            con1.Open();
+            cmd1.CommandText = "select * from objet_contrôle";
+            reader1 = cmd1.ExecuteReader();
+            while (reader1.Read())
+            {
+                bunifuDropdown6.Items.Add(reader1.GetString(0));
             }
             con1.Close();
         }
@@ -185,7 +236,33 @@ namespace medical
                 richTextBox5.AppendText("\n");
                 richTextBox5.AppendText("->Detail: " + Convert.ToString(bunifuDropdown5.SelectedItem));
             }
+            if (String.IsNullOrEmpty(richTextBox1.Text))
+            {
+                
+                richTextBox1.AppendText(Convert.ToString(bunifuDropdown6.SelectedItem));
+            }
+            else
+            {
+                richTextBox1.AppendText(",");
+                richTextBox1.AppendText(Convert.ToString(bunifuDropdown6.SelectedItem));
+            }
 
+        }
+        /*
+         * Clears all fields for a new exam and add a new date to the list.
+         */
+        private void newexamBtn_Click(object sender, EventArgs e)
+        {
+            flag = true;
+            bunifuDropdown1.Items.Add(DateTime.Today.ToShortDateString());
+            textBox1.Text = String.Empty;
+            textBox2.Text = String.Empty;
+            textBox3.Text = String.Empty;
+            richTextBox1.Text = String.Empty;
+            richTextBox2.Text = String.Empty;
+            richTextBox3.Text = String.Empty;
+            richTextBox4.Text = String.Empty;
+            richTextBox5.Text = String.Empty;
         }
     }
 }
