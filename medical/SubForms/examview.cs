@@ -264,5 +264,16 @@ namespace medical
             richTextBox4.Text = String.Empty;
             richTextBox5.Text = String.Empty;
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete from Examens where nom='" + global_nom + "' AND prénom='" + global_prénom + "' AND date_courante='" + bunifuDropdown1.SelectedItem.ToString() + "'";
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("deleted record succesfully");
+            con.Close();
+        }
     }
 }

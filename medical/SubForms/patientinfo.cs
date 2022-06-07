@@ -154,5 +154,16 @@ namespace medical
             MessageBox.Show("Successfully added new patient.");
             con.Close();
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete from Patients where nom ='" + global_nom + "' AND prénom = '"+ global_prénom +"'";
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Record deleted succesfully.");
+            con.Close();
+        }
     }
 }

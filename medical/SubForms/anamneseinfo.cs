@@ -195,5 +195,16 @@ namespace medical
             MessageBox.Show("Succesfully added new anamnese.");
             con.Close();
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete from Anamnese where nom='"+ global_nom + "' AND prénom ='"+ global_prénom + "'";
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Deleted record succesfully");
+            con.Close();
+        }
     }
 }
