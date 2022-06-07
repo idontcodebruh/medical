@@ -316,110 +316,6 @@ namespace medical
 
                     }
                     break;
-                case 3: // RESPONSIBLE FOR PATIENT FOLLOW
-                    Load_Patient();
-                    if(String.IsNullOrEmpty(global_nom) && String.IsNullOrEmpty(global_prénom))
-                    {
-                        MessageBox.Show("No patient was loaded.");
-                        return;
-                    }
-                    switch (index2)
-                    {
-                        
-                        case 0:
-                            if (!skipCalc)
-                            {
-                                Clear();
-                                search_examen(11);
-                                whereStop();
-                                calcRange();
-                                fixOther();
-                           
-                            }
-                            if (other_counter < pages && skipCalc && test)
-                            {
-                                other_counter++;
-                            }
-                            if (other_counter >= 1 && skipCalc && !test)
-                            {
-                                other_counter--;
-                            }
-                            List<double> data = new List<double>();
-                            n = 0;
-                            for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++)
-                            {
-
-                                bunifuChartCanvas1.Labels[n] = found[i];
-                                bunifuChartCanvas2.Labels[n] = found[i];
-                                bunifuChartCanvas3.Labels[n] = found[i];
-                                bunifuChartCanvas4.Labels[n] = found[i];
-                                data.Add(personal_poids[i]);
-                                n++;
-                            }
-                            
-                            bunifuPieChart1.Data = data;
-                            bunifuLineChart1.Data = data;
-                            bunifuBarChart1.Data = data;
-                            bunifuRadarChart1.Data = data;
-                            var r = new Random();
-                            List<Color> bgColors = new List<Color>();
-                            for (int i = 0; i < 5; i++)
-                            {
-                                bgColors.Add(Color.FromArgb(r.Next(256), r.Next(256), r.Next(256)));
-                            }
-                            bunifuPieChart1.BackgroundColor = bgColors;
-                            bunifuBarChart1.BackgroundColor = bgColors;
-                            break;
-                        case 1:
-                            if (!skipCalc)
-                            {
-                                Clear();
-                                search_examen(9);
-                                whereStop();
-                                calcRange();
-                                fixOther();
-                             
-                            }
-                            if (other_counter < pages && skipCalc && test)
-                            {
-                                other_counter++;
-                            }
-                            if (other_counter >= 1 && skipCalc && !test)
-                            {
-                                other_counter--;
-                            }
-                            List<double> data3 = new List<double>();
-                            n = 0;
-                            for (int i = minRange[other_counter]; i < maxRange[other_counter]; i++)
-                            {
-
-                                bunifuChartCanvas1.Labels[n] = found[i];
-                                bunifuChartCanvas2.Labels[n] = found[i];
-                                bunifuChartCanvas3.Labels[n] = found[i];
-                                bunifuChartCanvas4.Labels[n] = found[i];
-                                data3.Add(personal_poids[i]);
-                                n++;
-                            }
-
-                            bunifuPieChart1.Data = data3;
-                            bunifuLineChart1.Data = data3;
-                            bunifuBarChart1.Data = data3;
-                            bunifuRadarChart1.Data = data3;
-                            var r1 = new Random();
-                            List<Color> bgColors1 = new List<Color>();
-                            for (int i = 0; i < 5; i++)
-                            {
-                                bgColors1.Add(Color.FromArgb(r1.Next(256), r1.Next(256), r1.Next(256)));
-                            }
-                            bunifuPieChart1.BackgroundColor = bgColors1;
-                            bunifuBarChart1.BackgroundColor = bgColors1;
-                            break;
-                        default:
-
-                            break;
-
-                    }
-                    break;
                 default:
 
                     break;
@@ -435,45 +331,13 @@ namespace medical
 
 
         }
-        public void search_examen(int cell)
-        {
-            if (cell ==9 || cell == 11) // POIDS ND TAILLE 
-            {
-                int p = 0;
-                double test_weight;
-                for (int i = 0; i < dataGridView2.Rows.Count; i++)
-                {
-                    DataGridViewRow selectedRow = dataGridView2.Rows[i];
-                    if (selectedRow.Cells[0].Value.ToString() == global_nom && selectedRow.Cells[1].Value.ToString() == global_prénom)
-                    {
-                        // getting correct patient
-                        if (selectedRow.Cells[cell].Value != System.DBNull.Value)
-                        {
-                            // getting only correct weight
 
-                            found[p] = global_nom + " " + global_prénom + " " + selectedRow.Cells[4].Value.ToString();
-                            test_weight = Convert.ToDouble(selectedRow.Cells[cell].Value);
-                            if ((cell == 11) && (test_weight > 1000)) // cba to do separate func for checking weight just doing it here
-                            {
-                                // FIX WEIGHTS IN GRAMS TO KG
-                                test_weight = test_weight / 1000;
-                            }
-                            personal_poids[p] = test_weight;
-                            p++;
-                        }
-                    }
-                }
-
-            }
-        }
         private void stats_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mALADES4DataSet.Patients' table. You can move, or remove it, as needed.
             this.patientsTableAdapter.Fill(this.mALADES4DataSet.Patients);
             // TODO: This line of code loads data into the 'mALADES4DataSet.Anamnese' table. You can move, or remove it, as needed.
             this.anamneseTableAdapter.Fill(this.mALADES4DataSet.Anamnese);
-            // TODO: This line of code loads data into the 'mALADES4DataSet.Examens' table. You can move, or remove it, as needed.
-            this.examensTableAdapter.Fill(this.mALADES4DataSet.Examens);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -799,12 +663,6 @@ namespace medical
                 optionToRender.Items.Add("Hygiene");
                 optionToRender.Items.Add("Naissance");
 
-            }
-            if(databaseDrop.SelectedIndex == 3)
-            {
-                optionToRender.Items.Clear();
-                optionToRender.Items.Add("Poids");
-                optionToRender.Items.Add("Taille");
             }
         }
         /*
