@@ -24,10 +24,17 @@ namespace medical
 
             InitializeComponent();
             Load_Patient();
+            nomLabel.Text = global_nom;
+            prénomLabel.Text = global_prénom;
+            if(String.IsNullOrEmpty(global_nom) && String.IsNullOrEmpty(global_prénom))
+            {
+                MessageBox.Show("No patient was loaded");
+                this.Close();
+            }
             cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
             {
 
-                Title = "Normal Growth",
+                Title = "Patient Growth",
             });
 
         }
@@ -51,7 +58,6 @@ namespace medical
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            //initNormalChild();
             initPatient();
         }
         public void initNormalChild()
@@ -68,7 +74,8 @@ namespace medical
             var list = new List<DateTime>();
             var list3 = new List<DateTime>();
             var list4 = new List<String>();
-            var list2 = new List<double>(); // <- clean weight list
+            var list2 = new List<double>(); // <- clean list
+          
             while (reader.Read())  // SORT ALL DATES.
             {
                 list.Add(Convert.ToDateTime(reader.GetValue(4)));
@@ -83,16 +90,30 @@ namespace medical
                 reader = cmd.ExecuteReader();
                 while (reader.Read()) // GET VALUES FOR EACH DATE
                 {
-                   if(reader.GetValue(11) == System.DBNull.Value)
+                    if(bunifuDropdown1.SelectedIndex == 0) // Responbile for poids
                     {
-       
-                       // Detect the missing weight date
+                        if (reader.GetValue(11) == System.DBNull.Value)
+                        {
+                            // Detect the missing weight date
+                        }
+                        else
+                        {
+                            list4.Add(item.ToShortDateString());
+                            list2.Add(fixWeight(Convert.ToDouble(reader.GetValue(11)))); // Check then add the correct weight.
+                        }
                     }
-                    else
+                 if(bunifuDropdown1.SelectedIndex == 1) // Responsible for taille
                     {
-                        list4.Add(item.ToShortDateString());
-                        list2.Add(fixWeight(Convert.ToDouble(reader.GetValue(11)))); // Check then add the correct weight.
-                        
+
+                        if (reader.GetValue(9) == System.DBNull.Value)
+                        {
+                            // Detect the missing taille
+                        }
+                        else
+                        {
+                            list4.Add(item.ToShortDateString());
+                            list2.Add(Convert.ToDouble(reader.GetValue(9)));
+                        }
                     }
                 }
                 reader.Close();
@@ -100,13 +121,13 @@ namespace medical
             con.Close();
             cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
             {
-                Title = "Month",
+                Title = "Date",
 
                 Labels = list4.ToArray()
 
             });
             SeriesCollection series = new SeriesCollection();
-            series.Add(new LineSeries() { Title = "Normal Child", Values = new ChartValues<double>(list2) });
+            series.Add(new LineSeries() { Title = "Patient", Values = new ChartValues<double>(list2) });
 
             cartesianChart1.Series = series;
         }

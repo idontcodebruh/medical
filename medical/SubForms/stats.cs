@@ -81,7 +81,6 @@ namespace medical
             bunifuBarChart1.TargetCanvas = bunifuChartCanvas3;
             bunifuRadarChart1.TargetCanvas = bunifuChartCanvas4;
             dataGridView1.DataSource = patientsBindingSource;
-            dataGridView2.DataSource = examensBindingSource;
             dataGridView3.DataSource = anamneseBindingSource;
             bunifuChartCanvas1.Labels = new string[5];
             bunifuChartCanvas2.Labels = new string[5];
