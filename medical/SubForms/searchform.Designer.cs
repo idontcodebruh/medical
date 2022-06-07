@@ -38,47 +38,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mALADES4DataSet = new medical.MALADES4DataSet();
-            this.patientsTableAdapter = new medical.MALADES4DataSetTableAdapters.PatientsTableAdapter();
             this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.viewuser = new FontAwesome.Sharp.IconButton();
-            this.edituser = new FontAwesome.Sharp.IconButton();
-            this.deleteuser = new FontAwesome.Sharp.IconButton();
             this.SearchLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.SearchNumberLabel = new Bunifu.UI.WinForms.BunifuLabel();
-            this.addbtn = new FontAwesome.Sharp.IconButton();
-            this.examensBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.examensTableAdapter = new medical.MALADES4DataSetTableAdapters.ExamensTableAdapter();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prénomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nompèreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nommèreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fonctpèreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fonctmèreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.communeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wilayaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matriculeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbenffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbenfgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datenaissDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.premdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.finalGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mALADES4DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examensBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,19 +128,10 @@
             this.bunifuTextBox1.WordWrap = true;
             this.bunifuTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bunifuTextBox1_KeyPress);
             // 
-            // patientsBindingSource
-            // 
-            this.patientsBindingSource.DataMember = "Patients";
-            this.patientsBindingSource.DataSource = this.mALADES4DataSet;
-            // 
             // mALADES4DataSet
             // 
             this.mALADES4DataSet.DataSetName = "MALADES4DataSet";
             this.mALADES4DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patientsTableAdapter
-            // 
-            this.patientsTableAdapter.ClearBeforeFill = true;
             // 
             // bunifuDropdown1
             // 
@@ -210,7 +171,6 @@
             this.bunifuDropdown1.Items.AddRange(new object[] {
             "Nom",
             "Prenom",
-            "Matricule",
             "Date Naissance"});
             this.bunifuDropdown1.ItemTopMargin = 3;
             this.bunifuDropdown1.Location = new System.Drawing.Point(689, 29);
@@ -236,38 +196,6 @@
             this.viewuser.TabIndex = 3;
             this.viewuser.UseVisualStyleBackColor = true;
             this.viewuser.Click += new System.EventHandler(this.viewuser_Click);
-            // 
-            // edituser
-            // 
-            this.edituser.FlatAppearance.BorderSize = 0;
-            this.edituser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edituser.IconChar = FontAwesome.Sharp.IconChar.PenSquare;
-            this.edituser.IconColor = System.Drawing.Color.LightSlateGray;
-            this.edituser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.edituser.IconSize = 30;
-            this.edituser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.edituser.Location = new System.Drawing.Point(994, 29);
-            this.edituser.Name = "edituser";
-            this.edituser.Size = new System.Drawing.Size(33, 32);
-            this.edituser.TabIndex = 4;
-            this.edituser.UseVisualStyleBackColor = true;
-            this.edituser.Click += new System.EventHandler(this.edituser_Click);
-            // 
-            // deleteuser
-            // 
-            this.deleteuser.FlatAppearance.BorderSize = 0;
-            this.deleteuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteuser.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.deleteuser.IconColor = System.Drawing.Color.LightSlateGray;
-            this.deleteuser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.deleteuser.IconSize = 30;
-            this.deleteuser.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.deleteuser.Location = new System.Drawing.Point(1033, 29);
-            this.deleteuser.Name = "deleteuser";
-            this.deleteuser.Size = new System.Drawing.Size(33, 32);
-            this.deleteuser.TabIndex = 5;
-            this.deleteuser.UseVisualStyleBackColor = true;
-            this.deleteuser.Click += new System.EventHandler(this.deleteuser_Click);
             // 
             // SearchLabel
             // 
@@ -301,183 +229,10 @@
             this.SearchNumberLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.SearchNumberLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // addbtn
-            // 
-            this.addbtn.FlatAppearance.BorderSize = 0;
-            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addbtn.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.addbtn.IconColor = System.Drawing.Color.LightSlateGray;
-            this.addbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.addbtn.IconSize = 30;
-            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.addbtn.Location = new System.Drawing.Point(1072, 29);
-            this.addbtn.Name = "addbtn";
-            this.addbtn.Size = new System.Drawing.Size(33, 32);
-            this.addbtn.TabIndex = 8;
-            this.addbtn.UseVisualStyleBackColor = true;
-            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
-            // 
-            // examensBindingSource
-            // 
-            this.examensBindingSource.DataMember = "Examens";
-            this.examensBindingSource.DataSource = this.mALADES4DataSet;
-            // 
-            // examensTableAdapter
-            // 
-            this.examensTableAdapter.ClearBeforeFill = true;
-            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 7;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nomDataGridViewTextBoxColumn,
-            this.prénomDataGridViewTextBoxColumn,
-            this.addresseDataGridViewTextBoxColumn,
-            this.telDataGridViewTextBoxColumn,
-            this.nompèreDataGridViewTextBoxColumn,
-            this.nommèreDataGridViewTextBoxColumn,
-            this.fonctpèreDataGridViewTextBoxColumn,
-            this.fonctmèreDataGridViewTextBoxColumn,
-            this.communeDataGridViewTextBoxColumn,
-            this.sexeDataGridViewTextBoxColumn,
-            this.wilayaDataGridViewTextBoxColumn,
-            this.matriculeDataGridViewTextBoxColumn,
-            this.nbenffDataGridViewTextBoxColumn,
-            this.nbenfgDataGridViewTextBoxColumn,
-            this.datenaissDataGridViewTextBoxColumn,
-            this.premdateDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.patientsBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(758, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(10, 10);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.Visible = false;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prénomDataGridViewTextBoxColumn
-            // 
-            this.prénomDataGridViewTextBoxColumn.DataPropertyName = "prénom";
-            this.prénomDataGridViewTextBoxColumn.HeaderText = "prénom";
-            this.prénomDataGridViewTextBoxColumn.Name = "prénomDataGridViewTextBoxColumn";
-            this.prénomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addresseDataGridViewTextBoxColumn
-            // 
-            this.addresseDataGridViewTextBoxColumn.DataPropertyName = "addresse";
-            this.addresseDataGridViewTextBoxColumn.HeaderText = "addresse";
-            this.addresseDataGridViewTextBoxColumn.Name = "addresseDataGridViewTextBoxColumn";
-            this.addresseDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telDataGridViewTextBoxColumn
-            // 
-            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
-            this.telDataGridViewTextBoxColumn.HeaderText = "tel";
-            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
-            this.telDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nompèreDataGridViewTextBoxColumn
-            // 
-            this.nompèreDataGridViewTextBoxColumn.DataPropertyName = "nom_père";
-            this.nompèreDataGridViewTextBoxColumn.HeaderText = "nom_père";
-            this.nompèreDataGridViewTextBoxColumn.Name = "nompèreDataGridViewTextBoxColumn";
-            this.nompèreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nommèreDataGridViewTextBoxColumn
-            // 
-            this.nommèreDataGridViewTextBoxColumn.DataPropertyName = "nom_mère";
-            this.nommèreDataGridViewTextBoxColumn.HeaderText = "nom_mère";
-            this.nommèreDataGridViewTextBoxColumn.Name = "nommèreDataGridViewTextBoxColumn";
-            this.nommèreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fonctpèreDataGridViewTextBoxColumn
-            // 
-            this.fonctpèreDataGridViewTextBoxColumn.DataPropertyName = "fonct_père";
-            this.fonctpèreDataGridViewTextBoxColumn.HeaderText = "fonct_père";
-            this.fonctpèreDataGridViewTextBoxColumn.Name = "fonctpèreDataGridViewTextBoxColumn";
-            this.fonctpèreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fonctmèreDataGridViewTextBoxColumn
-            // 
-            this.fonctmèreDataGridViewTextBoxColumn.DataPropertyName = "fonct_mère";
-            this.fonctmèreDataGridViewTextBoxColumn.HeaderText = "fonct_mère";
-            this.fonctmèreDataGridViewTextBoxColumn.Name = "fonctmèreDataGridViewTextBoxColumn";
-            this.fonctmèreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // communeDataGridViewTextBoxColumn
-            // 
-            this.communeDataGridViewTextBoxColumn.DataPropertyName = "commune";
-            this.communeDataGridViewTextBoxColumn.HeaderText = "commune";
-            this.communeDataGridViewTextBoxColumn.Name = "communeDataGridViewTextBoxColumn";
-            this.communeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sexeDataGridViewTextBoxColumn
-            // 
-            this.sexeDataGridViewTextBoxColumn.DataPropertyName = "sexe";
-            this.sexeDataGridViewTextBoxColumn.HeaderText = "sexe";
-            this.sexeDataGridViewTextBoxColumn.Name = "sexeDataGridViewTextBoxColumn";
-            this.sexeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wilayaDataGridViewTextBoxColumn
-            // 
-            this.wilayaDataGridViewTextBoxColumn.DataPropertyName = "wilaya";
-            this.wilayaDataGridViewTextBoxColumn.HeaderText = "wilaya";
-            this.wilayaDataGridViewTextBoxColumn.Name = "wilayaDataGridViewTextBoxColumn";
-            this.wilayaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // matriculeDataGridViewTextBoxColumn
-            // 
-            this.matriculeDataGridViewTextBoxColumn.DataPropertyName = "matricule";
-            this.matriculeDataGridViewTextBoxColumn.HeaderText = "matricule";
-            this.matriculeDataGridViewTextBoxColumn.Name = "matriculeDataGridViewTextBoxColumn";
-            this.matriculeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nbenffDataGridViewTextBoxColumn
-            // 
-            this.nbenffDataGridViewTextBoxColumn.DataPropertyName = "nb_enf_f";
-            this.nbenffDataGridViewTextBoxColumn.HeaderText = "nb_enf_f";
-            this.nbenffDataGridViewTextBoxColumn.Name = "nbenffDataGridViewTextBoxColumn";
-            this.nbenffDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nbenfgDataGridViewTextBoxColumn
-            // 
-            this.nbenfgDataGridViewTextBoxColumn.DataPropertyName = "nb_enf_g";
-            this.nbenfgDataGridViewTextBoxColumn.HeaderText = "nb_enf_g";
-            this.nbenfgDataGridViewTextBoxColumn.Name = "nbenfgDataGridViewTextBoxColumn";
-            this.nbenfgDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datenaissDataGridViewTextBoxColumn
-            // 
-            this.datenaissDataGridViewTextBoxColumn.DataPropertyName = "date_naiss";
-            this.datenaissDataGridViewTextBoxColumn.HeaderText = "date_naiss";
-            this.datenaissDataGridViewTextBoxColumn.Name = "datenaissDataGridViewTextBoxColumn";
-            this.datenaissDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // premdateDataGridViewTextBoxColumn
-            // 
-            this.premdateDataGridViewTextBoxColumn.DataPropertyName = "prem_date";
-            this.premdateDataGridViewTextBoxColumn.HeaderText = "prem_date";
-            this.premdateDataGridViewTextBoxColumn.Name = "premdateDataGridViewTextBoxColumn";
-            this.premdateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // patientsBindingSource1
-            // 
-            this.patientsBindingSource1.DataMember = "Patients";
-            this.patientsBindingSource1.DataSource = this.mALADES4DataSet;
             // 
             // finalGrid
             // 
@@ -502,7 +257,6 @@
             this.finalGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.finalGrid.ColumnHeadersHeight = 40;
             this.finalGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
@@ -549,12 +303,6 @@
             this.finalGrid.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.finalGrid_ColumnHeaderMouseClick);
             this.finalGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.finalGrid_RowHeaderMouseClick_1);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Matricule";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // Column2
             // 
             this.Column2.HeaderText = "Nom";
@@ -579,12 +327,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 521);
             this.Controls.Add(this.finalGrid);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.addbtn);
             this.Controls.Add(this.SearchNumberLabel);
             this.Controls.Add(this.SearchLabel);
-            this.Controls.Add(this.deleteuser);
-            this.Controls.Add(this.edituser);
             this.Controls.Add(this.viewuser);
             this.Controls.Add(this.bunifuDropdown1);
             this.Controls.Add(this.bunifuTextBox1);
@@ -592,11 +336,7 @@
             this.Name = "searchform";
             this.Text = "searchform";
             this.Load += new System.EventHandler(this.searchform_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mALADES4DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.examensBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -607,38 +347,12 @@
 
         private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
         private MALADES4DataSet mALADES4DataSet;
-        private System.Windows.Forms.BindingSource patientsBindingSource;
-        private MALADES4DataSetTableAdapters.PatientsTableAdapter patientsTableAdapter;
         private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
         private FontAwesome.Sharp.IconButton viewuser;
-        private FontAwesome.Sharp.IconButton edituser;
-        private FontAwesome.Sharp.IconButton deleteuser;
         private Bunifu.UI.WinForms.BunifuLabel SearchLabel;
         private Bunifu.UI.WinForms.BunifuLabel SearchNumberLabel;
-        private FontAwesome.Sharp.IconButton addbtn;
-        private System.Windows.Forms.BindingSource examensBindingSource;
-        private MALADES4DataSetTableAdapters.ExamensTableAdapter examensTableAdapter;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prénomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addresseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nompèreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nommèreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fonctpèreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fonctmèreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn communeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wilayaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matriculeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbenffDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbenfgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datenaissDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn premdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource patientsBindingSource1;
         private Bunifu.UI.WinForms.BunifuDataGridView finalGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
