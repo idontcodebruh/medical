@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace medical
 {
     public partial class mainmenu : Form
@@ -17,6 +17,7 @@ namespace medical
             InitializeComponent();
             mainpanel.Dock = DockStyle.Fill;
         }
+        public string global_username;
         public void loadform(object Form) {
            
             if (this.mainpanel.Controls.Count > 0)
@@ -34,7 +35,15 @@ namespace medical
             
         }
 
+        public void Load_Username()
+        { /* LOAD USERNAME NAME INTO GLOBAL VARS */
 
+            var lines = File.ReadLines("current_user.txt");
+            foreach (var line in lines)
+            {
+                global_username = line;
+            }
+        }
         private void logoutbtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -69,5 +78,18 @@ namespace medical
         {
 
         }
+
+        private void mainmenu_Load(object sender, EventArgs e)
+        {
+            Load_Username();
+            currentuser.Text = global_username.ToUpper();
+            if(global_username == "nurse")
+            {
+                statsbtn.Visible = false;
+                medicalbtn.Visible = false;
+                homepagebtn.Visible = false;
+            }
+        }
+
     }
 }

@@ -262,6 +262,7 @@
             this.Name = "mainmenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainmenu";
+            this.Load += new System.EventHandler(this.mainmenu_Load);
             this.sidebar.ResumeLayout(false);
             this.logoutpanel.ResumeLayout(false);
             this.logoutpanel.PerformLayout();

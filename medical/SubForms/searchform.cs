@@ -121,9 +121,7 @@ namespace medical
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            addform f = new addform();
-            f.ShowDialog();
-            this.Close();
+
         }
 
         private void finalGrid_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)

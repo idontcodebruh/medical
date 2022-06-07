@@ -206,12 +206,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addform.Designer.cs">
-      <DependentUpon>addform.cs</DependentUpon>
-    </Compile>
     <Compile Include="PARAMETRESDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -322,9 +316,6 @@
     <Compile Include="SubForms\stats.Designer.cs">
       <DependentUpon>stats.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addform.resx">
-      <DependentUpon>addform.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SubForms\anamneseinfo.resx">
       <DependentUpon>anamneseinfo.cs</DependentUpon>
     </EmbeddedResource>
