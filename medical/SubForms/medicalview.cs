@@ -20,7 +20,8 @@ namespace medical
         }
         public string global_nom;
         public string global_prénom;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\MALADES4.accdb");
+
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+ Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"MALADES4.accdb"));
         public void loadform(object Form)
         {
 
@@ -39,6 +40,7 @@ namespace medical
         private void patientbtn_Click(object sender, EventArgs e)
         {
             loadform(new patientinfo());
+
         }
 
         private void anamnesebtn_Click(object sender, EventArgs e)
@@ -238,6 +240,11 @@ namespace medical
                 }
                 con.Close();
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

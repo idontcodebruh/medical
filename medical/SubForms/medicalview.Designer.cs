@@ -53,6 +53,7 @@
             this.patientbtn = new FontAwesome.Sharp.IconButton();
             this.viewpanel = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prénom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +74,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.menupanel.SuspendLayout();
             this.viewpanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -165,6 +166,7 @@
             // 
             // viewpanel
             // 
+            this.viewpanel.Controls.Add(this.button3);
             this.viewpanel.Controls.Add(this.groupBox2);
             this.viewpanel.Controls.Add(this.groupBox1);
             this.viewpanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -189,6 +191,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quick Search";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(726, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "View";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // bunifuDataGridView1
             // 
@@ -636,15 +648,15 @@
             this.bunifuElipse1.ElipseRadius = 7;
             this.bunifuElipse1.TargetControl = this.bunifuDataGridView1;
             // 
-            // button2
+            // button3
             // 
-            this.button2.Location = new System.Drawing.Point(726, 31);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "View";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.Location = new System.Drawing.Point(294, 58);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(153, 34);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // medicalview
             // 
@@ -700,5 +712,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Prénom;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

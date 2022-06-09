@@ -19,7 +19,7 @@ namespace medical
         }
         public string global_nom;
         public string global_prénom;
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\MALADES4.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MALADES4.accdb"));
         private void anamneseinfo_Load(object sender, EventArgs e)
         {
             Load_Patient();

@@ -69,7 +69,7 @@ namespace medical
             string remaining = date.Substring(pos, 4);
             return remaining;
         }
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\belha\\source\\repos\\medical\\medical\\MALADES4.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MALADES4.accdb"));
         void render(int index, int index2, int index3, bool skipCalc, bool test)
         {
 
