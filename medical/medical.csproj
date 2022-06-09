@@ -316,6 +316,18 @@
     <Compile Include="SubForms\stats.Designer.cs">
       <DependentUpon>stats.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\Tools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\Tools.Designer.cs">
+      <DependentUpon>Tools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\traitmentinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\traitmentinfo.Designer.cs">
+      <DependentUpon>traitmentinfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="SubForms\anamneseinfo.resx">
       <DependentUpon>anamneseinfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +371,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\stats.resx">
       <DependentUpon>stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Tools.resx">
+      <DependentUpon>Tools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\traitmentinfo.resx">
+      <DependentUpon>traitmentinfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="appointmentDataSet.xsc">
       <DependentUpon>appointmentDataSet.xsd</DependentUpon>

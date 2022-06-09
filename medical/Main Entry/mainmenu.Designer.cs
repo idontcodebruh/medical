@@ -33,6 +33,7 @@
             this.mainpanel = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.sidebar = new Bunifu.UI.WinForms.BunifuPanel();
+            this.toolsBtn = new FontAwesome.Sharp.IconButton();
             this.logoutpanel = new System.Windows.Forms.Panel();
             this.logoutbtn = new FontAwesome.Sharp.IconButton();
             this.currentuser = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.sidebar.BorderColor = System.Drawing.Color.Transparent;
             this.sidebar.BorderRadius = 3;
             this.sidebar.BorderThickness = 1;
+            this.sidebar.Controls.Add(this.toolsBtn);
             this.sidebar.Controls.Add(this.logoutpanel);
             this.sidebar.Controls.Add(this.searchbtn);
             this.sidebar.Controls.Add(this.statsbtn);
@@ -81,6 +83,28 @@
             this.sidebar.ShowBorders = true;
             this.sidebar.Size = new System.Drawing.Size(135, 521);
             this.sidebar.TabIndex = 1;
+            // 
+            // toolsBtn
+            // 
+            this.toolsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.toolsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.toolsBtn.FlatAppearance.BorderSize = 0;
+            this.toolsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.toolsBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolsBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolsBtn.IconChar = FontAwesome.Sharp.IconChar.Tools;
+            this.toolsBtn.IconColor = System.Drawing.Color.White;
+            this.toolsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.toolsBtn.IconSize = 20;
+            this.toolsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolsBtn.Location = new System.Drawing.Point(0, 252);
+            this.toolsBtn.Name = "toolsBtn";
+            this.toolsBtn.Size = new System.Drawing.Size(135, 35);
+            this.toolsBtn.TabIndex = 9;
+            this.toolsBtn.Text = "Tools";
+            this.toolsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolsBtn.UseVisualStyleBackColor = false;
+            this.toolsBtn.Click += new System.EventHandler(this.toolsBtn_Click);
             // 
             // logoutpanel
             // 
@@ -285,5 +309,6 @@
         private System.Windows.Forms.Label bottomside_label;
         private System.Windows.Forms.Panel mainpanel;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private FontAwesome.Sharp.IconButton toolsBtn;
     }
 }

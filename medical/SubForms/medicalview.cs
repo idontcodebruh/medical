@@ -246,5 +246,10 @@ namespace medical
         {
 
         }
+
+        private void traitmentbtn_Click(object sender, EventArgs e)
+        {
+            loadform(new traitmentinfo());
+        }
     }
 }

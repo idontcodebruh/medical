@@ -91,5 +91,9 @@ namespace medical
             }
         }
 
+        private void toolsBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new Tools());
+        }
     }
 }

@@ -47,10 +47,6 @@
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState8 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState9 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
             this.menupanel = new System.Windows.Forms.Panel();
-            this.graphbtn = new FontAwesome.Sharp.IconButton();
-            this.exambtn = new FontAwesome.Sharp.IconButton();
-            this.anamnesebtn = new FontAwesome.Sharp.IconButton();
-            this.patientbtn = new FontAwesome.Sharp.IconButton();
             this.viewpanel = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -61,11 +57,7 @@
             this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bunifuToggleSwitch3 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
-            this.bunifuToggleSwitch2 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
-            this.bunifuToggleSwitch1 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -74,7 +66,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.button3 = new System.Windows.Forms.Button();
+            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.bunifuToggleSwitch3 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.bunifuToggleSwitch2 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.bunifuToggleSwitch1 = new Bunifu.UI.WinForms.BunifuToggleSwitch();
+            this.traitmentbtn = new FontAwesome.Sharp.IconButton();
+            this.graphbtn = new FontAwesome.Sharp.IconButton();
+            this.exambtn = new FontAwesome.Sharp.IconButton();
+            this.anamnesebtn = new FontAwesome.Sharp.IconButton();
+            this.patientbtn = new FontAwesome.Sharp.IconButton();
             this.menupanel.SuspendLayout();
             this.viewpanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,6 +85,7 @@
             // menupanel
             // 
             this.menupanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(39)))), ((int)(((byte)(61)))));
+            this.menupanel.Controls.Add(this.traitmentbtn);
             this.menupanel.Controls.Add(this.graphbtn);
             this.menupanel.Controls.Add(this.exambtn);
             this.menupanel.Controls.Add(this.anamnesebtn);
@@ -96,77 +97,8 @@
             this.menupanel.Size = new System.Drawing.Size(1117, 67);
             this.menupanel.TabIndex = 0;
             // 
-            // graphbtn
-            // 
-            this.graphbtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.graphbtn.FlatAppearance.BorderSize = 0;
-            this.graphbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.graphbtn.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
-            this.graphbtn.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.graphbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.graphbtn.Location = new System.Drawing.Point(921, 0);
-            this.graphbtn.Name = "graphbtn";
-            this.graphbtn.Size = new System.Drawing.Size(196, 67);
-            this.graphbtn.TabIndex = 3;
-            this.graphbtn.Text = "Graph(?)";
-            this.graphbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.graphbtn.UseVisualStyleBackColor = true;
-            this.graphbtn.Click += new System.EventHandler(this.graphbtn_Click);
-            // 
-            // exambtn
-            // 
-            this.exambtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.exambtn.FlatAppearance.BorderSize = 0;
-            this.exambtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exambtn.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
-            this.exambtn.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.exambtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.exambtn.Location = new System.Drawing.Point(614, 0);
-            this.exambtn.Name = "exambtn";
-            this.exambtn.Size = new System.Drawing.Size(307, 67);
-            this.exambtn.TabIndex = 2;
-            this.exambtn.Text = "Examen";
-            this.exambtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.exambtn.UseVisualStyleBackColor = true;
-            this.exambtn.Click += new System.EventHandler(this.exambtn_Click);
-            // 
-            // anamnesebtn
-            // 
-            this.anamnesebtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.anamnesebtn.FlatAppearance.BorderSize = 0;
-            this.anamnesebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anamnesebtn.IconChar = FontAwesome.Sharp.IconChar.Syringe;
-            this.anamnesebtn.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.anamnesebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.anamnesebtn.Location = new System.Drawing.Point(307, 0);
-            this.anamnesebtn.Name = "anamnesebtn";
-            this.anamnesebtn.Size = new System.Drawing.Size(307, 67);
-            this.anamnesebtn.TabIndex = 1;
-            this.anamnesebtn.Text = "Anamnese";
-            this.anamnesebtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.anamnesebtn.UseVisualStyleBackColor = true;
-            this.anamnesebtn.Click += new System.EventHandler(this.anamnesebtn_Click);
-            // 
-            // patientbtn
-            // 
-            this.patientbtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.patientbtn.FlatAppearance.BorderSize = 0;
-            this.patientbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.patientbtn.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.patientbtn.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.patientbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.patientbtn.Location = new System.Drawing.Point(0, 0);
-            this.patientbtn.Name = "patientbtn";
-            this.patientbtn.Size = new System.Drawing.Size(307, 67);
-            this.patientbtn.TabIndex = 0;
-            this.patientbtn.Text = "Patient info";
-            this.patientbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.patientbtn.UseVisualStyleBackColor = true;
-            this.patientbtn.Click += new System.EventHandler(this.patientbtn_Click);
-            // 
             // viewpanel
             // 
-            this.viewpanel.Controls.Add(this.button3);
             this.viewpanel.Controls.Add(this.groupBox2);
             this.viewpanel.Controls.Add(this.groupBox1);
             this.viewpanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -217,7 +149,7 @@
             this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -247,7 +179,7 @@
             this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -355,6 +287,91 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Query:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.bunifuToggleSwitch3);
+            this.groupBox1.Controls.Add(this.bunifuToggleSwitch2);
+            this.groupBox1.Controls.Add(this.bunifuToggleSwitch1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.prénomLabel);
+            this.groupBox1.Controls.Add(this.nomLabel);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 158);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(278, 284);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "General";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 186);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 14);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Has examen(?):";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 155);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 14);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Has anamnese(?):";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 14);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Has patient file(?):";
+            // 
+            // prénomLabel
+            // 
+            this.prénomLabel.AutoSize = true;
+            this.prénomLabel.Location = new System.Drawing.Point(76, 73);
+            this.prénomLabel.Name = "prénomLabel";
+            this.prénomLabel.Size = new System.Drawing.Size(0, 14);
+            this.prénomLabel.TabIndex = 3;
+            // 
+            // nomLabel
+            // 
+            this.nomLabel.AutoSize = true;
+            this.nomLabel.Location = new System.Drawing.Point(52, 31);
+            this.nomLabel.Name = "nomLabel";
+            this.nomLabel.Size = new System.Drawing.Size(0, 14);
+            this.nomLabel.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 14);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Prénom: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom:";
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 7;
+            this.bunifuElipse1.TargetControl = this.bunifuDataGridView1;
+            // 
             // bunifuTextBox1
             // 
             this.bunifuTextBox1.AcceptsReturn = false;
@@ -429,25 +446,6 @@
             this.bunifuTextBox1.TextPlaceholder = "Enter text";
             this.bunifuTextBox1.UseSystemPasswordChar = false;
             this.bunifuTextBox1.WordWrap = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.bunifuToggleSwitch3);
-            this.groupBox1.Controls.Add(this.bunifuToggleSwitch2);
-            this.groupBox1.Controls.Add(this.bunifuToggleSwitch1);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.prénomLabel);
-            this.groupBox1.Controls.Add(this.nomLabel);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 158);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(278, 284);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General";
             // 
             // bunifuToggleSwitch3
             // 
@@ -582,81 +580,90 @@
             this.bunifuToggleSwitch1.Value = true;
             this.bunifuToggleSwitch1.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.bunifuToggleSwitch1_CheckedChanged);
             // 
-            // label5
+            // traitmentbtn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 186);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 14);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Has examen(?):";
+            this.traitmentbtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.traitmentbtn.FlatAppearance.BorderSize = 0;
+            this.traitmentbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.traitmentbtn.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.traitmentbtn.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.traitmentbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.traitmentbtn.Location = new System.Drawing.Point(914, 0);
+            this.traitmentbtn.Name = "traitmentbtn";
+            this.traitmentbtn.Size = new System.Drawing.Size(203, 67);
+            this.traitmentbtn.TabIndex = 4;
+            this.traitmentbtn.Text = "Traitment";
+            this.traitmentbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.traitmentbtn.UseVisualStyleBackColor = true;
+            this.traitmentbtn.Click += new System.EventHandler(this.traitmentbtn_Click);
             // 
-            // label4
+            // graphbtn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 155);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 14);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Has anamnese(?):";
+            this.graphbtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.graphbtn.FlatAppearance.BorderSize = 0;
+            this.graphbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.graphbtn.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            this.graphbtn.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.graphbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.graphbtn.Location = new System.Drawing.Point(735, 0);
+            this.graphbtn.Name = "graphbtn";
+            this.graphbtn.Size = new System.Drawing.Size(179, 67);
+            this.graphbtn.TabIndex = 3;
+            this.graphbtn.Text = "Graph(?)";
+            this.graphbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.graphbtn.UseVisualStyleBackColor = true;
+            this.graphbtn.Click += new System.EventHandler(this.graphbtn_Click);
             // 
-            // label3
+            // exambtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 14);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Has patient file(?):";
+            this.exambtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.exambtn.FlatAppearance.BorderSize = 0;
+            this.exambtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exambtn.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.exambtn.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.exambtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.exambtn.Location = new System.Drawing.Point(528, 0);
+            this.exambtn.Name = "exambtn";
+            this.exambtn.Size = new System.Drawing.Size(207, 67);
+            this.exambtn.TabIndex = 2;
+            this.exambtn.Text = "Examen";
+            this.exambtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.exambtn.UseVisualStyleBackColor = true;
+            this.exambtn.Click += new System.EventHandler(this.exambtn_Click);
             // 
-            // prénomLabel
+            // anamnesebtn
             // 
-            this.prénomLabel.AutoSize = true;
-            this.prénomLabel.Location = new System.Drawing.Point(76, 73);
-            this.prénomLabel.Name = "prénomLabel";
-            this.prénomLabel.Size = new System.Drawing.Size(0, 14);
-            this.prénomLabel.TabIndex = 3;
+            this.anamnesebtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.anamnesebtn.FlatAppearance.BorderSize = 0;
+            this.anamnesebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anamnesebtn.IconChar = FontAwesome.Sharp.IconChar.Syringe;
+            this.anamnesebtn.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.anamnesebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.anamnesebtn.Location = new System.Drawing.Point(283, 0);
+            this.anamnesebtn.Name = "anamnesebtn";
+            this.anamnesebtn.Size = new System.Drawing.Size(245, 67);
+            this.anamnesebtn.TabIndex = 1;
+            this.anamnesebtn.Text = "Anamnese";
+            this.anamnesebtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.anamnesebtn.UseVisualStyleBackColor = true;
+            this.anamnesebtn.Click += new System.EventHandler(this.anamnesebtn_Click);
             // 
-            // nomLabel
+            // patientbtn
             // 
-            this.nomLabel.AutoSize = true;
-            this.nomLabel.Location = new System.Drawing.Point(52, 31);
-            this.nomLabel.Name = "nomLabel";
-            this.nomLabel.Size = new System.Drawing.Size(0, 14);
-            this.nomLabel.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 14);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Prénom: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom:";
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 7;
-            this.bunifuElipse1.TargetControl = this.bunifuDataGridView1;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(294, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.patientbtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.patientbtn.FlatAppearance.BorderSize = 0;
+            this.patientbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.patientbtn.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.patientbtn.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.patientbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.patientbtn.Location = new System.Drawing.Point(0, 0);
+            this.patientbtn.Name = "patientbtn";
+            this.patientbtn.Size = new System.Drawing.Size(283, 67);
+            this.patientbtn.TabIndex = 0;
+            this.patientbtn.Text = "Patient info";
+            this.patientbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.patientbtn.UseVisualStyleBackColor = true;
+            this.patientbtn.Click += new System.EventHandler(this.patientbtn_Click);
             // 
             // medicalview
             // 
@@ -712,6 +719,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Prénom;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private FontAwesome.Sharp.IconButton traitmentbtn;
     }
 }
