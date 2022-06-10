@@ -30,45 +30,6 @@ namespace medical
         int pages = 0;
         int other_counter = 0;
         /* GLOBAL VAR */
-        public void Load_Patient()
-        { /* LOAD PATIENT NAME INTO GLOBAL VARS */
-            bool isFirstReadDone = false;
-            var lines = File.ReadLines("current_patient.txt");
-            foreach (var line in lines)
-            {
-                if (!isFirstReadDone)
-                {
-                    global_nom = line;
-                    isFirstReadDone = true;
-                }
-                else
-                {
-                    global_prénom = line;
-                }
-
-            }
-
-        }
-        public string date_naissance(string date)
-        {
-            int found = 0;
-            int pos=0;
-            for(int i = 0; i<date.Length; i++)
-            {
-               if(date[i] == '/')
-                {
-                    found++;
-                }
-                if (found == 2)
-                {
-                    pos = i + 1;
-                    break;
-                }
-            }
-            
-            string remaining = date.Substring(pos, 4);
-            return remaining;
-        }
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MALADES4.accdb"));
         void render(int index, int index2, int index3, bool skipCalc, bool test)
         {
@@ -80,8 +41,6 @@ namespace medical
             bunifuLineChart1.TargetCanvas = bunifuChartCanvas2;
             bunifuBarChart1.TargetCanvas = bunifuChartCanvas3;
             bunifuRadarChart1.TargetCanvas = bunifuChartCanvas4;
-            dataGridView1.DataSource = patientsBindingSource;
-            dataGridView3.DataSource = anamneseBindingSource;
             bunifuChartCanvas1.Labels = new string[5];
             bunifuChartCanvas2.Labels = new string[5];
             bunifuChartCanvas3.Labels = new string[5];
@@ -198,7 +157,15 @@ namespace medical
                                  calcRange();
                                  fixFound();
                             }
-                             Do_Render();
+                            if (other_counter < pages && skipCalc && test)
+                            {
+                                other_counter++;
+                            }
+                            if (other_counter >= 1 && skipCalc && !test)
+                            {
+                                other_counter--;
+                            }
+                            Do_Render();
                                 
                             break;
                         default:
@@ -207,15 +174,7 @@ namespace medical
                     }
 
                     break;
-                case 1: // RESPONSIBLE FOR EXAMEN
-                    switch (index2)
-                    {
-                        case 0:
-
-                            break;
-                    }
-                    break;
-                case 2: // RESPONSIBLE FOR ANAMNESE
+                case 1: // RESPONSIBLE FOR ANAMNESE
                     switch (index2)
                     {
                         case 0: // ANAMNESE > Né
@@ -333,10 +292,7 @@ namespace medical
 
         private void stats_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'mALADES4DataSet.Patients' table. You can move, or remove it, as needed.
-            this.patientsTableAdapter.Fill(this.mALADES4DataSet.Patients);
-            // TODO: This line of code loads data into the 'mALADES4DataSet.Anamnese' table. You can move, or remove it, as needed.
-            this.anamneseTableAdapter.Fill(this.mALADES4DataSet.Anamnese);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -371,14 +327,18 @@ namespace medical
         {
             bool wasFound;
             int temp = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Patients";
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
                 wasFound = false;
-                DataGridViewRow selectedRow = dataGridView1.Rows[i];
-
                 if (temp == 0)
-                { // ADDING FIRST ITEM 
-                    found[0] = date_naissance(selectedRow.Cells[cell].Value.ToString());
+                {
+                    
+                    found[0] = Convert.ToDateTime(reader.GetValue(14)).Year.ToString();
                     counter[0]++;
                     temp++;
                 }
@@ -387,27 +347,22 @@ namespace medical
                     int j = 0;
                     while (!String.IsNullOrEmpty(found[j]))
                     {
-                        if (selectedRow.Cells[cell].Value == System.DBNull.Value)
-                        {
-                            // SKIP CUZ THIS IS NULL
-                            break;
-                        }
-                        if (date_naissance(selectedRow.Cells[cell].Value.ToString()) == found[j])
-                        { // CHECK IF ITEM ALRDY EXISTS IN MY ARRAY
+                        if(reader.GetValue(14) == System.DBNull.Value) { break; }
+                        if(Convert.ToDateTime(reader.GetValue(14)).Year.ToString() == found[j] ) {
                             wasFound = true;
                             counter[j]++;
                         }
                         j++;
                     }
-                    if (!wasFound && (selectedRow.Cells[cell].Value != System.DBNull.Value))
-                    { // I DIDNT FIND THE ITEM IN THE LIST
-                        found[j] = date_naissance(selectedRow.Cells[cell].Value.ToString());
+                    if (!wasFound && (reader.GetValue(14) != System.DBNull.Value))
+                    {
+                        found[j] = Convert.ToDateTime(reader.GetValue(14)).Year.ToString();
                         counter[j]++;
                     }
-
                 }
-
             }
+            reader.Close();
+            con.Close();
         }
         /*
          * We need to make sure we clear our toStop counter after each render. 
@@ -434,15 +389,18 @@ namespace medical
         {
             bool wasFound;
             int temp = 0;
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Patients";
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
                 wasFound = false;
-                DataGridViewRow selectedRow = dataGridView1.Rows[i];
-
                 if (temp == 0)
-                { // ADDING FIRST ITEM 
-                    found[0] = selectedRow.Cells[cell].Value.ToString();
+                {
 
+                    found[0] = reader.GetValue(cell).ToString();
                     counter[0]++;
                     temp++;
                 }
@@ -451,29 +409,23 @@ namespace medical
                     int j = 0;
                     while (!String.IsNullOrEmpty(found[j]))
                     {
-                        if (selectedRow.Cells[cell].Value == null)
+                        if (reader.GetValue(14) == System.DBNull.Value) { break; }
+                        if (reader.GetValue(cell).ToString().ToLower() == found[j].ToLower())
                         {
-                            // SKIP CUZ THIS IS NULL
-                            break;
-                        }
-                        if (selectedRow.Cells[cell].Value.ToString().ToLower() == found[j].ToLower())
-                        { // CHECK IF ITEM ALRDY EXISTS IN MY ARRAY
                             wasFound = true;
                             counter[j]++;
                         }
                         j++;
                     }
-                    if (!wasFound && (selectedRow.Cells[cell].Value != null))
-                    { // I DIDNT FIND THE ITEM IN THE LIST
-                        found[j] = selectedRow.Cells[cell].Value.ToString();
+                    if (!wasFound && (reader.GetValue(cell) != System.DBNull.Value))
+                    {
+                        found[j] = reader.GetValue(cell).ToString();
                         counter[j]++;
                     }
-
                 }
-
-                
-
             }
+            reader.Close();
+            con.Close();
 
         }
         /*
@@ -516,15 +468,18 @@ namespace medical
             {
                 bool wasFound;
                 int temp = 0;
-                for (int i = 0; i < dataGridView3.RowCount; i++)
+                con.Open();
+                OleDbCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from Anamnese";
+                OleDbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
                     wasFound = false;
-                    DataGridViewRow selectedRow = dataGridView3.Rows[i];
-
                     if (temp == 0)
-                    { // ADDING FIRST ITEM 
-                        found[0] = selectedRow.Cells[cell].Value.ToString();
+                    {
 
+                        found[0] = reader.GetValue(cell).ToString();
                         counter[0]++;
                         temp++;
                     }
@@ -533,61 +488,69 @@ namespace medical
                         int j = 0;
                         while (!String.IsNullOrEmpty(found[j]))
                         {
-                            if (selectedRow.Cells[cell].Value == null)
+                            if (reader.GetValue(14) == System.DBNull.Value) { break; }
+                            if (reader.GetValue(cell).ToString().ToLower() == found[j].ToLower())
                             {
-                                // SKIP CUZ THIS IS NULL
-                                break;
-                            }
-                            if (selectedRow.Cells[cell].Value.ToString() == found[j])
-                            { // CHECK IF ITEM ALRDY EXISTS IN MY ARRAY
                                 wasFound = true;
                                 counter[j]++;
                             }
                             j++;
                         }
-                        if (!wasFound && (selectedRow.Cells[cell].Value != null))
-                        { // I DIDNT FIND THE ITEM IN THE LIST
-                            found[j] = selectedRow.Cells[cell].Value.ToString();
+                        if (!wasFound && (reader.GetValue(cell) != System.DBNull.Value))
+                        {
+                            found[j] = reader.GetValue(cell).ToString();
                             counter[j]++;
                         }
-
                     }
                 }
+                reader.Close();
+                con.Close();
             }
             else // doing tabac or hygiene or vaccination test
             {
                 if(cell== 16) // RESPONSIBLE FOR CHECKING VACCINATION
                 {
-                        found[0] = "Vacciné";
-                        found[1] = "Non-Vacciné";
-                        found[2] = "01";
-                        found[3] = "02";
-                        found[4] = "03";
-                        for (int i = 0; i < dataGridView3.Rows.Count; i++)
-                        {
-                            
-                            DataGridViewRow selectedRow = dataGridView3.Rows[i];
-                        string a = selectedRow.Cells[16].Value.ToString();
-                        string b = selectedRow.Cells[17].Value.ToString();
-                        string c = selectedRow.Cells[18].Value.ToString();
-                        string d = selectedRow.Cells[19].Value.ToString();
-                        string e = selectedRow.Cells[20].Value.ToString();
-                        string f = selectedRow.Cells[21].Value.ToString();
-                        string g = selectedRow.Cells[22].Value.ToString();
-                        string h = selectedRow.Cells[23].Value.ToString();
-                        string j = selectedRow.Cells[24].Value.ToString();
-                        string k = selectedRow.Cells[25].Value.ToString();
-                        string l = selectedRow.Cells[26].Value.ToString();
-                        string[] array_vaccine = {a,b,c,d,e,f,g,h,j,k,l };
-                            if (array_vaccine.Contains("True")) // Vaccinated?
+                    string a, b, c, d, e, f, g, h, j, k, l;
+                    con.Open();
+                    OleDbCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select * from Anamnese";
+                    found[0] = "Vacciné";
+                    found[1] = "Non-Vacciné";
+                    found[2] = "01";
+                    found[3] = "02";
+                    found[4] = "03";
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        a = reader.GetValue(16).ToString();
+                        b = reader.GetValue(17).ToString();
+                        c = reader.GetValue(18).ToString();
+                        d = reader.GetValue(19).ToString();
+                        e = reader.GetValue(20).ToString();
+                        f = reader.GetValue(21).ToString();
+                        g = reader.GetValue(22).ToString();
+                        h = reader.GetValue(23).ToString();
+                        j = reader.GetValue(24).ToString();
+                        k = reader.GetValue(25).ToString();
+                        l = reader.GetValue(26).ToString();
+                        string[] array_vaccine = { a, b, c, d, e, f, g, h, j, k, l };
+                            if (array_vaccine.Contains("True"))
                             {
                                 counter[0] = counter[0] + 1;
                             }
-                            else // Non-vaccinated?
+                            else
                             {
                                 counter[1] = counter[1] + 1;
                             }
-                        }
+
+
+
+                    }
+                    reader.Close();
+                    con.Close();
+
+              
                 }
                 if (cell==27) // RESPONSIBLE FOR CHECKING TABAC
                 {
@@ -596,20 +559,27 @@ namespace medical
                     found[2] = "01";
                     found[3] = "02";
                     found[4] = "03";
-                    for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                    con.Open();
+                    OleDbCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select * from Anamnese";
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
-                        
-                        DataGridViewRow selectedRow = dataGridView3.Rows[i];
-                        if(selectedRow.Cells[cell].Value.ToString() == "True") // Smoker?
+
+                        if (reader.GetValue(cell).ToString() == "True") // Smoker?
                         {
-                            
-                            counter[0]= counter[0]+1;
+
+                            counter[0] = counter[0] + 1;
                         }
                         else // Non-smoker
                         {
-                            counter[1]= counter[1]+1;
+                            counter[1] = counter[1] + 1;
                         }
                     }
+                    reader.Close();
+                    con.Close();
+
                 }
                 if (cell==28) // RESPONBILE FOR CHECKING HYGIENE
                 {
@@ -618,19 +588,26 @@ namespace medical
                     found[2] = "01";
                     found[3] = "02";
                     found[4] = "03";
-                    for (int i = 0; i < dataGridView3.Rows.Count; i++)
+                    con.Open();
+                    OleDbCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select * from Anamnese";
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
-                        DataGridViewRow selectedRow = dataGridView3.Rows[i];
-                        if (selectedRow.Cells[cell].Value.ToString() == "True") // Hygiene
+
+                        if (reader.GetValue(cell).ToString() == "True") // Smoker?
                         {
 
                             counter[0] = counter[0] + 1;
                         }
-                        else // No Hygiene
+                        else // Non-smoker
                         {
                             counter[1] = counter[1] + 1;
                         }
                     }
+                    reader.Close();
+                    con.Close();
                 }
             }
         }
@@ -646,12 +623,7 @@ namespace medical
                 optionToRender.Items.Add("Enfants");
                 optionToRender.Items.Add("Date naissance");
             }
-            if (databaseDrop.SelectedIndex == 1)
-            {
-                optionToRender.Items.Clear();
-                optionToRender.Items.Add("Maladie");
-            }
-            if(databaseDrop.SelectedIndex == 2)
+            if(databaseDrop.SelectedIndex == 1)
             {
                 optionToRender.Items.Clear();
                 optionToRender.Items.Add("Né");
