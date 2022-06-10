@@ -110,7 +110,7 @@ namespace medical
                 }
                 else
                 {
-                    MessageBox.Show("fausses informations d'identification");
+                    MessageBox.Show("nom d'utilisateur ou mot de pas incorrect");
                 }
             }
         }
