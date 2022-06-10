@@ -81,6 +81,7 @@ namespace medical
 
         private void mainmenu_Load(object sender, EventArgs e)
         {
+            
             Load_Username();
             currentuser.Text = global_username.ToUpper();
             if(global_username == "nurse")
@@ -88,6 +89,10 @@ namespace medical
                 statsbtn.Visible = false;
                 medicalbtn.Visible = false;
                 homepagebtn.Visible = false;
+            }
+            else
+            {
+                loadform(new homepage());
             }
         }
 

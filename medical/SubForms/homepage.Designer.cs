@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuShadowPanel1 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.patientGrowth = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.bunifuShadowPanel2 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.appointmentsToday = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.bunifuShadowPanel3 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.processedAppointments = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.bunifuShadowPanel4 = new Bunifu.UI.WinForms.BunifuShadowPanel();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.patientGrowth = new System.Windows.Forms.Label();
-            this.appointmentsToday = new System.Windows.Forms.Label();
-            this.processedAppointments = new System.Windows.Forms.Label();
             this.canceledAppointments = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.logsDataSet = new medical.LogsDataSet();
             this.logBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logTableAdapter = new medical.LogsDataSetTableAdapters.LogTableAdapter();
@@ -57,15 +57,15 @@
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.appointmentDataSet1 = new medical.appointmentDataSet1();
-            this.table1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.table1TableAdapter = new medical.appointmentDataSet1TableAdapters.Table1TableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prénomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateappDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.table1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentDataSet1 = new medical.appointmentDataSet1();
+            this.table1TableAdapter = new medical.appointmentDataSet1TableAdapters.Table1TableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.bunifuShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -79,8 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.logBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -127,6 +127,25 @@
             this.bunifuShadowPanel1.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel1.TabIndex = 0;
             // 
+            // patientGrowth
+            // 
+            this.patientGrowth.AutoSize = true;
+            this.patientGrowth.ForeColor = System.Drawing.Color.White;
+            this.patientGrowth.Location = new System.Drawing.Point(47, 42);
+            this.patientGrowth.Name = "patientGrowth";
+            this.patientGrowth.Size = new System.Drawing.Size(0, 14);
+            this.patientGrowth.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(47, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 14);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Croissance des patients";
+            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -163,6 +182,25 @@
             this.bunifuShadowPanel2.Size = new System.Drawing.Size(273, 84);
             this.bunifuShadowPanel2.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel2.TabIndex = 1;
+            // 
+            // appointmentsToday
+            // 
+            this.appointmentsToday.AutoSize = true;
+            this.appointmentsToday.ForeColor = System.Drawing.Color.White;
+            this.appointmentsToday.Location = new System.Drawing.Point(50, 42);
+            this.appointmentsToday.Name = "appointmentsToday";
+            this.appointmentsToday.Size = new System.Drawing.Size(0, 14);
+            this.appointmentsToday.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(50, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 14);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Rendez-vous aujourd\'hui";
             // 
             // iconPictureBox2
             // 
@@ -201,6 +239,25 @@
             this.bunifuShadowPanel3.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel3.TabIndex = 2;
             // 
+            // processedAppointments
+            // 
+            this.processedAppointments.AutoSize = true;
+            this.processedAppointments.ForeColor = System.Drawing.Color.White;
+            this.processedAppointments.Location = new System.Drawing.Point(50, 42);
+            this.processedAppointments.Name = "processedAppointments";
+            this.processedAppointments.Size = new System.Drawing.Size(0, 14);
+            this.processedAppointments.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(50, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 14);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Rendez-vous traités";
+            // 
             // iconPictureBox3
             // 
             this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -238,6 +295,25 @@
             this.bunifuShadowPanel4.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.bunifuShadowPanel4.TabIndex = 3;
             // 
+            // canceledAppointments
+            // 
+            this.canceledAppointments.AutoSize = true;
+            this.canceledAppointments.ForeColor = System.Drawing.Color.White;
+            this.canceledAppointments.Location = new System.Drawing.Point(50, 42);
+            this.canceledAppointments.Name = "canceledAppointments";
+            this.canceledAppointments.Size = new System.Drawing.Size(0, 14);
+            this.canceledAppointments.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(50, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 14);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Rendez-vous annulés";
+            // 
             // iconPictureBox4
             // 
             this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
@@ -250,82 +326,6 @@
             this.iconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox4.TabIndex = 2;
             this.iconPictureBox4.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(47, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 14);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Patient Growth";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(50, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 14);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Appointments Today";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(50, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 14);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Processed Appointments";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(50, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 14);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Canceled Appointments";
-            // 
-            // patientGrowth
-            // 
-            this.patientGrowth.AutoSize = true;
-            this.patientGrowth.ForeColor = System.Drawing.Color.White;
-            this.patientGrowth.Location = new System.Drawing.Point(47, 42);
-            this.patientGrowth.Name = "patientGrowth";
-            this.patientGrowth.Size = new System.Drawing.Size(0, 14);
-            this.patientGrowth.TabIndex = 2;
-            // 
-            // appointmentsToday
-            // 
-            this.appointmentsToday.AutoSize = true;
-            this.appointmentsToday.ForeColor = System.Drawing.Color.White;
-            this.appointmentsToday.Location = new System.Drawing.Point(50, 42);
-            this.appointmentsToday.Name = "appointmentsToday";
-            this.appointmentsToday.Size = new System.Drawing.Size(0, 14);
-            this.appointmentsToday.TabIndex = 3;
-            // 
-            // processedAppointments
-            // 
-            this.processedAppointments.AutoSize = true;
-            this.processedAppointments.ForeColor = System.Drawing.Color.White;
-            this.processedAppointments.Location = new System.Drawing.Point(50, 42);
-            this.processedAppointments.Name = "processedAppointments";
-            this.processedAppointments.Size = new System.Drawing.Size(0, 14);
-            this.processedAppointments.TabIndex = 4;
-            // 
-            // canceledAppointments
-            // 
-            this.canceledAppointments.AutoSize = true;
-            this.canceledAppointments.ForeColor = System.Drawing.Color.White;
-            this.canceledAppointments.Location = new System.Drawing.Point(50, 42);
-            this.canceledAppointments.Name = "canceledAppointments";
-            this.canceledAppointments.Size = new System.Drawing.Size(0, 14);
-            this.canceledAppointments.TabIndex = 5;
             // 
             // logsDataSet
             // 
@@ -361,22 +361,22 @@
             this.bunifuDataGridView1.AllowUserToAddRows = false;
             this.bunifuDataGridView1.AllowUserToDeleteRows = false;
             this.bunifuDataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuDataGridView1.AutoGenerateColumns = false;
             this.bunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuDataGridView1.ColumnHeadersHeight = 40;
             this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.accessTimeDataGridViewTextBoxColumn,
@@ -400,14 +400,14 @@
             this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.bunifuDataGridView1.DataSource = this.logBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuDataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
             this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
@@ -448,20 +448,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(10, 10);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.Visible = false;
-            // 
-            // appointmentDataSet1
-            // 
-            this.appointmentDataSet1.DataSetName = "appointmentDataSet1";
-            this.appointmentDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // table1BindingSource
-            // 
-            this.table1BindingSource.DataMember = "Table1";
-            this.table1BindingSource.DataSource = this.appointmentDataSet1;
-            // 
-            // table1TableAdapter
-            // 
-            this.table1TableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -505,6 +491,20 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // table1BindingSource
+            // 
+            this.table1BindingSource.DataMember = "Table1";
+            this.table1BindingSource.DataSource = this.appointmentDataSet1;
+            // 
+            // appointmentDataSet1
+            // 
+            this.appointmentDataSet1.DataSetName = "appointmentDataSet1";
+            this.appointmentDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // table1TableAdapter
+            // 
+            this.table1TableAdapter.ClearBeforeFill = true;
+            // 
             // homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -536,8 +536,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.logBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

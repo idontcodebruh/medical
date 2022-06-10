@@ -207,9 +207,9 @@
             this.SearchLabel.Location = new System.Drawing.Point(12, 67);
             this.SearchLabel.Name = "SearchLabel";
             this.SearchLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SearchLabel.Size = new System.Drawing.Size(107, 14);
+            this.SearchLabel.Size = new System.Drawing.Size(143, 14);
             this.SearchLabel.TabIndex = 6;
-            this.SearchLabel.Text = "Search returned:";
+            this.SearchLabel.Text = "La recherche a trouvé:";
             this.SearchLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.SearchLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -220,7 +220,7 @@
             this.SearchNumberLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.SearchNumberLabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.SearchNumberLabel.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchNumberLabel.Location = new System.Drawing.Point(125, 67);
+            this.SearchNumberLabel.Location = new System.Drawing.Point(161, 67);
             this.SearchNumberLabel.Name = "SearchNumberLabel";
             this.SearchNumberLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SearchNumberLabel.Size = new System.Drawing.Size(8, 14);

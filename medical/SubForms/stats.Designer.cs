@@ -66,7 +66,7 @@
             this.optionSel.Size = new System.Drawing.Size(1093, 59);
             this.optionSel.TabIndex = 0;
             this.optionSel.TabStop = false;
-            this.optionSel.Text = "Option select";
+            this.optionSel.Text = "Sélection d\'options";
             // 
             // graphType
             // 
@@ -109,7 +109,7 @@
             "Bar",
             "Radar"});
             this.graphType.ItemTopMargin = 3;
-            this.graphType.Location = new System.Drawing.Point(833, 21);
+            this.graphType.Location = new System.Drawing.Point(797, 19);
             this.graphType.Name = "graphType";
             this.graphType.Size = new System.Drawing.Size(254, 32);
             this.graphType.TabIndex = 5;
@@ -120,11 +120,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(748, 24);
+            this.label3.Location = new System.Drawing.Point(685, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 14);
+            this.label3.Size = new System.Drawing.Size(106, 14);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Graph type :";
+            this.label3.Text = "Type de graph :";
             // 
             // optionToRender
             // 
@@ -162,7 +162,7 @@
             this.optionToRender.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.optionToRender.ItemHighLightForeColor = System.Drawing.Color.White;
             this.optionToRender.ItemTopMargin = 3;
-            this.optionToRender.Location = new System.Drawing.Point(482, 21);
+            this.optionToRender.Location = new System.Drawing.Point(419, 21);
             this.optionToRender.Name = "optionToRender";
             this.optionToRender.Size = new System.Drawing.Size(260, 32);
             this.optionToRender.TabIndex = 3;
@@ -175,9 +175,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(355, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 14);
+            this.label2.Size = new System.Drawing.Size(58, 14);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Option to render :";
+            this.label2.Text = "Option :";
             // 
             // databaseDrop
             // 

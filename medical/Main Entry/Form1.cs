@@ -108,6 +108,10 @@ namespace medical
                     f2.ShowDialog();
                     this.Close();
                 }
+                else
+                {
+                    MessageBox.Show("fausses informations d'identification");
+                }
             }
         }
 

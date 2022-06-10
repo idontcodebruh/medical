@@ -120,23 +120,7 @@
   <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Light'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
-  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Light'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuCheckBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGcSURBVDhP7VQ9SMNAFM4kgotujuJix46OjnXSwcmpiyC4
-        6CIODnFyFFx0cnFwa2maNEOhKV2kUAqlFFsKbTe3SidLoT7fd7k00Zzt4eDkBx/h3r3vy7t3P8afw7Ks
-        hG3b6Xw+b0bJ8eNcLrct0xbD87xlx3GuWfzOhqTBJ+a6lMfBk0nmi0ymx2KRLms1Oux0vvC8XqeHUilq
-        /MbV70ubEKiQJ/tIui+XaWs4JINoLtfGY7qqVoUxVua67oa088ETd5i8rVRoaTpVmvzEs0YjMHalnV9l
-        0MPN0UgpnEdUjFZBP6uWB+il6JNKpEP0Hh6z3nKVpwhgGSqBDg+63aAFZmBqIoCdVQl0CO2/aWjKO3aB
-        wFGrpRToMLZRPEghgIOvEujwpNkUpnhshGk2m11FIFMo0MpkohQtIq42PJhJYQrwwEPwN2d1r9cLDPvS
-        zgeXneB+iKuabre17//uYEAZx/mQpilpFwL9kJPiyqJP2NXvxKbgx5ElgzfSJg686JzwHEmeS17dK3/j
-        FaoAc1SOI6IijiF/d2R6BIbxCb6yBJYKpj24AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

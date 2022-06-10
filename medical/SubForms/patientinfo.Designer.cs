@@ -141,7 +141,7 @@
             this.groupBox1.Size = new System.Drawing.Size(327, 356);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Child Info";
+            this.groupBox1.Text = "Informations sur l\'enfant";
             // 
             // bunifuDatePicker2
             // 
@@ -517,7 +517,7 @@
             this.groupBox2.Size = new System.Drawing.Size(352, 356);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Parents Info";
+            this.groupBox2.Text = "Infos parents";
             // 
             // bunifuTextBox8
             // 
@@ -1074,7 +1074,7 @@
             this.groupBox3.Size = new System.Drawing.Size(402, 356);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "General Info";
+            this.groupBox3.Text = "Informations générales";
             // 
             // bunifuTextBox10
             // 

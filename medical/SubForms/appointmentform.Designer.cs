@@ -39,6 +39,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.finalGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prénomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateappDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.table1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentDataSet1 = new medical.appointmentDataSet1();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.markBtn = new FontAwesome.Sharp.IconButton();
             this.viewBtn = new FontAwesome.Sharp.IconButton();
@@ -55,20 +63,12 @@
             this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.label1 = new System.Windows.Forms.Label();
             this.searchBtn = new FontAwesome.Sharp.IconButton();
-            this.appointmentDataSet1 = new medical.appointmentDataSet1();
-            this.table1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.table1TableAdapter = new medical.appointmentDataSet1TableAdapters.Table1TableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prénomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateappDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.finalGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBox
@@ -219,6 +219,58 @@
             this.finalGrid.TabIndex = 2;
             this.finalGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prénomDataGridViewTextBoxColumn
+            // 
+            this.prénomDataGridViewTextBoxColumn.DataPropertyName = "prénom";
+            this.prénomDataGridViewTextBoxColumn.HeaderText = "prénom";
+            this.prénomDataGridViewTextBoxColumn.Name = "prénomDataGridViewTextBoxColumn";
+            this.prénomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateappDataGridViewTextBoxColumn
+            // 
+            this.dateappDataGridViewTextBoxColumn.DataPropertyName = "date_app";
+            this.dateappDataGridViewTextBoxColumn.HeaderText = "date_app";
+            this.dateappDataGridViewTextBoxColumn.Name = "dateappDataGridViewTextBoxColumn";
+            this.dateappDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priorityDataGridViewTextBoxColumn
+            // 
+            this.priorityDataGridViewTextBoxColumn.DataPropertyName = "priority";
+            this.priorityDataGridViewTextBoxColumn.HeaderText = "priority";
+            this.priorityDataGridViewTextBoxColumn.Name = "priorityDataGridViewTextBoxColumn";
+            this.priorityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // table1BindingSource
+            // 
+            this.table1BindingSource.DataMember = "Table1";
+            this.table1BindingSource.DataSource = this.appointmentDataSet1;
+            // 
+            // appointmentDataSet1
+            // 
+            this.appointmentDataSet1.DataSetName = "appointmentDataSet1";
+            this.appointmentDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.markBtn);
@@ -238,7 +290,7 @@
             this.groupBox1.Size = new System.Drawing.Size(528, 150);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Current Profil";
+            this.groupBox1.Text = "Profil actuel";
             // 
             // markBtn
             // 
@@ -302,10 +354,10 @@
             this.lowRadio.AutoSize = true;
             this.lowRadio.Location = new System.Drawing.Point(131, 86);
             this.lowRadio.Name = "lowRadio";
-            this.lowRadio.Size = new System.Drawing.Size(51, 18);
+            this.lowRadio.Size = new System.Drawing.Size(48, 18);
             this.lowRadio.TabIndex = 8;
             this.lowRadio.TabStop = true;
-            this.lowRadio.Text = "Low";
+            this.lowRadio.Text = "Bas";
             this.lowRadio.UseVisualStyleBackColor = true;
             // 
             // highRadio
@@ -313,10 +365,10 @@
             this.highRadio.AutoSize = true;
             this.highRadio.Location = new System.Drawing.Point(72, 86);
             this.highRadio.Name = "highRadio";
-            this.highRadio.Size = new System.Drawing.Size(53, 18);
+            this.highRadio.Size = new System.Drawing.Size(55, 18);
             this.highRadio.TabIndex = 7;
             this.highRadio.TabStop = true;
-            this.highRadio.Text = "High";
+            this.highRadio.Text = "Haut";
             this.highRadio.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -324,9 +376,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 14);
+            this.label3.Size = new System.Drawing.Size(61, 14);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Priority :";
+            this.label3.Text = "Priorité :";
             // 
             // label2
             // 
@@ -350,9 +402,9 @@
             this.currentProfil.AutoSize = true;
             this.currentProfil.Location = new System.Drawing.Point(6, 30);
             this.currentProfil.Name = "currentProfil";
-            this.currentProfil.Size = new System.Drawing.Size(98, 14);
+            this.currentProfil.Size = new System.Drawing.Size(99, 14);
             this.currentProfil.TabIndex = 3;
-            this.currentProfil.Text = "Current View :";
+            this.currentProfil.Text = "Patient actuel:";
             // 
             // deleteBtn
             // 
@@ -398,7 +450,7 @@
             this.groupBox2.Size = new System.Drawing.Size(559, 150);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search";
+            this.groupBox2.Text = "Chercher";
             // 
             // bunifuDropdown1
             // 
@@ -474,61 +526,9 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // appointmentDataSet1
-            // 
-            this.appointmentDataSet1.DataSetName = "appointmentDataSet1";
-            this.appointmentDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // table1BindingSource
-            // 
-            this.table1BindingSource.DataMember = "Table1";
-            this.table1BindingSource.DataSource = this.appointmentDataSet1;
-            // 
             // table1TableAdapter
             // 
             this.table1TableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prénomDataGridViewTextBoxColumn
-            // 
-            this.prénomDataGridViewTextBoxColumn.DataPropertyName = "prénom";
-            this.prénomDataGridViewTextBoxColumn.HeaderText = "prénom";
-            this.prénomDataGridViewTextBoxColumn.Name = "prénomDataGridViewTextBoxColumn";
-            this.prénomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateappDataGridViewTextBoxColumn
-            // 
-            this.dateappDataGridViewTextBoxColumn.DataPropertyName = "date_app";
-            this.dateappDataGridViewTextBoxColumn.HeaderText = "date_app";
-            this.dateappDataGridViewTextBoxColumn.Name = "dateappDataGridViewTextBoxColumn";
-            this.dateappDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priorityDataGridViewTextBoxColumn
-            // 
-            this.priorityDataGridViewTextBoxColumn.DataPropertyName = "priority";
-            this.priorityDataGridViewTextBoxColumn.HeaderText = "priority";
-            this.priorityDataGridViewTextBoxColumn.Name = "priorityDataGridViewTextBoxColumn";
-            this.priorityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // appointmentform
             // 
@@ -543,12 +543,12 @@
             this.Text = "appointmentform";
             this.Load += new System.EventHandler(this.appointmentform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.finalGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

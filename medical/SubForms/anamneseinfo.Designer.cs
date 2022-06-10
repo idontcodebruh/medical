@@ -200,7 +200,7 @@
             this.groupBox1.Size = new System.Drawing.Size(327, 337);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Child Info";
+            this.groupBox1.Text = "Informations sur l\'enfant";
             // 
             // bunifuDatePicker2
             // 
@@ -589,7 +589,7 @@
             this.groupBox2.Size = new System.Drawing.Size(148, 337);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Vaccine Data";
+            this.groupBox2.Text = "Vaccins Data";
             // 
             // bunifuToggleSwitch13
             // 

@@ -160,7 +160,7 @@
             this.groupBox1.Size = new System.Drawing.Size(986, 103);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General Info";
+            this.groupBox1.Text = "Informations générales";
             // 
             // richTextBox1
             // 
@@ -625,7 +625,7 @@
             this.groupBox3.Size = new System.Drawing.Size(874, 321);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Exam File";
+            this.groupBox3.Text = "Dossier d\'examen";
             // 
             // bunifuDropdown6
             // 

@@ -101,7 +101,7 @@
             this.toolsBtn.Name = "toolsBtn";
             this.toolsBtn.Size = new System.Drawing.Size(135, 35);
             this.toolsBtn.TabIndex = 9;
-            this.toolsBtn.Text = "Tools";
+            this.toolsBtn.Text = "Outils";
             this.toolsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolsBtn.UseVisualStyleBackColor = false;
             this.toolsBtn.Click += new System.EventHandler(this.toolsBtn_Click);
@@ -171,7 +171,7 @@
             this.searchbtn.Name = "searchbtn";
             this.searchbtn.Size = new System.Drawing.Size(135, 35);
             this.searchbtn.TabIndex = 6;
-            this.searchbtn.Text = "Search";
+            this.searchbtn.Text = "Recherche";
             this.searchbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.searchbtn.UseVisualStyleBackColor = false;
             this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click_1);
@@ -193,7 +193,7 @@
             this.statsbtn.Name = "statsbtn";
             this.statsbtn.Size = new System.Drawing.Size(135, 35);
             this.statsbtn.TabIndex = 4;
-            this.statsbtn.Text = "Statistics";
+            this.statsbtn.Text = "Statistiques";
             this.statsbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.statsbtn.UseVisualStyleBackColor = false;
             this.statsbtn.Click += new System.EventHandler(this.statsbtn_Click);
@@ -215,7 +215,7 @@
             this.appointmentbtn.Name = "appointmentbtn";
             this.appointmentbtn.Size = new System.Drawing.Size(135, 35);
             this.appointmentbtn.TabIndex = 3;
-            this.appointmentbtn.Text = "Appointment";
+            this.appointmentbtn.Text = "Rendez-vous";
             this.appointmentbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.appointmentbtn.UseVisualStyleBackColor = false;
             this.appointmentbtn.Click += new System.EventHandler(this.appointmentbtn_Click);
@@ -237,7 +237,7 @@
             this.medicalbtn.Name = "medicalbtn";
             this.medicalbtn.Size = new System.Drawing.Size(135, 35);
             this.medicalbtn.TabIndex = 2;
-            this.medicalbtn.Text = "Medical File";
+            this.medicalbtn.Text = "DossierMédical";
             this.medicalbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.medicalbtn.UseVisualStyleBackColor = false;
             this.medicalbtn.Click += new System.EventHandler(this.medicalbtn_Click);
@@ -259,7 +259,7 @@
             this.homepagebtn.Name = "homepagebtn";
             this.homepagebtn.Size = new System.Drawing.Size(135, 35);
             this.homepagebtn.TabIndex = 1;
-            this.homepagebtn.Text = "Home";
+            this.homepagebtn.Text = "Accueil";
             this.homepagebtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.homepagebtn.UseVisualStyleBackColor = false;
             this.homepagebtn.Click += new System.EventHandler(this.homepagebtn_Click);
