@@ -536,9 +536,9 @@
             this.groupBox1.Controls.Add(this.bunifuDropdown1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.bunifuTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(351, 278);
+            this.groupBox1.Location = new System.Drawing.Point(351, 96);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(754, 231);
+            this.groupBox1.Size = new System.Drawing.Size(754, 413);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recherche correspondants";
@@ -744,7 +744,7 @@
             this.bunifuDataGridView2.RowHeadersVisible = false;
             this.bunifuDataGridView2.RowTemplate.Height = 40;
             this.bunifuDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView2.Size = new System.Drawing.Size(742, 166);
+            this.bunifuDataGridView2.Size = new System.Drawing.Size(742, 348);
             this.bunifuDataGridView2.TabIndex = 3;
             this.bunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
