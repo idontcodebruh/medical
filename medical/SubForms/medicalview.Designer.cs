@@ -177,7 +177,7 @@
             this.patientbtn.Name = "patientbtn";
             this.patientbtn.Size = new System.Drawing.Size(283, 67);
             this.patientbtn.TabIndex = 0;
-            this.patientbtn.Text = "Patient info";
+            this.patientbtn.Text = "État civil";
             this.patientbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.patientbtn.UseVisualStyleBackColor = true;
             this.patientbtn.Click += new System.EventHandler(this.patientbtn_Click);
