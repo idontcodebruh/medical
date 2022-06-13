@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.OleDb;
 namespace medical
 {
     public partial class mainmenu : Form
@@ -18,6 +19,8 @@ namespace medical
             mainpanel.Dock = DockStyle.Fill;
         }
         public string global_username;
+        public int permission=0;
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine("", "utulisateur.accdb"));
         public void loadform(object Form) {
            
             if (this.mainpanel.Controls.Count > 0)
@@ -43,6 +46,16 @@ namespace medical
             {
                 global_username = line;
             }
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from users where username='"+ global_username+"'";
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                permission = reader.GetInt32(3);
+            }
+            con.Close();
         }
         private void logoutbtn_Click(object sender, EventArgs e)
         {
@@ -84,11 +97,14 @@ namespace medical
             
             Load_Username();
             currentuser.Text = global_username.ToUpper();
-            if(global_username == "nurse")
+            if(permission==0)
             {
                 statsbtn.Visible = false;
                 medicalbtn.Visible = false;
                 homepagebtn.Visible = false;
+                searchbtn.Visible = false;
+                toolsBtn.Visible = false;
+                loadform(new appointmentform());
             }
             else
             {

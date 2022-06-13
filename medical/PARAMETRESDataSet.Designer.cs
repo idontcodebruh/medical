@@ -13405,7 +13405,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13743,7 +13743,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14065,7 +14065,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14375,7 +14375,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14609,7 +14609,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14839,7 +14839,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15078,7 +15078,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15334,7 +15334,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15868,7 +15868,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16948,7 +16948,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17203,7 +17203,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17437,7 +17437,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17680,7 +17680,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17992,7 +17992,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18236,7 +18236,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18476,7 +18476,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18704,7 +18704,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18932,7 +18932,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19160,7 +19160,7 @@ namespace medical.PARAMETRESDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString;
+            this._connection.ConnectionString = global::medical.Properties.Settings.Default.PARAMETRESConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

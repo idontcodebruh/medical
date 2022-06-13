@@ -6,10 +6,3 @@
     {
     }
 }
-
-namespace medical.LogsDataSetTableAdapters {
-    
-    
-    public partial class LogTableAdapter {
-    }
-}

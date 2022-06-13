@@ -17,7 +17,7 @@ namespace medical
         {
             InitializeComponent();
         }
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MALADES4.accdb"));
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine("", "MALADES4.accdb"));
         private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
         {
 

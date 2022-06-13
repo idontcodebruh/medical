@@ -20,8 +20,8 @@ namespace medical
 
             
         }
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs.accdb"));
-        OleDbConnection con1 = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PARAMETRES.accdb"));
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+ Path.Combine("", "Logs.accdb"));
+        OleDbConnection con1 = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine("", "PARAMETRES.accdb"));
         private void homepage_Load(object sender, EventArgs e)
         {
             con1.Open();
@@ -34,10 +34,17 @@ namespace medical
                 bunifuDataGridView2.Rows.Add(reader.GetValue(0).ToString(), reader.GetValue(1).ToString(), reader.GetValue(2).ToString(), reader.GetValue(3).ToString(), reader.GetValue(4).ToString(), reader.GetValue(5).ToString(), reader.GetValue(6).ToString(), reader.GetValue(7).ToString());
             }
             con1.Close();
-            // TODO: This line of code loads data into the 'appointmentDataSet1.Table1' table. You can move, or remove it, as needed.
-            this.table1TableAdapter.Fill(this.appointmentDataSet1.Table1);
+            con.Open();
+            OleDbCommand cmd1 = con.CreateCommand();
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = "select * from Log";
+            OleDbDataReader reader1 = cmd1.ExecuteReader();
+            while (reader1.Read())
+            {
+                bunifuDataGridView1.Rows.Add(reader1.GetValue(0).ToString(), reader1.GetValue(1).ToString());
+            }
+            con.Close();
             // TODO: This line of code loads data into the 'logsDataSet.Log' table. You can move, or remove it, as needed.
-            this.logTableAdapter.Fill(this.logsDataSet.Log);
             refreshData();
             doCalc();
 
@@ -50,7 +57,6 @@ namespace medical
             DateTime date1 = new DateTime();
             DateTime date2 = new DateTime();
             date2 = DateTime.Now;
-            dataGridView1.DataSource = table1BindingSource;
             /*
              * Update Appointments for today 
              *
@@ -81,17 +87,17 @@ namespace medical
 
         public void refreshData()
         {
-
+            bunifuDataGridView1.Rows.Clear();
             /* REFRESH DATA */
             OleDbCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             con.Open();
             cmd.CommandText = "select * from Log";
-            cmd.ExecuteNonQuery();
-            DataTable dt1 = new DataTable();
-            OleDbDataAdapter dataAdapter1 = new OleDbDataAdapter(cmd);
-            dataAdapter1.Fill(dt1);
-            bunifuDataGridView1.DataSource = dt1;
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                bunifuDataGridView1.Rows.Add(reader.GetValue(0).ToString(), reader.GetValue(1).ToString());
+            }
             con.Close();
             /* REFRESH DATA */
 

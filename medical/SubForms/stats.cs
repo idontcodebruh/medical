@@ -30,7 +30,7 @@ namespace medical
         int pages = 0;
         int other_counter = 0;
         /* GLOBAL VAR */
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MALADES4.accdb"));
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine("", "MALADES4.accdb"));
         void render(int index, int index2, int index3, bool skipCalc, bool test)
         {
 

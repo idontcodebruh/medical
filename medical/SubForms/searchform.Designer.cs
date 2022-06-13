@@ -38,7 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.mALADES4DataSet = new medical.MALADES4DataSet();
             this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.viewuser = new FontAwesome.Sharp.IconButton();
             this.SearchLabel = new Bunifu.UI.WinForms.BunifuLabel();
@@ -48,7 +47,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.mALADES4DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,11 +125,6 @@
             this.bunifuTextBox1.UseSystemPasswordChar = false;
             this.bunifuTextBox1.WordWrap = true;
             this.bunifuTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bunifuTextBox1_KeyPress);
-            // 
-            // mALADES4DataSet
-            // 
-            this.mALADES4DataSet.DataSetName = "MALADES4DataSet";
-            this.mALADES4DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bunifuDropdown1
             // 
@@ -336,7 +329,6 @@
             this.Name = "searchform";
             this.Text = "searchform";
             this.Load += new System.EventHandler(this.searchform_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.mALADES4DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -346,7 +338,6 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
-        private MALADES4DataSet mALADES4DataSet;
         private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
         private FontAwesome.Sharp.IconButton viewuser;
         private Bunifu.UI.WinForms.BunifuLabel SearchLabel;

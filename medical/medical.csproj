@@ -206,6 +206,24 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="appointmentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>appointmentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LogsDataSet.cs">
+      <DependentUpon>LogsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LogsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MALADES4DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MALADES4DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PARAMETRESDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,19 +247,6 @@
     <Compile Include="SubForms\anamneseinfo.Designer.cs">
       <DependentUpon>anamneseinfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="appointmentDataSet.cs">
-      <DependentUpon>appointmentDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="appointmentDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>appointmentDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="appointmentDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SubForms\patientinfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,14 +265,6 @@
     <Compile Include="SubForms\appointmentform.Designer.cs">
       <DependentUpon>appointmentform.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSet1.cs">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Main Entry\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,27 +277,11 @@
     <Compile Include="SubForms\homepage.Designer.cs">
       <DependentUpon>homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogsDataSet.cs">
-      <DependentUpon>LogsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="LogsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LogsDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Main Entry\mainmenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Entry\mainmenu.Designer.cs">
       <DependentUpon>mainmenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MALADES4DataSet.cs">
-      <DependentUpon>MALADES4DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MALADES4DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MALADES4DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -327,6 +308,11 @@
     </Compile>
     <Compile Include="SubForms\traitmentinfo.Designer.cs">
       <DependentUpon>traitmentinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utulisateurDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>utulisateurDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="SubForms\anamneseinfo.resx">
       <DependentUpon>anamneseinfo.cs</DependentUpon>
@@ -378,6 +364,7 @@
     <EmbeddedResource Include="SubForms\traitmentinfo.resx">
       <DependentUpon>traitmentinfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="medical.gclicx" />
     <None Include="appointmentDataSet.xsc">
       <DependentUpon>appointmentDataSet.xsd</DependentUpon>
     </None>
@@ -388,28 +375,6 @@
     </None>
     <None Include="appointmentDataSet.xss">
       <DependentUpon>appointmentDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="appointmentDataSet1.xsc">
-      <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="appointmentDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>appointmentDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="appointmentDataSet1.xss">
-      <DependentUpon>appointmentDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="LogsDataSet.xsc">
       <DependentUpon>LogsDataSet.xsd</DependentUpon>
@@ -433,7 +398,6 @@
     <None Include="MALADES4DataSet.xss">
       <DependentUpon>MALADES4DataSet.xsd</DependentUpon>
     </None>
-    <EmbeddedResource Include="medical.gclicx" />
     <None Include="packages.config" />
     <None Include="PARAMETRESDataSet.xsc">
       <DependentUpon>PARAMETRESDataSet.xsd</DependentUpon>
@@ -455,6 +419,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="utulisateurDataSet.xsc">
+      <DependentUpon>utulisateurDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="utulisateurDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>utulisateurDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="utulisateurDataSet.xss">
+      <DependentUpon>utulisateurDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -463,18 +438,6 @@
     <None Include="Resources\1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appointment.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logs.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MALADES4.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PARAMETRES.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\download.jpg" />
   </ItemGroup>
   <ItemGroup>
