@@ -783,9 +783,9 @@
             this.bunifuLabel8.Location = new System.Drawing.Point(6, 216);
             this.bunifuLabel8.Name = "bunifuLabel8";
             this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(83, 14);
+            this.bunifuLabel8.Size = new System.Drawing.Size(75, 14);
             this.bunifuLabel8.TabIndex = 16;
-            this.bunifuLabel8.Text = "Mother\'s job:";
+            this.bunifuLabel8.Text = "Fonct mère:";
             this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -948,9 +948,9 @@
             this.bunifuLabel9.Location = new System.Drawing.Point(6, 153);
             this.bunifuLabel9.Name = "bunifuLabel9";
             this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(80, 14);
+            this.bunifuLabel9.Size = new System.Drawing.Size(72, 14);
             this.bunifuLabel9.TabIndex = 14;
-            this.bunifuLabel9.Text = "Father\'s job:";
+            this.bunifuLabel9.Text = "Fonct père:";
             this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 

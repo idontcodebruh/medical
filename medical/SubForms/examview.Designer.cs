@@ -215,9 +215,9 @@
             this.bunifuDropdown1.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown1.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown1.ItemTopMargin = 3;
-            this.bunifuDropdown1.Location = new System.Drawing.Point(297, 55);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(576, 55);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.Size = new System.Drawing.Size(220, 32);
+            this.bunifuDropdown1.Size = new System.Drawing.Size(249, 32);
             this.bunifuDropdown1.TabIndex = 13;
             this.bunifuDropdown1.Text = null;
             this.bunifuDropdown1.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -227,7 +227,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(189, 55);
+            this.label9.Location = new System.Drawing.Point(468, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(102, 14);
             this.label9.TabIndex = 12;
