@@ -43,11 +43,25 @@ namespace medical
 
         private void appointmentform_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'appointmentDataSet1.Table1' table. You can move, or remove it, as needed.
-            this.table1TableAdapter.Fill(this.appointmentDataSet1.Table1);
-            // TODO: This line of code loads data into the 'dataSet1.Table1' table. You can move, or remove it, as needed.
+
             Load_Patient();
             fullNameText.Text = global_nom + "-" + global_prénom;
+            /*
+             * Load current appointments into the grid
+             */
+
+            finalGrid.Rows.Clear();
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Table1";
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                finalGrid.Rows.Add(reader.GetValue(1).ToString(),reader.GetValue(2).ToString(),reader.GetValue(3).ToString(), reader.GetValue(5).ToString());
+            }
+            reader.Close();
+            con.Close();
         }
 
         private void searchBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,35 +72,7 @@ namespace medical
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            string search_txt = searchBox.Text;
-            if (String.IsNullOrEmpty(search_txt))
-            {
-                finalGrid.DataSource = table1BindingSource;
-                return;
-            }
-            string strSearch = searchBox.Text;
-            con.Open();
-            OleDbCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            switch (bunifuDropdown1.SelectedIndex)
-            {
-                case 0: // NOM
-                    cmd.CommandText = "select * from Table1 where nom LIKE '%" + strSearch + "%'";
-                    break;
-                case 1: // PRENOM
-                    cmd.CommandText = "select * from Table1 where prénom LIKE '%" + strSearch + "%'";
-                    break;
-                case 2: // DATE APPOINTMENT
-                    cmd.CommandText = "select * from Table1 where date_app ='" + strSearch + "'";
-                    break;
-                default:
-                    break;
-            }
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            OleDbDataAdapter dataAdapter = new OleDbDataAdapter(cmd);
-            dataAdapter.Fill(dt);
-            finalGrid.DataSource = dt;
+                
         }
 
         private void viewBtn_Click(object sender, EventArgs e)
@@ -106,31 +92,18 @@ namespace medical
                 global_prénom = prénom_child;
                 bunifuDatePicker1.Checked = true;
                 bunifuDatePicker1.Value = Convert.ToDateTime(finalGrid.SelectedRows[0].Cells[3].Value.ToString());
-                if (priority == "High")
-                {
-                    highRadio.Checked = true;
-                }
-                else {
-                    lowRadio.Checked = true;
-                }
+
             }
 
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            string priority = "Low";
-            if (highRadio.Checked == true) {
-                priority = "High";
-            }
-            else {
-                priority = "Low";
-            }
                 con.Open();
                 OleDbCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 string status = "Unknown";
-                cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority,status) values ('" + global_nom + "','" + global_prénom + "','" + bunifuDatePicker1.Value.ToString("MM/dd/yyyy") + "','" + priority + "','" + status + "')";
+                cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority,status) values ('" + global_nom + "','" + global_prénom + "','" + bunifuDatePicker1.Value.ToString("MM/dd/yyyy") + "','" + "Low" + "','" + status + "')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Yes");
                 con.Close();
@@ -139,15 +112,31 @@ namespace medical
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            string nom;
+            string prénom;
+            string date_app;
+            int ID = 0;
+            string mark = "Annulé";
             int current_row = finalGrid.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (current_row > 0)
             {
-                int ID;
-                string mark = "Canceled";
-                ID = Convert.ToInt32(finalGrid.SelectedRows[0].Cells[0].Value);
-                con.Open();
                 OleDbCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
+                nom = finalGrid.SelectedRows[0].Cells[0].Value.ToString();
+                prénom = finalGrid.SelectedRows[0].Cells[1].Value.ToString();
+                date_app = finalGrid.SelectedRows[0].Cells[2].Value.ToString();
+                // Perform a search to determine ID
+                con.Open();
+                cmd.CommandText = "select * from Table1 where nom='" + nom + "' AND prénom ='" + prénom + "' AND date_app ='" + date_app + "'";
+                OleDbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ID = reader.GetInt32(0);
+                    MessageBox.Show(ID.ToString());
+                }
+                reader.Close();
+                con.Close();
+                con.Open();
                 cmd.CommandText = "update Table1 set status = '" + mark + "' where ID=" + ID;
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -157,15 +146,32 @@ namespace medical
 
         private void markBtn_Click(object sender, EventArgs e)
         {
+            string nom;
+            string prénom;
+            string date_app;
+            int ID=0;
+            string mark = "Traité";
             int current_row = finalGrid.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (current_row > 0)
             {
-                int ID;
-                string mark = "Processed";
-                ID = Convert.ToInt32(finalGrid.SelectedRows[0].Cells[0].Value);
-                con.Open();
                 OleDbCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
+                
+                nom = finalGrid.SelectedRows[0].Cells[0].Value.ToString();
+                prénom = finalGrid.SelectedRows[0].Cells[1].Value.ToString();
+                date_app = finalGrid.SelectedRows[0].Cells[2].Value.ToString();
+                // Perform a search to determine ID
+                con.Open();
+                cmd.CommandText = "select * from Table1 where nom='" + nom + "' AND prénom ='" + prénom + "' AND date_app ='" + date_app + "'";
+                OleDbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ID = reader.GetInt32(0);
+                    MessageBox.Show(ID.ToString());
+                }
+                reader.Close();
+                con.Close();
+                con.Open();
                 cmd.CommandText = "update Table1 set status = '" + mark + "' where ID=" + ID;
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -173,20 +179,32 @@ namespace medical
             }
         }
         public void refreshData() {
-
-            /* REFRESH DATA */
+            finalGrid.Rows.Clear();
+            con.Open();
             OleDbCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            con.Open();
             cmd.CommandText = "select * from Table1";
-            cmd.ExecuteNonQuery();
-            DataTable dt1 = new DataTable();
-            OleDbDataAdapter dataAdapter1 = new OleDbDataAdapter(cmd);
-            dataAdapter1.Fill(dt1);
-            finalGrid.DataSource = dt1;
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                finalGrid.Rows.Add(reader.GetValue(1).ToString(), reader.GetValue(2).ToString(), reader.GetValue(3).ToString(), reader.GetValue(5).ToString());
+            }
+            reader.Close();
             con.Close();
-            /* REFRESH DATA */
 
+        }
+
+        private void addAppBtn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OleDbCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            string status = "Unknown";
+            cmd.CommandText = "insert into Table1 (nom,prénom,date_app,priority,status) values ('" + bunifuTextBox1.Text + "','" + bunifuTextBox2.Text + "','" + bunifuDatePicker2.Value.ToString("MM/dd/yyyy") + "','" + "Low" + "','" + status + "')";
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Yes");
+            con.Close();
+            refreshData();
         }
     }
 }
