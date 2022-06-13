@@ -46,33 +46,33 @@
             this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.bunifuTextBox6 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -209,32 +209,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ajouter un compte";
             // 
-            // label2
+            // textBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 14);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Nom d\'utulisateur:";
+            this.textBox2.Location = new System.Drawing.Point(9, 104);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(260, 22);
+            this.textBox2.TabIndex = 7;
             // 
-            // label3
+            // textBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 14);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Mot de pass:";
+            this.textBox1.Location = new System.Drawing.Point(9, 52);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(260, 22);
+            this.textBox1.TabIndex = 6;
             // 
-            // label4
+            // button2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 141);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 14);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Permission:";
+            this.button2.Location = new System.Drawing.Point(168, 154);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 28);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Ajouter";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(81, 159);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(67, 18);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "NURSE";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -247,16 +255,32 @@
             this.radioButton1.Text = "ADMIN";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // label4
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(81, 159);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(67, 18);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "NURSE";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 14);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Permission:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 14);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Mot de passe:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 14);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Nom d\'utulisateur:";
             // 
             // groupBox3
             // 
@@ -272,33 +296,47 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Changer le mot de pass";
             // 
-            // label5
+            // textBox6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 14);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Mot de pass actuel:";
+            this.textBox6.Location = new System.Drawing.Point(9, 89);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(260, 22);
+            this.textBox6.TabIndex = 12;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(9, 47);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(260, 22);
+            this.textBox5.TabIndex = 11;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(86, 142);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(101, 28);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "Update";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 14);
+            this.label6.Size = new System.Drawing.Size(158, 14);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Nouveau mot de pass:";
+            this.label6.Text = "Nouveau mot de passe:";
             // 
-            // button2
+            // label5
             // 
-            this.button2.Location = new System.Drawing.Point(168, 154);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 28);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Ajouter";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 14);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Mot de passe actuel:";
             // 
             // groupBox4
             // 
@@ -420,23 +458,19 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Certificats";
             // 
-            // label8
+            // textBox4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 14);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Type:";
+            this.textBox4.Location = new System.Drawing.Point(6, 105);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(260, 22);
+            this.textBox4.TabIndex = 10;
             // 
-            // label9
+            // textBox3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 86);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 14);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Texte:";
+            this.textBox3.Location = new System.Drawing.Point(6, 51);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(260, 22);
+            this.textBox3.TabIndex = 9;
             // 
             // button4
             // 
@@ -448,6 +482,24 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 86);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 14);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Texte:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 14);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Type:";
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.bunifuDataGridView1);
@@ -457,16 +509,6 @@
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Liste d\'utulisateur";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(86, 142);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 28);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Update";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // bunifuDataGridView1
             // 
@@ -483,7 +525,7 @@
             this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -515,7 +557,7 @@
             this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -541,48 +583,6 @@
             this.bunifuElipse1.ElipseRadius = 7;
             this.bunifuElipse1.TargetControl = this.bunifuDataGridView1;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 22);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(9, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(260, 22);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(6, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(260, 22);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(6, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(260, 22);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(9, 47);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(260, 22);
-            this.textBox5.TabIndex = 11;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(9, 89);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(260, 22);
-            this.textBox6.TabIndex = 12;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "ID";
@@ -597,7 +597,7 @@
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Mot de pass";
+            this.Column3.HeaderText = "Mot de passe";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 

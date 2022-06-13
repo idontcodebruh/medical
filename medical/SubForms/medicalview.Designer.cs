@@ -126,7 +126,7 @@
             this.graphbtn.Name = "graphbtn";
             this.graphbtn.Size = new System.Drawing.Size(179, 67);
             this.graphbtn.TabIndex = 3;
-            this.graphbtn.Text = "Graph(?)";
+            this.graphbtn.Text = "Graph";
             this.graphbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.graphbtn.UseVisualStyleBackColor = true;
             this.graphbtn.Click += new System.EventHandler(this.graphbtn_Click);
