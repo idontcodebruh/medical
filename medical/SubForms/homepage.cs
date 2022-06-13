@@ -22,6 +22,7 @@ namespace medical
         }
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+ Path.Combine("", "Logs.accdb"));
         OleDbConnection con1 = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine("", "PARAMETRES.accdb"));
+        OleDbConnection con2 = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path.Combine("", "appointment.accdb"));
         private void homepage_Load(object sender, EventArgs e)
         {
             con1.Open();
@@ -44,7 +45,6 @@ namespace medical
                 bunifuDataGridView1.Rows.Add(reader1.GetValue(0).ToString(), reader1.GetValue(1).ToString());
             }
             con.Close();
-            // TODO: This line of code loads data into the 'logsDataSet.Log' table. You can move, or remove it, as needed.
             refreshData();
             doCalc();
 
@@ -56,29 +56,32 @@ namespace medical
             int canceledCounter = 0;
             DateTime date1 = new DateTime();
             DateTime date2 = new DateTime();
-            date2 = DateTime.Now;
+            date2 = DateTime.Now; // <-- Today's date
             /*
              * Update Appointments for today 
              *
              */
-            for(int i =0; i < dataGridView1.RowCount; i++)
+            con2.Open();
+            OleDbCommand cmd = con2.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from Table1";
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                DataGridViewRow selectedRow = dataGridView1.Rows[i];
-                date1 = Convert.ToDateTime(selectedRow.Cells[3].Value);
-                if(DateTime.Compare(Convert.ToDateTime(date1.ToShortDateString()), Convert.ToDateTime(date2.ToShortDateString())) == 0)
-                {
+                if (DateTime.Compare(Convert.ToDateTime(Convert.ToDateTime(reader.GetValue(3).ToString()).ToShortDateString()),Convert.ToDateTime(date2.ToShortDateString())) == 0) {
                     appointmentCounter++;
-                    if (selectedRow.Cells[5].Value.ToString() == "Processed")
+                    if(reader.GetValue(4).ToString() == "Processed")
                     {
                         processedCounter++;
                     }
-                    if (selectedRow.Cells[5].Value.ToString() == "Canceled")
+                    if(reader.GetValue(4).ToString()== "Canceled")
                     {
                         canceledCounter++;
                     }
                 }
-
             }
+            reader.Close();
+            con2.Close();
             appointmentsToday.Text = "Total : " + appointmentCounter;
             canceledAppointments.Text = "Total : " + canceledCounter;
             processedAppointments.Text = "Total : " + processedCounter;
