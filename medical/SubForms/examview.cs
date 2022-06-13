@@ -102,7 +102,6 @@ namespace medical
             OleDbDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                MessageBox.Show(reader.GetValue(3).ToString());
                 bunifuDropdown1.Items.Add(reader.GetString(4));
                 bunifuDatePicker1.Value = Convert.ToDateTime(reader.GetValue(3).ToString());
             }
@@ -160,13 +159,13 @@ namespace medical
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Examens where nom='" + global_nom + "' AND prénom='" + global_prénom + "' AND date_courante='" + Convert.ToDateTime(bunifuDropdown1.SelectedItem).ToShortDateString() + "'";
             OleDbDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+           while (reader.Read())
             {
                 MessageBox.Show(textBox1.Text);
                 textBox1.Text = reader.GetValue(9).ToString();
-                textBox2.Text = reader.GetValue(10).ToString();
-                textBox3.Text = reader.GetValue(11).ToString();
-                string objects = reader.GetString(6);
+                textBox2.Text = reader.GetValue(11).ToString();
+                textBox3.Text = reader.GetValue(10).ToString();
+                string objects = reader.GetValue(6).ToString();
                 objects = objects.Replace(" _ ", String.Empty);
                 objects = objects.Replace("+", ",");
                 richTextBox1.Text = objects;
